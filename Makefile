@@ -54,7 +54,7 @@ SRC_DIR		=	src/
 
 # Pipex functions
 
-SRC_S		=	ft_so_long \
+SRC_S		=	ft_and_thanks_for_all_the_fish \
 				ft_hook \
 				ft_test \
 				ft_player \
