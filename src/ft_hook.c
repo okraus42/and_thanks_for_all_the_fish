@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 16:20:55 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 16:37:25 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ void	ft_hook(void *param)
 
 	max = param;
 	if (mlx_is_key_down(max->mlx, MLX_KEY_ESCAPE))
+	{
+		mlx_close_window(max->mlx);
+	}
+	if (max->map->p < 0 && mlx_is_key_down(max->mlx, MLX_KEY_ENTER))
 	{
 		mlx_close_window(max->mlx);
 	}
