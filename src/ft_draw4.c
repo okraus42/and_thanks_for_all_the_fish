@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:17:59 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 16:19:38 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 15:55:02 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 void	ft_put_enemies2(t_max *max, mlx_image_t *en_img)
 {

@@ -26,7 +26,7 @@ LIBMLX		=	./MLX42
 LIBS		=	$(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 LHEADERS	=	-I ./include -I $(LIBMLX)/include
 CC 			=	cc
-CFLAGS		=	-Wall -Wextra -Werror -O3 -g
+CFLAGS		=	-Wall -Wextra -Werror -g
 CMFLAGS		=	-DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -B build
 OBJ_DIR		=	objects/
 SLEEP		=	#sleep 0.5
@@ -98,11 +98,11 @@ OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_S)))
 # RULES
 
 all:			announce libmlx $(LIBFT) $(NAME)
-				@echo "$(RETURN)$(RETURN)$(GREEN)SO LONG compiled! $(NRM_FORMAT)"
+				@echo "$(RETURN)$(RETURN)$(GREEN)AND THANKS FOR ALL THE FISH compiled! $(NRM_FORMAT)"
 				@$(PRINT2)
 				@$(PRINT1)
 				@$(ECHO)
-				@echo "$(GREEN)Amazing <<$(REVERSE)so_long$(NRM_FORMAT)$(GREEN)>> compiled!$(NRM_FORMAT)"
+				@echo "$(GREEN)Amazing <<$(REVERSE)and_thanks_for_all_the_fish$(NRM_FORMAT)$(GREEN)>> compiled!$(NRM_FORMAT)"
 				
 
 bonus:			all
@@ -126,7 +126,7 @@ libmlx:
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 				@mkdir -p $(OBJ_DIR)
 				@$(SLEEP)
-				@echo "$(RETURN)$(RETURN)$(YELLOW)Compiling SO LONG: $< $(NRM_FORMAT)"
+				@echo "$(RETURN)$(RETURN)$(YELLOW)Compiling AND THANKS FOR ALL THE FISH: $< $(NRM_FORMAT)"
 				@$(PRINT2)
 				@$(PRINT1)
 				@$(CC) $(CFLAGS) -c $< -o $@
@@ -135,7 +135,7 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 $(NAME): 		$(OBJ)
 				@echo "$(RETURN)$(RETURN)$(GREEN)Libft compilation complete!$(NRM_FORMAT)"
 				@$(CC) $(CFLAGS) $(SRC) libft.a $(LIBS) $(LHEADERS) -o $(NAME)
-				@echo "$(RETURN)$(RETURN)$(GREEN)SO LONG compiled!$(NRM_FORMAT)"
+				@echo "$(RETURN)$(RETURN)$(GREEN)AND THANKS FOR ALL THE FISH compiled!$(NRM_FORMAT)"
 				@$(PRINT2)
 				@$(PRINT1)
 				@$(ECHO)
@@ -144,7 +144,7 @@ $(LIBFT):
 				@echo "$(RETURN)$(RETURN)$(YELLOW)Compiling LIBFT: $< $(NRM_FORMAT)"
 				@make -s -C $(LIBFT_F)
 				@cp libft/libft.a .
-				@echo "$(YELLOW)Compiling SO LONG: $< $(NRM_FORMAT)"
+				@echo "$(YELLOW)Compiling AND THANKS FOR ALL THE FISH: $< $(NRM_FORMAT)"
 				@$(PRINT2)
 				@$(PRINT1)
 				@$(ECHO)

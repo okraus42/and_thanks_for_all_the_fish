@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   and_thanks_for_all_the_fish.h                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 16:28:57 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 15:54:54 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
+#ifndef AND_THANKS_FOR_ALL_THE_FISH_H
 
-# define SO_LONG_H
+# define AND_THANKS_FOR_ALL_THE_FISH_H
 
 // INCLUDES
 
@@ -21,11 +21,11 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdarg.h>
-# include <sys/wait.h> //check if needed, but it must be
-# include <time.h> //check if needed
-# include <sys/types.h> //open function1
-# include <sys/stat.h> //open function2
-# include <fcntl.h> //open function3
+# include <sys/wait.h>
+# include <time.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -37,7 +37,7 @@
 // DEFINITIONS
 
 // STRUCTURES
-// SO_LONG structure
+// AND_THANKS_FOR_ALL_THE_FISH structures
 
 // typedef struct map_s
 // {

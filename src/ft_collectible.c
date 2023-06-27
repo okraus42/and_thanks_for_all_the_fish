@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 12:47:19 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/24 18:34:28 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 16:13:01 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 void	ft_remove_collectible(t_max *max, int x, int y)
 {
@@ -59,7 +59,7 @@ void	ft_check_door(t_max *max)
 	if (!max->map->cr && max->map->p && max->map->px == max->map->xx
 		&& max->map->py == max->map->xy)
 	{
-		max->map->p = 0;
+		max->map->p = -1;
 		ft_printf("\n\n%2CYou win!%0C\n\n\n");
 	}
 }

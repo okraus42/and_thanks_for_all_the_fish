@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:16:05 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 16:17:33 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 15:55:03 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 void	ft_put_door2(t_max *max, mlx_image_t *door_img)
 {

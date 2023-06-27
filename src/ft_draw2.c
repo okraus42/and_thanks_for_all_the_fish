@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:16:15 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 16:20:26 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 15:55:04 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 void	ft_put_collectibles3(t_max *max, mlx_image_t *col_img)
 {

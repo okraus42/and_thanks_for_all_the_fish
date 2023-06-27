@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:04:17 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 16:18:26 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 15:55:07 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 void	ft_put_walls(t_max *max, mlx_image_t *wall_img)
 {

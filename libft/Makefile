@@ -23,8 +23,8 @@ endif
 NAME		=	libft.a
 INCS		=	libft.h
 LIBC		=	ar rcs
-CC 			=	cc
-CFLAGS		=	-Wall -Wextra -Werror -O3
+CC 		=	cc
+CFLAGS		=	-Wall -Wextra -Werror
 OBJ_DIR		=	objects/
 SLEEP		=	#sleep 0.5
 

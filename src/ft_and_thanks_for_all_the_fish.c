@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_so_long.c                                       :+:      :+:    :+:   */
+/*   ft_and_thanks_for_all_the_fish.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 16:26:28 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 16:13:50 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 void	ft_fill_map(t_map *map, char *mapfile)
 {
@@ -37,7 +37,7 @@ void	ft_fill_map(t_map *map, char *mapfile)
 	ft_test_map(map);
 }
 
-void	ft_so_long2(t_max *max, char *mapfile)
+void	ft_and_thanks_for_all_the_fish2(t_max *max, char *mapfile)
 {
 	ft_init_map(max->map);
 	ft_init_keys(max->key);
@@ -45,7 +45,7 @@ void	ft_so_long2(t_max *max, char *mapfile)
 	ft_update_map(max->map);
 }
 
-void	ft_so_long3(t_max *max)
+void	ft_and_thanks_for_all_the_fish3(t_max *max)
 {
 	ft_put_background(max);
 	ft_put_collectibles(max);
@@ -61,7 +61,7 @@ void	ft_so_long3(t_max *max)
 	max->steps = mlx_put_string(max->mlx, max->map->s, 10, 10);
 }
 
-void	ft_so_long(char *mapfile)
+int	ft_and_thanks_for_all_the_fish(char *mapfile)
 {
 	mlx_t				*mlx;
 	t_max				max;
@@ -73,37 +73,39 @@ void	ft_so_long(char *mapfile)
 	max.key = &keyt;
 	max.img = &imgt;
 	max.steps = NULL;
-	ft_so_long2(&max, mapfile);
-	mlx = mlx_init(max.map->w * 32, max.map->h * 32, "SO LONG", true);
+	ft_and_thanks_for_all_the_fish2(&max, mapfile);
+	mlx = mlx_init(max.map->w * 32, max.map->h * 32, "AND THANX FOR ALL THE FISH", true);
 	if (!max.mlx)
 	{
 		ft_printf_fd(2, "%s\n", mlx_strerror(mlx_errno));
 		exit(-999);
 	}
 	max.mlx = mlx;
-	ft_so_long3(&max);
+	ft_and_thanks_for_all_the_fish3(&max);
 	mlx_loop_hook(mlx, ft_hook, &max);
 	mlx_loop(mlx);
+	if (mapt.p == -1)
+	{
+		ft_free(&max);
+		mlx_terminate(mlx);
+		return (0);
+	}
 	ft_free(&max);
 	mlx_terminate(mlx);
+	return (1);
 }
 
 int	main(int argc, char *argv[])
 {
-	int	n;
-
-	if (argc != 2)
+	if (argc != 1)
 	{
 		ft_printf_fd(2, "%9CError%0C\n");
 		return (1);
 	}
-	n = ft_strlen(argv[1]);
-	if (n < 5 || argv[1][n - 1] != 'r' || argv[1][n - 2] != 'e'
-		|| argv[1][n - 3] != 'b' || argv[1][n - 4] != '.')
-	{
-		ft_printf_fd(2, "%91CError%0C\n%61CThis is not a valid map file%0C\n");
-		return (2);
-	}
-	ft_so_long(argv[1]);
+	(void)argv;
+	if (!ft_and_thanks_for_all_the_fish("maps/map1.ber"))
+		if (!ft_and_thanks_for_all_the_fish("maps/map2.ber"))
+			if (!ft_and_thanks_for_all_the_fish("maps/map3.ber"))
+				ft_and_thanks_for_all_the_fish("maps/map4.ber");
 	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:05:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 15:44:14 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 16:19:58 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 static void	ft_putsteps(t_max *max)
 {
@@ -25,22 +25,22 @@ static void	ft_putsteps(t_max *max)
 
 static void	ft_domovep(t_max *max, int d)
 {
-	if (d == 8 && max->map->p)
+	if (d == 8 && max->map->p > 0)
 	{
 		max->img->pi[0].y -= 32;
 		max->map->py--;
 	}
-	if (d == 4 && max->map->p)
+	if (d == 4 && max->map->p > 0)
 	{
 		max->img->pi[0].y += 32;
 		max->map->py++;
 	}
-	if (d == 2 && max->map->p)
+	if (d == 2 && max->map->p > 0)
 	{
 		max->img->pi[0].x -= 32;
 		max->map->px--;
 	}
-	if (d == 1 && max->map->p)
+	if (d == 1 && max->map->p > 0)
 	{
 		max->img->pi[0].x += 32;
 		max->map->px++;
@@ -50,7 +50,7 @@ static void	ft_domovep(t_max *max, int d)
 
 static int	ft_checkmovep(t_max *max, int x, int y)
 {
-	if (max->map->m[y][x] != '1')
+	if (max->map->m[y][x] != '1' || max->map->p < 1)
 	{
 		if (max->map->m[y][x] == 'c')
 		{
@@ -75,7 +75,7 @@ void	ft_moveplayer2(t_max *max, int x, int y, int d)
 		ft_domovep(max, d);
 		if (max->map->et)
 			ft_check_enemy(max);
-		if (max->map->et && max->map->p
+		if (max->map->et && max->map->p > 0
 			&& (max->map->steps % 2 || max->map->steps % 3))
 			ft_moveenemies(max);
 		ft_check_door(max);

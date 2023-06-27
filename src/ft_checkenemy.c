@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:21:31 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 19:27:35 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 15:55:08 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 void	ft_domovee(t_max *max, int i, int d)
 {

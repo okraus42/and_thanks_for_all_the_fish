@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:09:29 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 16:28:32 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 15:54:51 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 // void	ft_print_map(t_map *map)
 // {
@@ -40,10 +40,8 @@ void	ft_check_flood(t_map *map)
 {
 	int	x;
 	int	y;
-	int	z;
 
 	y = 1;
-	z = 0;
 	while (y < map->h - 1)
 	{
 		x = 1;
@@ -128,9 +126,6 @@ void	ft_check_map(t_map *map)
 
 void	ft_test_map(t_map *map)
 {
-	int	error;
-
-	error = 0;
 	if (map->h < 3)
 		ft_exit(map, 9);
 	ft_check_map(map);

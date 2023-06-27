@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:06:11 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 15:36:45 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 15:54:47 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 void	ft_update_map3(t_map *map, int y, int c, int s)
 {

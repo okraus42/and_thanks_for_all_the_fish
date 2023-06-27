@@ -6,11 +6,11 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/26 16:26:30 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/27 16:20:55 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/so_long.h"
+#include "../header/and_thanks_for_all_the_fish.h"
 
 void	ft_game(t_max *max)
 {
@@ -50,19 +50,19 @@ void	ft_hook(void *param)
 	{
 		mlx_close_window(max->mlx);
 	}
-	if (max->map->p && mlx_is_key_down(max->mlx, MLX_KEY_UP))
+	if (max->map->p > 0 && mlx_is_key_down(max->mlx, MLX_KEY_UP))
 	{
 		ft_init_key(max->key, 1);
 	}
-	if (max->map->p && mlx_is_key_down(max->mlx, MLX_KEY_DOWN))
+	if (max->map->p > 0 && mlx_is_key_down(max->mlx, MLX_KEY_DOWN))
 	{
 		ft_init_key(max->key, 2);
 	}
-	if (max->map->p && mlx_is_key_down(max->mlx, MLX_KEY_LEFT))
+	if (max->map->p > 0 && mlx_is_key_down(max->mlx, MLX_KEY_LEFT))
 	{
 		ft_init_key(max->key, 3);
 	}
-	if (max->map->p && mlx_is_key_down(max->mlx, MLX_KEY_RIGHT))
+	if (max->map->p > 0 && mlx_is_key_down(max->mlx, MLX_KEY_RIGHT))
 	{
 		ft_init_key(max->key, 4);
 	}
