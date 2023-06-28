@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:21:31 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/28 20:51:52 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/28 20:54:01 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ void	ft_check_enemy(t_max *max)
 			max->score -= 500;
 			ft_printf("%21CYou stepped on enemy and died:(%0C\n");
 			ft_printf("%55CCurrent score: %i%0C\n", max->score);
+			mlx_close_window(max->mlx);
 		}
 		i++;
 	}
