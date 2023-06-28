@@ -6,11 +6,20 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 16:37:25 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/28 19:51:08 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/and_thanks_for_all_the_fish.h"
+
+static void	ft_putscore(t_max *max)
+{
+	free(max->map->s);
+	max->map->s = ft_itoa(max->score);
+	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
+	mlx_delete_image(max->mlx, max->str);
+	max->str = mlx_put_string(max->mlx, max->map->s, 10, 10);
+}
 
 void	ft_game(t_max *max)
 {
@@ -29,14 +38,20 @@ void	ft_game(t_max *max)
 	if (max->key->t && max->key->t < 10)
 	{
 		max->key->t++;
+		max->score--;
+		ft_putscore(max);
 	}
 	else
 	{
 		max->key->t = 0;
+		max->score--;
+		ft_putscore(max);
 	}
 	if (max->key->time > 10)
 	{
 		max->key->time = 0;
+		max->score--;
+		ft_putscore(max);
 	}
 	ft_check_time(max);
 }

@@ -6,21 +6,21 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:05:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 16:19:58 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/28 20:45:38 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/and_thanks_for_all_the_fish.h"
 
-static void	ft_putsteps(t_max *max)
+static void	ft_putscore(t_max *max)
 {
 	max->map->steps++;
+	max->score += 5;
 	free(max->map->s);
-	max->map->s = ft_itoa(max->map->steps);
-	max->map->s = ft_strjoin_freeright("Steps: ", max->map->s);
-	mlx_delete_image(max->mlx, max->steps);
-	max->steps = mlx_put_string(max->mlx, max->map->s, 10, 10);
-	ft_printf("Steps: %i\n", max->map->steps);
+	max->map->s = ft_itoa(max->score);
+	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
+	mlx_delete_image(max->mlx, max->str);
+	max->str = mlx_put_string(max->mlx, max->map->s, 10, 10);
 }
 
 static void	ft_domovep(t_max *max, int d)
@@ -45,7 +45,7 @@ static void	ft_domovep(t_max *max, int d)
 		max->img->pi[0].x += 32;
 		max->map->px++;
 	}
-	ft_putsteps(max);
+	ft_putscore(max);
 }
 
 static int	ft_checkmovep(t_max *max, int x, int y)

@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 16:13:50 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/28 20:48:51 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,56 +56,59 @@ void	ft_and_thanks_for_all_the_fish3(t_max *max)
 	ft_put_player(max);
 	max->map->cr = max->map->ct;
 	max->key->time = 0;
-	max->map->s = ft_itoa(max->map->steps);
-	max->map->s = ft_strjoin_freeright("Steps: ", max->map->s);
-	max->steps = mlx_put_string(max->mlx, max->map->s, 10, 10);
+	max->map->s = ft_itoa(max->score);
+	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
+	max->str = mlx_put_string(max->mlx, max->map->s, 10, 10);
 }
 
-int	ft_and_thanks_for_all_the_fish(char *mapfile)
+int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 {
 	mlx_t				*mlx;
-	t_max				max;
 	t_map				mapt;
 	t_imgs				imgt;
 	t_controls			keyt;
 
-	max.map = &mapt;
-	max.key = &keyt;
-	max.img = &imgt;
-	max.steps = NULL;
-	ft_and_thanks_for_all_the_fish2(&max, mapfile);
-	mlx = mlx_init(max.map->w * 32, max.map->h * 32, "AND THANX FOR ALL THE FISH", true);
-	if (!max.mlx)
+	max->map = &mapt;
+	max->key = &keyt;
+	max->img = &imgt;
+	max->str = NULL;
+	ft_and_thanks_for_all_the_fish2(max, mapfile);
+	mlx = mlx_init(max->map->w * 32, max->map->h * 32, "AND THANX FOR ALL THE FISH", true);
+	if (!max->mlx)
 	{
 		ft_printf_fd(2, "%s\n", mlx_strerror(mlx_errno));
 		exit(-999);
 	}
-	max.mlx = mlx;
-	ft_and_thanks_for_all_the_fish3(&max);
-	mlx_loop_hook(mlx, ft_hook, &max);
+	max->mlx = mlx;
+	ft_and_thanks_for_all_the_fish3(max);
+	mlx_loop_hook(mlx, ft_hook, max);
 	mlx_loop(mlx);
 	if (mapt.p == -1)
 	{
-		ft_free(&max);
+		ft_free(max);
 		mlx_terminate(mlx);
 		return (0);
 	}
-	ft_free(&max);
+	ft_free(max);
 	mlx_terminate(mlx);
 	return (1);
 }
 
 int	main(int argc, char *argv[])
 {
+	t_max	max;
+
+	max.score = 1000;
 	if (argc != 1)
 	{
 		ft_printf_fd(2, "%9CError%0C\n");
 		return (1);
 	}
 	(void)argv;
-	if (!ft_and_thanks_for_all_the_fish("maps/map1.ber"))
-		if (!ft_and_thanks_for_all_the_fish("maps/map2.ber"))
-			if (!ft_and_thanks_for_all_the_fish("maps/map3.ber"))
-				ft_and_thanks_for_all_the_fish("maps/map4.ber");
+	if (!ft_and_thanks_for_all_the_fish("maps/map1.ber", &max))
+		if (!ft_and_thanks_for_all_the_fish("maps/map2.ber", &max))
+			if (!ft_and_thanks_for_all_the_fish("maps/map3.ber", &max))
+				ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
+	ft_printf("%93CFinal score: %i%0C\n", max.score);
 	return (0);
 }
