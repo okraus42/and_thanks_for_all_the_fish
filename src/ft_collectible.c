@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 12:47:19 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/28 20:48:58 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/28 21:06:13 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_check_time(t_max *max)
 void	ft_open_door(t_max *max)
 {
 	max->img->dci[0].x += 32 * max->map->w;
-	max->score *= 2;
+	max->score += 500;
 }
 
 void	ft_check_door(t_max *max)
@@ -62,6 +62,7 @@ void	ft_check_door(t_max *max)
 		&& max->map->py == max->map->xy)
 	{
 		max->map->p = -1;
+		max->score += 1000;
 		ft_printf("%22CYou win!%0C\n");
 		ft_printf("%52CCurrent score: %i%0C\n", max->score);
 	}
