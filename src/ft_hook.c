@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/29 09:44:07 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/29 15:06:30 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static void	ft_putscore(t_max *max)
 	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
 	mlx_delete_image(max->mlx, max->str);
 	max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);
-	if (max->score == 0)
+	if (max->score <= 0)
 	{
 		ft_printf("%41CYour score have dropped to 0 :/%0C\n");
 		ft_printf("%55CCurrent score: %i%0C\n", max->score);
 		mlx_close_window(max->mlx);
 	}
-	if (max->time == 0)
+	if (max->time <= 0)
 	{
 		ft_printf("%41CYou have run out of time :/%0C\n");
 		ft_printf("%55CCurrent score: %i%0C\n", max->score);
@@ -90,6 +90,8 @@ void	ft_hook(void *param)
 	max = param;
 	if (mlx_is_key_down(max->mlx, MLX_KEY_ESCAPE))
 	{
+		ft_printf("%41CYou have quit this map:/%0C\n");
+		ft_printf("%55CCurrent score: %i%0C\n", max->score);
 		mlx_close_window(max->mlx);
 	}
 	if (max->map->p < 0 && mlx_is_key_down(max->mlx, MLX_KEY_ENTER))

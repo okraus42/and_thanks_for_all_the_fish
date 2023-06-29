@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/29 09:42:46 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/29 15:26:32 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,10 +112,11 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	(void)argv;
-	if (!ft_and_thanks_for_all_the_fish("maps/map1.ber", &max))
-		if (!ft_and_thanks_for_all_the_fish("maps/map2.ber", &max))
-			if (!ft_and_thanks_for_all_the_fish("maps/map3.ber", &max))
-				ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
+	ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
+	ft_and_thanks_for_all_the_fish("maps/map2.ber", &max);
+	ft_and_thanks_for_all_the_fish("maps/map3.ber", &max);
+	ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
+	ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
 	ft_printf("%93CFinal score: %i%0C\n", max.score);
 	return (0);
 }
