@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:05:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/28 20:45:38 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/29 09:10:17 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ static void	ft_putscore(t_max *max)
 {
 	max->map->steps++;
 	max->score += 5;
-	free(max->map->s);
-	max->map->s = ft_itoa(max->score);
-	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
-	mlx_delete_image(max->mlx, max->str);
-	max->str = mlx_put_string(max->mlx, max->map->s, 10, 10);
 }
 
 static void	ft_domovep(t_max *max, int d)

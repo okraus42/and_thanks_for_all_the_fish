@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/28 19:51:08 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/29 09:44:07 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,43 @@
 
 static void	ft_putscore(t_max *max)
 {
-	free(max->map->s);
-	max->map->s = ft_itoa(max->score);
+	char *str;
+
+	max->time--;
+	free (max->map->s);
+	max->map->s = ft_itoa(max->time);
+	max->map->s = ft_strjoin_freeright("        Time left: ", max->map->s);
+	str = ft_itoa(max->score);
+	max->map->s = ft_strjoin_freeright(str, max->map->s);
+	free(str);
 	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
 	mlx_delete_image(max->mlx, max->str);
-	max->str = mlx_put_string(max->mlx, max->map->s, 10, 10);
+	max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);
+	if (max->score == 0)
+	{
+		ft_printf("%41CYour score have dropped to 0 :/%0C\n");
+		ft_printf("%55CCurrent score: %i%0C\n", max->score);
+		mlx_close_window(max->mlx);
+	}
+	if (max->time == 0)
+	{
+		ft_printf("%41CYou have run out of time :/%0C\n");
+		ft_printf("%55CCurrent score: %i%0C\n", max->score);
+		mlx_close_window(max->mlx);
+	}
 }
+
+// static void	ft_puttime(t_max *max)
+// {
+// 	max->time--;
+// 	free (max->map->s);
+// 	max->map->s = ft_itoa(max->time);
+// 	max->map->s = ft_strjoin_freeright("Time left: ", max->map->s);
+// 	mlx_delete_image(max->mlx, max->tmp);
+// 	max->tmp = mlx_put_string(max->mlx, max->map->s, 250, 5);
+// 	f
+	
+// }
 
 void	ft_game(t_max *max)
 {
@@ -35,24 +66,20 @@ void	ft_game(t_max *max)
 		ft_init_key(max->key, 0);
 	}
 	max->key->time++;
-	if (max->key->t && max->key->t < 10)
+	max->score--;
+	if (max->key->t && max->key->t < 20)
 	{
 		max->key->t++;
-		max->score--;
-		ft_putscore(max);
 	}
 	else
 	{
 		max->key->t = 0;
-		max->score--;
-		ft_putscore(max);
 	}
-	if (max->key->time > 10)
+	if (max->key->time > 20)
 	{
-		max->key->time = 0;
-		max->score--;
-		ft_putscore(max);
+		max->key->time = 0;	
 	}
+	ft_putscore(max);
 	ft_check_time(max);
 }
 

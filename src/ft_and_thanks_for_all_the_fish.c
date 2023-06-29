@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/28 20:48:51 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/29 09:42:46 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,12 @@ void	ft_and_thanks_for_all_the_fish3(t_max *max)
 	max->key->time = 0;
 	max->map->s = ft_itoa(max->score);
 	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
-	max->str = mlx_put_string(max->mlx, max->map->s, 10, 10);
+	max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);
+	free(max->map->s);
+	max->map->s = ft_itoa(max->time);
+	max->map->s = ft_strjoin_freeright("Time left: ", max->map->s);
+	max->tmp = mlx_put_string(max->mlx, max->map->s, 250, 5);
+	mlx_delete_image(max->mlx, max->tmp);
 }
 
 int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
@@ -72,6 +77,7 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	max->key = &keyt;
 	max->img = &imgt;
 	max->str = NULL;
+	max->tmp = NULL;
 	ft_and_thanks_for_all_the_fish2(max, mapfile);
 	mlx = mlx_init(max->map->w * 32, max->map->h * 32, "AND THANX FOR ALL THE FISH", true);
 	if (!max->mlx)
@@ -99,6 +105,7 @@ int	main(int argc, char *argv[])
 	t_max	max;
 
 	max.score = 1000;
+	max.time = 2000;
 	if (argc != 1)
 	{
 		ft_printf_fd(2, "%9CError%0C\n");

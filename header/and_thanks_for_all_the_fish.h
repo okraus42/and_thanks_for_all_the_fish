@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/28 19:37:11 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/29 08:57:16 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,9 @@ typedef struct s_max
 	t_controls	*key;
 	t_imgs		*img;
 	mlx_image_t	*str;
+	mlx_image_t	*tmp;
 	int			score;
+	int			time;
 }	t_max;
 
 // PROTOTYPES
