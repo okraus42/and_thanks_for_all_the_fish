@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/29 15:26:32 by okraus           ###   ########.fr       */
+/*   Updated: 2023/06/29 17:40:47 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,8 @@ int	main(int argc, char *argv[])
 {
 	t_max	max;
 
-	max.score = 1000;
-	max.time = 2000;
+	max.score = 2500;
+	max.time = 2500;
 	if (argc != 1)
 	{
 		ft_printf_fd(2, "%9CError%0C\n");
