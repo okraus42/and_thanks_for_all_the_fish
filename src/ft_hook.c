@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/29 15:06:30 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/10 15:25:17 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_game(t_max *max)
 	}
 	max->key->time++;
 	max->score--;
-	if (max->key->t && max->key->t < 20)
+	if (max->key->t && max->key->t < 10)
 	{
 		max->key->t++;
 	}

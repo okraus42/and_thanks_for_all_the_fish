@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/10 15:19:43 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/10 15:26:39 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void	ft_max_init(t_max *max)
 			str[ft_strlen(str) - 1] = 0;
 		while (str && !yn && ft_strncmp(str, "exit", 5))
 		{
-			ft_printf("\nIs your name: %s?\nTypeq 'y' to continue\n", str);
+			ft_printf("\nIs your name: %s?\nType 'y' to continue\n", str);
 			yn = get_next_line(0);
 			if (!(ft_strncmp(yn, "y", 1) && ft_strncmp(yn, "Y", 1)))
 			{
@@ -167,6 +167,7 @@ int	main(int argc, char *argv[])
 		//enter player name and coalition (max init function?)
 		ft_max_init(&max);
 	}
+	close(fd);
 	//also figure out how to maximise MLX window to fullscreen
 	//display highscores before exiting
 	return (0);
