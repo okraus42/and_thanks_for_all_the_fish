@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/10 14:42:53 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/10 15:19:43 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void	ft_max_init(t_max *max)
 	yn = NULL;
 	while (!str)
 	{
-		ft_printf("Enter your intra or type 'exit' to quit: ");
+		ft_printf("Enter your intra name or type 'exit' to quit: ");
 		str = get_next_line(0);
 		if (str && ft_strchr(str, ':'))
 		{
@@ -123,7 +123,7 @@ void	ft_max_init(t_max *max)
 			str[ft_strlen(str) - 1] = 0;
 		while (str && !yn && ft_strncmp(str, "exit", 5))
 		{
-			ft_printf("Is your name: %s\nPress 'y' to continue\n\n", str);
+			ft_printf("\nIs your name: %s?\nTypeq 'y' to continue\n", str);
 			yn = get_next_line(0);
 			if (!(ft_strncmp(yn, "y", 1) && ft_strncmp(yn, "Y", 1)))
 			{
@@ -144,6 +144,7 @@ void	ft_max_init(t_max *max)
 int	main(int argc, char *argv[])
 {
 	t_max	max;
+	int		fd;
 
 	ft_max_init(&max);
 	if (argc != 1)
@@ -152,6 +153,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	(void)argv;
+	fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
 	while (!max.exit)
 	{
 		ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
@@ -160,7 +162,8 @@ int	main(int argc, char *argv[])
 		ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
 		ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
 		ft_printf("%93CFinal score: %i%0C\n", max.score);
-		//save score (save score function?) name coalition, score and time
+		ft_printf_fd(fd, "%s:coalition:%i\n", max.player_name, max.score);
+		//save score (save score function?) name coalition, score and time does not matter, order in score txt will be enough to index it
 		//enter player name and coalition (max init function?)
 		ft_max_init(&max);
 	}
