@@ -22,7 +22,7 @@ endif
 NAME		=	and_thanks_for_all_the_fish
 LIBFT_F		=	libft/
 LIBFT		=	libft.a
-LIBMLX		=	./MLX42
+LIBMLX		=	./.MLX42
 LIBS		=	$(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 LHEADERS	=	-I ./include -I $(LIBMLX)/include
 CC 			=	cc

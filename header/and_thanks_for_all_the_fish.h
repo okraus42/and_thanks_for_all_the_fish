@@ -31,7 +31,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <math.h>
-# include "../MLX42/include/MLX42/MLX42.h"
+# include "../.MLX42/include/MLX42/MLX42.h"
 # include "../libft/header/libft.h"
 
 // DEFINITIONS
