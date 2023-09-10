@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/10 12:37:53 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/10 14:42:53 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,13 +100,52 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	return (1);
 }
 
+void	ft_max_init(t_max *max)
+{
+	char	*str;
+	char	*yn;
+
+	max->score = 2500;
+	max->time = 2500;
+	max->exit = 0;
+	str = NULL;
+	yn = NULL;
+	while (!str)
+	{
+		ft_printf("Enter your intra or type 'exit' to quit: ");
+		str = get_next_line(0);
+		if (str && ft_strchr(str, ':'))
+		{
+			ft_printf_fd(2, "Invalid name!\n");
+			str = NULL;
+		}
+		if (str)
+			str[ft_strlen(str) - 1] = 0;
+		while (str && !yn && ft_strncmp(str, "exit", 5))
+		{
+			ft_printf("Is your name: %s\nPress 'y' to continue\n\n", str);
+			yn = get_next_line(0);
+			if (!(ft_strncmp(yn, "y", 1) && ft_strncmp(yn, "Y", 1)))
+			{
+				break;
+			}
+			else
+			{
+				yn = NULL;
+				str = NULL;
+			}
+		}
+	}
+	max->player_name = str;
+	if (!ft_strncmp(max->player_name, "exit", 5))
+		max->exit = 1;
+}
+
 int	main(int argc, char *argv[])
 {
 	t_max	max;
 
-	max.score = 2500;
-	max.time = 2500;
-	max.exit = 0;
+	ft_max_init(&max);
 	if (argc != 1)
 	{
 		ft_printf_fd(2, "%9CError%0C\n");
@@ -123,8 +162,7 @@ int	main(int argc, char *argv[])
 		ft_printf("%93CFinal score: %i%0C\n", max.score);
 		//save score (save score function?) name coalition, score and time
 		//enter player name and coalition (max init function?)
-		if (!ft_strncmp, max.player_name, "exit", 5);
-			max.exit = 0;
+		ft_max_init(&max);
 	}
 	//also figure out how to maximise MLX window to fullscreen
 	//display highscores before exiting
