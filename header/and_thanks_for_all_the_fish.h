@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/29 08:57:16 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/10 12:18:36 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@
 # include "../libft/header/libft.h"
 
 // DEFINITIONS
+
+#define BLOCK_WIDTH 32
+#define BLOCK_HEIGHT 32
 
 // STRUCTURES
 // AND_THANKS_FOR_ALL_THE_FISH structures
@@ -119,7 +122,10 @@ typedef struct s_max
 	t_imgs		*img;
 	mlx_image_t	*str;
 	mlx_image_t	*tmp;
+	char		*player_name;
+	char		*player_coalition;
 	int			score;
+	int			exit;
 	int			time;
 }	t_max;
 

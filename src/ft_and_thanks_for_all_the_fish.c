@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/29 19:04:23 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/10 12:37:53 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,11 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	max->str = NULL;
 	max->tmp = NULL;
 	ft_and_thanks_for_all_the_fish2(max, mapfile);
-	mlx = mlx_init(max->map->w * 32, max->map->h * 32, "AND THANX FOR ALL THE FISH", true);
+	mlx = mlx_init(max->map->w * BLOCK_WIDTH, max->map->h * BLOCK_HEIGHT, "AND THANX FOR ALL THE FISH", true);
 	if (!max->mlx)
 	{
 		ft_printf_fd(2, "%s\n", mlx_strerror(mlx_errno));
-		exit(-999);
+		exit(-9);
 	}
 	max->mlx = mlx;
 	ft_and_thanks_for_all_the_fish3(max);
@@ -106,17 +106,27 @@ int	main(int argc, char *argv[])
 
 	max.score = 2500;
 	max.time = 2500;
+	max.exit = 0;
 	if (argc != 1)
 	{
 		ft_printf_fd(2, "%9CError%0C\n");
 		return (1);
 	}
 	(void)argv;
-	ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
-	ft_and_thanks_for_all_the_fish("maps/map2.ber", &max);
-	ft_and_thanks_for_all_the_fish("maps/map3.ber", &max);
-	ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
-	ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
-	ft_printf("%93CFinal score: %i%0C\n", max.score);
+	while (!max.exit)
+	{
+		ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
+		ft_and_thanks_for_all_the_fish("maps/map2.ber", &max);
+		ft_and_thanks_for_all_the_fish("maps/map3.ber", &max);
+		ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
+		ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
+		ft_printf("%93CFinal score: %i%0C\n", max.score);
+		//save score (save score function?) name coalition, score and time
+		//enter player name and coalition (max init function?)
+		if (!ft_strncmp, max.player_name, "exit", 5);
+			max.exit = 0;
+	}
+	//also figure out how to maximise MLX window to fullscreen
+	//display highscores before exiting
 	return (0);
 }
