@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/10 15:26:39 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/12 08:54:05 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	max->str = NULL;
 	max->tmp = NULL;
 	ft_and_thanks_for_all_the_fish2(max, mapfile);
+	mlx_set_setting(MLX_FULLSCREEN, true);
 	mlx = mlx_init(max->map->w * BLOCK_WIDTH, max->map->h * BLOCK_HEIGHT, "AND THANX FOR ALL THE FISH", true);
 	if (!max->mlx)
 	{
