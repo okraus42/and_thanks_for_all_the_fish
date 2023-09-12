@@ -1,59 +1,70 @@
 !XPM42
-32 32 25 1 c
-  #00000000
-. #FE0000FF
-X #FF0000FF
-o #FEFE00FF
-O #FFFE00FF
-+ #FFFF00FF
-@ #FFFF01FF
-# #0000FEFF
-$ #0100FEFF
-% #0001FEFF
-& #0101FEFF
-* #0000FFFF
-= #0100FFFF
-- #0001FFFF
-; #0101FFFF
-: #00FEFEFF
-> #01FEFEFF
-, #00FFFEFF
-< #01FFFEFF
-1 #00FEFFFF
-2 #01FEFFFF
-3 #00FFFFFF
-4 #01FFFFFF
-5 #FFFEFFFF
-6 #FFFFFFFF
-                                
-        ****        **          
-        *444*      *44*         
-         *444*    *4444*        
-          *444*  *44****        
-           *44*  *44*           
-           *44*  *44*           
-       *****44****44****        
-      *44444444:44444444*       
-     *4444444444444444444*      
-    *44444***4444***444444*     
-    *44444*X*4444*+*4444444*    
-    *44444*XX*444*++*444444*    
- ****44444*XXX*44*+++*44444*    
- *44444444*****44*****44444*    
- *4444444444444444444444444*    
- *:444444444444444444444444*    
- *444444444444444444:4:4:444*   
- *4:44444444********4444:4444*  
- *444:**4444*X6XX6X*4444**4444* 
- *444* *4444********4444* *444* 
- *44*  *4444444444444444*  *44* 
- *4*   *4444444444444444*   *4* 
- **    *4444444444444444*    ** 
-       ****44******44****       
-          *44*    *44*          
-          *44*    *44*          
-          *44*    *44*          
-         *444*    *444*         
-        *4444*    *4444*        
-        ******    ******        
-                                
+60 60 8 1 c
+  #000000FF
+. #FF0000FF
+X #00FF00FF
+o #130881FF
+O #006EFFFF
++ #FF00FFFF
+@ #009BFFFF
+# #FFFFFFFF
+O@oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@O
+O@oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@O
+@oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO
+@oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO
+oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO@
+oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO@
+ooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO@o
+ooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO@o
+oooooooooooooooooooooooo@OO@         ooooooooooooooooo@OO@oo
+oooooooooooooooooooooooo    +++++++++    ooooooooooooo@OO@oo
+oooooooooooooooooooooo  +++++++++++++++++  oooooooooo@OO@ooo
+oooooooooooooooooooo  +++++++++++++++++++++  oooooooo@OO@ooo
+oooooooooooooooooo  +++++++++++++++++++++++++  ooooo@OO@oooo
+ooooooooooooooooo +++++++++++++++++++++++++++++ oooo@OO@oooo
+oooooooooooooooo +++++++++++++++++++++++++++++++ oo@OO@ooooo
+ooooooooooooooo +++++++++++++++++++++++++++++++++ o@OO@ooooo
+oooooooooooooo +++++++++++++++++++++++++++++++++++ OO@oooooo
+ooooooooooooo +++++++++++++++++++++++++++++++++++++ O@oooooo
+oooooooooooo +++++++++++++++++++++++++++++++++++++++ ooooooo
+oooooooooooo +++++++++++++++++++++++++++++++++++++++ ooooooo
+ooooooooooo ++++++++++      ++++++++++         ++++++ oooooo
+ooooooooooo ++++++++  XX  XX  ++++++  XXXX  XXX  ++++ oooooo
+oooooooooo ++++++++ XXXX  XXXX ++++ XXXXXX  XXXXX ++++ ooooo
+oooooooooo +++++++ XXXXX  XXXXX ++ XXXXXXX  XXXXXX +++ ooooo
+ooooooooo ++++++++ XXXXX  XXXXX ++ XXXXXXX  XXXXXX ++++ oooo
+ooooooooo +++++++++ XXXX  XXXX ++++ XXXXXX  XXXXX +++++ oooo
+ooooooooo ++++++++++  XX  XX  ++++++  XXXX  XXX  ++++++ oooo
+oooooooo +++++++++++++      ++++++++++         +++++++++ ooo
+oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
+oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
+oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
+oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
+oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
+oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
+oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
+oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
+oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
+ooooooooo +++++++++++++++++++++++++++++++++++++++++++++ oooo
+ooooooooo +++++++++++++++++             +++++++++++++++ oooo
+ooooooooo +++++++++++++    #.###..###.##    +++++++++++ oooo
+oooooooo@O ++++++++++  #####.###..###.##.##.  ++++++++ ooooo
+oooooooo@O +++++++++ ##...##.###..###.##.##.## +++++++ ooooo
+ooooooo@OO@ ++++++++ ####.......##.......##.## ++++++ oooooo
+ooooooo@OO@ ++++++++ ####.#.###.##.##.##...### ++++++ oooooo
+oooooo@OO@oo ++++++++  ##.#.###.##.##.##.##.  ++++++ ooooooo
+oooooo@OO@oo ++++++++++    .###.##.##.##    ++++++++ ooooooo
+ooooo@OO@oooo +++++++++++++             +++++++++++ oooooooo
+ooooo@OO@ooooo +++++++++++++++++++++++++++++++++++ ooooooooo
+oooo@OO@ooooooo +++++++++++++++++++++++++++++++++ oooooooooo
+oooo@OO@oooooooo +++++++++++++++++++++++++++++++ ooooooooooo
+ooo@OO@oooooooooo +++++++++++++++++++++++++++++ oooooooooooo
+ooo@OO@ooooooooooo  +++++++++++++++++++++++++  ooooooooooooo
+oo@OO@oooooooooooooo  +++++++++++++++++++++  ooooooooooooooo
+oo@OO@oooooooooooooooo  +++++++++++++++++  ooooooooooooooooo
+o@OO@ooooooooooooooooooo    +++++++++    ooooooooooooooooooo
+o@OO@ooooooooooooooooooooooo         ooooooooooooooooooooooo
+@OO@oooooooooooooooooooooooooo@OO@ooooooooooooooooooooooooo@
+@OO@oooooooooooooooooooooooooo@OO@ooooooooooooooooooooooooo@
+OO@oooooooooooooooooooooooooo@OO@ooooooooooooooooooooooooo@O
+OO@oooooooooooooooooooooooooo@OO@ooooooooooooooooooooooooo@O

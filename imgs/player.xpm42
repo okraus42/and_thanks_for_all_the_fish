@@ -1,60 +1,69 @@
 !XPM42
-32 32 26 1 c
-  #00000000
-. #000000FF
-X #010000FF
-o #000100FF
-O #000001FF
-+ #010001FF
-@ #111111FF
-# #0F0E0EFF
-$ #0E0F0EFF
-% #0F0F0EFF
-& #0E0E0FFF
-* #7D007CFF
-= #7D017CFF
-- #7C007DFF
-; #7D007DFF
-: #7D017DFF
-> #FE0000FF
-, #FF0000FF
-< #FF0100FF
-1 #FE0001FF
-2 #FF0001FF
-3 #FF0101FF
-4 #FFFE00FF
-5 #FEFF00FF
-6 #FFFF00FF
-7 #FFFF01FF
-                                
-   @@@@    @@      @@    &@@&   
-  @@,,@@@  @@      @@  @@@,,@@  
- @,,:::,@@  @      @  @@,:::,,@ 
-@,,:444:,,& @@    @@ $,,:444:,,@
-@,:44444:,&  @    @  @,:44444:,@
-@,:44444:,@@ @@  @$ $@,:44444:,@
-&,:44444:,,@  @@@@  @,,:44444:,@
-@,,:444:,,,,@ @@$$ &,,,,:444:,,&
- @,,:::,,,,1& @oo& &,,,,,:::,,& 
- @,,,,,,,,,,,@@oo@&,1,,,,,,,,,@ 
- &,,,,,,,,,,,,@oo@,,,,,,,,,,,,@ 
- @,,,,,,,,,,,,&oo@,,,,,,,,,,,,@ 
-  @,,,,,,1,,,,&oo@,,,,,,,,,,,@  
-   $,,,,,,,,,,&oo@,,,,,,,,,,@   
-   @,,,,,,,,,,&oo@,,,,,,,,,,@   
-   &,,,,,,,,,,#oo@,,,,,,,,,,&   
-  @&,,,,,,,,,,&oo@,,,,,,,,,,&&  
- @&,,,,,,,,,,,@oo@,,,,,,,,,,,$$ 
- @,,,,,,,,,,,,@oo@,,,,,,1,,,,,$ 
- @,,,,,,,,,,,,@oo&,,,,,,,,,,,,$ 
- &,,,,,,,,,,,,@oo@,,,,,,,,,,,,$ 
- @,,:::,,,,,,,#oo@,,,,,,,:::,,@ 
- @,:444-,,,,,,@oo@,,,,,,:444:,@ 
-@,:44444:,,,,&@oo@@,,,,:44444:,&
-&,:44444:,,,@@@oo@@@,,,:44444-,&
-&,:44444:,,@@ oooo $@,,:44444:,@
- @,:444:,,@@  oooo  @@,,:444:,@ 
- @$,-::,@@@   oooo   @@@,:::,@@ 
-  #@,,,&&     oooo     @@,,,@@  
-   @@@&@       oo       @@&&@   
-                                
+60 60 7 1 c
+  #000000FF
+. #555555FF
+X #130881FF
+o #006EFFFF
+O #009BFFFF
++ #AAAAAAFF
+@ #FFFFFFFF
+oOXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXXOo
+oOXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXXOo
+OXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXXOoo
+OXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXXOoo
+XXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXXOooO
+XXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXXOooO
+XXXXXXXXXXXXXXXXXXXXXXXXXOooOXX   XXXXXXXXXXXXXXXXXXXXXOooOX
+XXXXXXXXXXXXXXXXXXXXXXXXXOooOXX . XXXXXXXXXXXXXXXXXXXXXOooOX
+XXXXXXXXXXXXXXXXXXXXXXXXOooOXXX . XXXXXXXXXXXXXXXXXXXXOooOXX
+XXXXXXXXXXXXXXXXXXXXXXXXOooOXXX . XXXXXXXXXXXXXXXXXXXXOooOXX
+XXXXXXXXXXXXXXXXXXXXXXXOooOXXXX . XXXXXXXXXXXXXXXXXXXOooOXXX
+XXXXXXXXXXXXXXXXXXXXXXXOooOXXXX . XXXXXXXXXXXXXXXXXXXOooOXXX
+XXXXXXXXXXXXXXXXXXXXXXOooOXXXXX . XXXXXXXXXXXXXXXXXXOooOXXXX
+XXXXXXXXXXXXXXXXXXXXXXOooOXXXXX . XXXXXXXXXXXXXXXXXXOooOXXXX
+XXXXXXXXXXXXXXXXXXXXXOooOXXX         XXXXXXXXXXXXXXOooOXXXXX
+XXXXXXXXXXXXXXXXXXXXXOooO   +++++++++   XXXXXXXXXXXOooOXXXXX
+XXXXXXXXXXXXXXXXXXXXOoo  +++++++++++++++  XXXXXXXXOooOXXXXXX
+XXXXXXXXXXXXXXXXXXXXO  +++++++++++++++++++  XXXXXXOooOXXXXXX
+XXXXXXXXXXXXXXXXXXXO +++++++++++++++++++++++ XXXXOooOXXXXXXX
+XXXXXXXXXXXXXXXXXXX +++++++++++++++++++++++++ XXXOooOXXXXXXX
+XXXXXXXXXXXXXXXXXX ++++++  ++++++++++  +++++++ XOooOXXXXXXXX
+XXXXXXXXXXXXXXXXX ++++++ @@ ++++++++ @@ +++++++ OooOXXXXXXXX
+XXXXXXXXXXXXXXXX ++++++ @@@@ ++++++ @@@@ +++++++ oOXXXXXXXXX
+XXXXXXXXXXXXXXX +++++++ @@@@ ++++++ @@@@ ++++++++ OXXXXXXXXX
+XXXXXXXXXXXXXXX ++++++++ @@ ++++++++ @@ +++++++++ XXXXXXXXXX
+XXXXXXXXXXXXXX ++++++++++  ++++++++++  +++++++++++ XXXXXXXXX
+XXXXXXXXXXXXXX +++++++++++++++++++++++++++++++++++ XXXXXXXXX
+XXXXXXXXXXXXXX +++++++++++++++++++++++++++++++++++ XXXXXXXXX
+XXXXXXXXXXXXX +++++++++++++++++++++++++++++++++++++ XXXXXXXX
+XXXXXXXXXXXXX +++++++++++++++++++++++++++++++++++++ XXXXXXXX
+XXXXXXXXXXXXX +++++++++++++++++++++++++++++++++++++ XXXXXXXX
+XXXXXXXXXXXXX ++++++++++++++++     ++++++++++++++++ XXXXXXXX
+XXXXXXXXXXXXO +++++++++++++++ +++++ +++++++++++++++ XXXXXXXX
+XXXXXXXXXXXXO +++++++++++++++ +++++ +++++++++++++++ XXXXXXXX
+XXXXXXXXXXXOo +++++++++++++++ +++++ +++++++++++++++ XXXXXXXX
+XXXXXXXXXXXOo ++++++++++++++++     ++++++++++++++++ XXXXXXXX
+XXXXXXXXXXOooO +++++++++++++++++++++++++++++++++++ XXXXXXXXX
+XXXXXXXXXXOooO +++++++++++++++++++++++++++++++++++ XXXXXXXXX
+XXXXXXXXXOooOX +++++++++++++++++++++++++++++++++++ XXXXXXXXX
+XXXXXXXXXOooOXX +++++++++++++++++++++++++++++++++ XXXXXXXXXX
+XXXXXXXXOooOXXX +++++++++++++++++++++++++++++++++ XXXXXXXXXX
+XXXXXXXXOooOXXXX +++++++++++++++++++++++++++++++ XXXXXXXXXXX
+XXXXXXXOooOXXXXXX +++++++++++++++++++++++++++++ XXXXXXXXXXXX
+XXXXXXXOooOXXXXXXX +++++++++++++++++++++++++++ XXXXXXXXXXXXX
+XXXXXXOooOXXXXXXXX  +++++++++++++++++++++++++  XXXXXXXXXXXXX
+XXXXXXOooOXXXXXXX .. +++++++++++++++++++++++ . XXXXXXXXXXXXX
+XXXXXOooOXXXXXXXX ...  +++++++++++++++++++  ... XXXXXXXXXXXX
+XXXXXOooOXXXXXXX .....   +++++++++++++++   .... XXXXXXXXXXXX
+XXXXOooOXXXXXXXX .... XXX   +++++++++   XXX ... XXXXXXXXXXXX
+XXXXOooOXXXXXXXX ... XXXXXXX         OXXXXX ... XXXXXXXXXXXX
+XXXOooOXXXXXXXXX .  XXXXXXXXXXXXXOooOXXXXXXX .. XXXXXXXXXXXX
+XXXOooOXXXXXXXX . XXXXXXXXXXXXXXXOooOXXXXXXXX . XXXXXXXXXXXX
+XXOooOXXXXXXXXX  XXXXXXXXXXXXXXXOooOXXXXXXXXXX . XXXXXXXXXXX
+XXOooOXXXXXXXXX XXXXXXXXXXXXXXXXOooOXXXXXXXXXX . XXXXXXXXXXX
+XOooOXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXX  XXXXXXXXXXX
+XOooOXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXX
+OooOXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXO
+OooOXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXO
+ooOXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXOo
+ooOXXXXXXXXXXXXXXXXXXXXXXXXXXOooOXXXXXXXXXXXXXXXXXXXXXXXXXOo
