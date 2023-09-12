@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 12:47:19 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/29 17:42:59 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/12 08:50:14 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	ft_remove_collectible(t_max *max, int x, int y)
 	{
 		if (max->map->cx[i] == x && max->map->cy[i] == y)
 		{
-			max->img->ci[i].x += 32 * max->map->w;
-			max->img->c2i[i].x += 32 * max->map->w;
+			max->img->ci[i].x += BLOCK_WIDTH * max->map->w;
+			max->img->c2i[i].x += BLOCK_WIDTH * max->map->w;
 		}
 		i++;
 	}
@@ -38,13 +38,13 @@ void	ft_check_time(t_max *max)
 	{
 		if (max->key->time == 2 && max->map->c[i])
 		{
-			max->img->ci[i].x += 32 * max->map->w;
-			max->img->c2i[i].x -= 32 * max->map->w;
+			max->img->ci[i].x += BLOCK_WIDTH * max->map->w;
+			max->img->c2i[i].x -= BLOCK_WIDTH * max->map->w;
 		}
 		if (max->key->time == 12 && max->map->c[i])
 		{
-			max->img->ci[i].x -= 32 * max->map->w;
-			max->img->c2i[i].x += 32 * max->map->w;
+			max->img->ci[i].x -= BLOCK_WIDTH * max->map->w;
+			max->img->c2i[i].x += BLOCK_WIDTH * max->map->w;
 		}
 		i++;
 	}
@@ -52,7 +52,7 @@ void	ft_check_time(t_max *max)
 
 void	ft_open_door(t_max *max)
 {
-	max->img->dci[0].x += 32 * max->map->w;
+	max->img->dci[0].x += BLOCK_WIDTH * max->map->w;
 	max->score += 1000;
 }
 

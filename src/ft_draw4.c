@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:17:59 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 15:55:02 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/12 08:38:57 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_put_enemies2(t_max *max, mlx_image_t *en_img)
 		{
 			if (max->map->m[y][x] == 's')
 			{
-				if (mlx_image_to_window(max->mlx, en_img, x * 32, y * 32) < 0)
+				if (mlx_image_to_window(max->mlx, en_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 					exit(-5);
 				max->img->ei = en_img->instances;
 				i++;
@@ -66,7 +66,7 @@ void	ft_put_player2(t_max *max, mlx_image_t *play_img)
 		{
 			if (max->map->m[y][x] == 'p')
 			{
-				if (mlx_image_to_window(max->mlx, play_img, x * 32, y * 32) < 0)
+				if (mlx_image_to_window(max->mlx, play_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 					exit(-5);
 				max->img->pi = play_img->instances;
 				max->map->px = x;

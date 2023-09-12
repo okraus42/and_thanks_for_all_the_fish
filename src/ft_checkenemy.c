@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:21:31 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/28 20:54:01 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/12 08:50:14 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@ void	ft_domovee(t_max *max, int i, int d)
 {
 	if (d == 4)
 	{
-		max->img->ei[i].y -= 32;
+		max->img->ei[i].y -= BLOCK_HEIGHT;
 		max->map->ey[i]--;
 	}
 	if (d == 2)
 	{
-		max->img->ei[i].y += 32;
+		max->img->ei[i].y += BLOCK_HEIGHT;
 		max->map->ey[i]++;
 	}
 	if (d == 3)
 	{
-		max->img->ei[i].x -= 32;
+		max->img->ei[i].x -= BLOCK_WIDTH;
 		max->map->ex[i]--;
 	}
 	if (d == 1)
 	{
-		max->img->ei[i].x += 32;
+		max->img->ei[i].x += BLOCK_WIDTH;
 		max->map->ex[i]++;
 	}
 }

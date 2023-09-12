@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:16:15 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 15:55:04 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/12 08:40:30 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_put_collectibles3(t_max *max, mlx_image_t *col_img)
 		{
 			if (max->map->m[y][x] == 'c')
 			{
-				if (mlx_image_to_window(max->mlx, col_img, x * 32, y * 32) < 0)
+				if (mlx_image_to_window(max->mlx, col_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 					exit(-5);
 				max->img->ci = col_img->instances;
 			}
@@ -64,7 +64,7 @@ void	ft_put_collectibles4(t_max *max, mlx_image_t *col2_img)
 			if (max->map->m[y][x] == 'c')
 			{
 				if (mlx_image_to_window(max->mlx,
-						col2_img, (max->map->w + x) * 32, y * 32) < 0)
+						col2_img, (max->map->w + x) * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 					exit(-5);
 				max->img->c2i = col2_img->instances;
 			}

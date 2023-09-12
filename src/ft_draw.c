@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:04:17 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 15:55:07 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/12 08:38:57 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_put_walls(t_max *max, mlx_image_t *wall_img)
 		{
 			if (max->map->m[y][x] == '1')
 			{
-				if (mlx_image_to_window(max->mlx, wall_img, x * 32, y * 32) < 0)
+				if (mlx_image_to_window(max->mlx, wall_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 					exit(-5);
 			}
 			x++;
@@ -47,7 +47,7 @@ void	ft_put_ground(t_max *max, mlx_image_t *grnd_img)
 		{
 			if (max->map->m[y][x] != '1')
 			{
-				if (mlx_image_to_window(max->mlx, grnd_img, x * 32, y * 32) < 0)
+				if (mlx_image_to_window(max->mlx, grnd_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 					exit(-5);
 			}
 			x++;

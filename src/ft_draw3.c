@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:16:05 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 15:55:03 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/12 08:38:57 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_put_door2(t_max *max, mlx_image_t *door_img)
 		{
 			if (max->map->m[y][x] == 'e')
 			{
-				if (mlx_image_to_window(max->mlx, door_img, x * 32, y * 32) < 0)
+				if (mlx_image_to_window(max->mlx, door_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 					exit(-5);
 				max->img->dci = door_img->instances;
 			}
@@ -64,7 +64,7 @@ void	ft_put_opendoor2(t_max *max, mlx_image_t *opendoor_img)
 			if (max->map->m[y][x] == 'e')
 			{
 				if (mlx_image_to_window(max->mlx,
-						opendoor_img, x * 32, y * 32) < 0)
+						opendoor_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 					exit(-5);
 				max->img->doi = opendoor_img->instances;
 			}

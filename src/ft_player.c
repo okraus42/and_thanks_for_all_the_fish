@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:05:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/29 09:10:17 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/12 08:42:15 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ static void	ft_domovep(t_max *max, int d)
 {
 	if (d == 8 && max->map->p > 0)
 	{
-		max->img->pi[0].y -= 32;
+		max->img->pi[0].y -= BLOCK_HEIGHT;
 		max->map->py--;
 	}
 	if (d == 4 && max->map->p > 0)
 	{
-		max->img->pi[0].y += 32;
+		max->img->pi[0].y += BLOCK_HEIGHT;
 		max->map->py++;
 	}
 	if (d == 2 && max->map->p > 0)
 	{
-		max->img->pi[0].x -= 32;
+		max->img->pi[0].x -= BLOCK_WIDTH;
 		max->map->px--;
 	}
 	if (d == 1 && max->map->p > 0)
 	{
-		max->img->pi[0].x += 32;
+		max->img->pi[0].x += BLOCK_WIDTH;
 		max->map->px++;
 	}
 	ft_putscore(max);
