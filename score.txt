@@ -9,3 +9,7 @@ hermano:coalition:6686
 tester:coalition:7387
 full:coalition:4893
 fish:coalition:8038
+phe:coalition:26253
+tester:coalition:10981
+sol:coalition:7121
+sol:coalition:7071
