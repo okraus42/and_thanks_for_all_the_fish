@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:23:40 by okraus            #+#    #+#             */
-/*   Updated: 2023/03/14 15:13:40 by okraus           ###   ########.fr       */
+/*   Updated: 2023/07/28 19:52:21 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s3 == NULL)
 		return (NULL);
 	i = 0;
-	while (s1[i])
+	while (s1 && s1[i])
 	{
 		s3[i] = s1[i];
 		i++;
 	}
 	i = 0;
-	while (s2[i])
+	while (s2 && s2[i])
 	{
 		s3[i + j] = s2[i];
 		i++;

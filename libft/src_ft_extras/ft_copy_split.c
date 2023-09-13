@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_copy_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 15:35:03 by okraus            #+#    #+#             */
-/*   Updated: 2023/08/15 16:08:55 by okraus           ###   ########.fr       */
+/*   Created: 2023/03/14 15:57:11 by okraus            #+#    #+#             */
+/*   Updated: 2023/07/13 18:49:01 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	**ft_copy_split(char **split)
 {
-	size_t	i;
-	char	*a;
+	int		i;
+	int		l;
+	char	**newsplit;
 
 	i = 0;
-	a = NULL;
-	while (s[i])
+	l = ft_splitlen(split) + 1;
+	if (l < 0)
+		return (NULL);
+	newsplit = malloc(sizeof(char *) * l);
+	while (split[i])
 	{
-		if (s[i] == (c % 256))
-			a = (char *)&s[i];
+		l = ft_strlen(split[i]) + 1;
+		newsplit[i] = ft_calloc(sizeof(char), l);
+		ft_strlcpy(newsplit[i], split[i], l);
 		i++;
 	}
-	if (s[i] == (c % 256))
-		a = (char *)&s[i];
-	return (a);
+	newsplit[i] = NULL;
+	return (newsplit);
 }

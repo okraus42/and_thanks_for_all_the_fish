@@ -1,30 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_split_rm.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:57:11 by okraus            #+#    #+#             */
-/*   Updated: 2023/08/15 16:10:02 by okraus           ###   ########.fr       */
+/*   Updated: 2023/07/16 13:04:00 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libft.h"
 
-void	ft_free_split(char ***splitptr)
+static void	ft_split_rm2(char **oldsplit, char **newsplit, int l, int n)
 {
-	int		i;
-	char	**split;
+	int	i;
 
-	split = *splitptr;
 	i = 0;
-	while (split[i])
+	while (oldsplit[i] && i < n)
 	{
-		free(split[i]);
-		split[i] = NULL;
+		newsplit[i] = oldsplit[i];
 		i++;
 	}
-	free(split);
-	split = NULL;
+	while (i < l)
+	{
+		newsplit[i] = oldsplit[i + 1];
+		i++;
+	}
+}
+
+int	ft_split_rm(char ***split, int n)
+{
+	int		l;
+	char	**oldsplit;
+	char	**newsplit;
+
+	if (!split || !*split || n < 0)
+		return (-1);
+	oldsplit = *split;
+	l = ft_splitlen(oldsplit);
+	newsplit = malloc(sizeof(char *) * l);
+	if (!newsplit || l <= n)
+		return (-1);
+	ft_split_rm2(oldsplit, newsplit, l, n);
+	*split = newsplit;
+	free(oldsplit);
+	return (0);
 }

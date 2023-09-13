@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 13:49:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/03/19 14:53:57 by okraus           ###   ########.fr       */
+/*   Updated: 2023/08/15 16:07:55 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_printf_fd(int fd, const char *s, ...)
 	q[1] = 0;
 	q[2] = fd;
 	while (s[q[0]])
-	{	
+	{
 		if (s[q[0]] == '%')
 		{
 			ft_initialise_struct(t);
@@ -96,7 +96,7 @@ int	ft_printf(const char *s, ...)
 	q[1] = 0;
 	q[2] = 1;
 	while (s[q[0]])
-	{	
+	{
 		if (s[q[0]] == '%')
 		{
 			ft_initialise_struct(t);

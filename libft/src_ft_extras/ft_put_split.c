@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_put_split.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 15:35:03 by okraus            #+#    #+#             */
-/*   Updated: 2023/08/15 16:08:55 by okraus           ###   ########.fr       */
+/*   Created: 2023/05/08 17:11:53 by okraus            #+#    #+#             */
+/*   Updated: 2023/07/16 12:12:44 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_put_split(char **split)
 {
-	size_t	i;
-	char	*a;
+	int	i;
 
+	if (!split)
+		ft_printf_fd(2, "split is %s\n", split);
 	i = 0;
-	a = NULL;
-	while (s[i])
+	while (split[i])
 	{
-		if (s[i] == (c % 256))
-			a = (char *)&s[i];
+		ft_printf("%s\n", split[i]);
 		i++;
 	}
-	if (s[i] == (c % 256))
-		a = (char *)&s[i];
-	return (a);
 }

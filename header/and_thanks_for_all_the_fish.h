@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/10 12:18:36 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/13 16:49:20 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@
 
 #define BLOCK_WIDTH 60
 #define BLOCK_HEIGHT 60
+#define MANDALORE "Mandalore"
+#define TATOOINE "Tatooine"
+#define NABOO "Naboo"
+#define ALDERAAN "Alderaan"
 
 // STRUCTURES
 // AND_THANKS_FOR_ALL_THE_FISH structures

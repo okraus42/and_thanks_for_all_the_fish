@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:43:29 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/17 15:55:52 by okraus           ###   ########.fr       */
+/*   Updated: 2023/08/17 14:54:50 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 // GET_NEXT_LINE definitions
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 64
+#  define BUFFER_SIZE 1
 # endif
 
 // FT_PRINTF definitions
@@ -132,6 +132,9 @@ void			ft_dlstmoveout(t_dlist **dlst_src);
 void			ft_dlstmoveone(t_dlist **dlst_dst, t_dlist **dlst_src);
 t_dlist			*ft_dlstnew(void *content);
 
+// string stuff
+char			*ft_stringcopy(char const *str);
+
 // evil malloc & calloc
 void			*ft_evil_malloc(size_t size);
 void			*ft_evil_malloc_plus(size_t size, size_t padding);
@@ -153,8 +156,13 @@ unsigned int	ft_uabsdif(unsigned int a, unsigned int b);
 long long		ft_latoi(const char *nptr);
 char			*ft_litoa(long long n);
 
-// free split
-void			ft_free_split(char **split);
+// split
+char			**ft_copy_split(char **split);
+void			ft_free_split(char ***splitptr);
+void			ft_put_split(char **split);
+int				ft_split_add(char ***split, char *s, int n);
+int				ft_split_rm(char ***split, int n);
+int				ft_splitlen(char **split);
 
 // memory
 void			*ft_print_memory(void *addr, int fd, unsigned int size);

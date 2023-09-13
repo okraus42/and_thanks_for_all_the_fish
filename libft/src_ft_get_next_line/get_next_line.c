@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 12:37:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/03/14 15:12:26 by okraus           ###   ########.fr       */
+/*   Updated: 2023/08/17 14:57:06 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char	*read_file(int fd, char *str)
 	int		r;
 
 	r = 1;
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	buff = malloc(sizeof(char) * (1 + 1));
 	if (!buff)
 		return (NULL);
 	while (r > 0 && !ft_find_char(str, '\n'))
 	{
-		r = read(fd, buff, BUFFER_SIZE);
+		r = read(fd, buff, 1);
 		if (r < 0)
 		{
 			free(buff);
@@ -94,7 +94,7 @@ char	*get_next_line(int fd)
 	static char	*str[1024];
 	char		*nl;
 
-	if (fd > 1023 || fd < 0 || BUFFER_SIZE <= 0)
+	if (fd > 1023 || fd < 0 || 1 <= 0)
 	{
 		return (NULL);
 	}
@@ -104,5 +104,8 @@ char	*get_next_line(int fd)
 	}
 	nl = get(str[fd]);
 	str[fd] = next(str[fd]);
+	if (str[fd])
+		free (str[fd]);
+	str[fd] = NULL;
 	return (nl);
 }

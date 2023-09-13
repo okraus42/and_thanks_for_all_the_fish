@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_stringcopy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 15:35:03 by okraus            #+#    #+#             */
-/*   Updated: 2023/08/15 16:08:55 by okraus           ###   ########.fr       */
+/*   Created: 2023/07/19 15:28:19 by okraus            #+#    #+#             */
+/*   Updated: 2023/07/19 15:53:31 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_stringcopy(char const *str)
 {
-	size_t	i;
-	char	*a;
+	int		i;
+	char	*dest;
 
 	i = 0;
-	a = NULL;
-	while (s[i])
+	if (!str)
+		return (NULL);
+	dest = malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!dest)
+		return (NULL);
+	while (str[i])
 	{
-		if (s[i] == (c % 256))
-			a = (char *)&s[i];
+		dest[i] = str[i];
 		i++;
 	}
-	if (s[i] == (c % 256))
-		a = (char *)&s[i];
-	return (a);
+	dest[i] = 0;
+	return (dest);
 }

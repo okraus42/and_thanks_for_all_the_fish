@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_splitlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 15:35:03 by okraus            #+#    #+#             */
-/*   Updated: 2023/08/15 16:08:55 by okraus           ###   ########.fr       */
+/*   Created: 2023/03/14 15:57:11 by okraus            #+#    #+#             */
+/*   Updated: 2023/07/13 18:26:08 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_splitlen(char **split)
 {
-	size_t	i;
-	char	*a;
+	int	i;
 
+	if (!split)
+		return (-1);
 	i = 0;
-	a = NULL;
-	while (s[i])
-	{
-		if (s[i] == (c % 256))
-			a = (char *)&s[i];
+	while (split[i])
 		i++;
-	}
-	if (s[i] == (c % 256))
-		a = (char *)&s[i];
-	return (a);
+	return (i);
 }

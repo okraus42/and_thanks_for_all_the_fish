@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/12 08:54:05 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/13 17:02:10 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,34 +105,42 @@ void	ft_max_init(t_max *max)
 {
 	char	*str;
 	char	*yn;
+	char	*coal;
 
 	max->score = 2500;
 	max->time = 2500;
 	max->exit = 0;
 	str = NULL;
 	yn = NULL;
+	coal = NULL;
 	while (!str)
 	{
-		ft_printf("Enter your intra name or type 'exit' to quit: ");
+		ft_printf("Enter your intra name or type 'exit' to quit: \n");
 		str = get_next_line(0);
 		if (str && ft_strchr(str, ':'))
 		{
 			ft_printf_fd(2, "Invalid name!\n");
+			free(str);
 			str = NULL;
 		}
 		if (str)
 			str[ft_strlen(str) - 1] = 0;
-		while (str && !yn && ft_strncmp(str, "exit", 5))
+		while (str && ft_strncmp(str, "exit", 5))
 		{
-			ft_printf("\nIs your name: %s?\nType 'y' to continue\n", str);
+			ft_printf("\nIs your name: %s?\nPress 'y' to continue\n", str);
 			yn = get_next_line(0);
-			if (!(ft_strncmp(yn, "y", 1) && ft_strncmp(yn, "Y", 1)))
+			if (yn && (yn[0] == 'y' || yn[0] == 'Y'))
 			{
+				free(yn);
 				break;
 			}
 			else
 			{
+				if (yn)
+					free(yn);
 				yn = NULL;
+				if (str)
+					free(str);
 				str = NULL;
 			}
 		}
@@ -140,6 +148,62 @@ void	ft_max_init(t_max *max)
 	max->player_name = str;
 	if (!ft_strncmp(max->player_name, "exit", 5))
 		max->exit = 1;
+	str = NULL;
+	yn = NULL;
+	while (!max->exit && !str)
+	{
+		ft_printf("\nChoose your coalition: \n1 - Alderaan   2 - Naboo   3 - Tatooine   4 - Mandalore   5 - other\n");
+		coal = get_next_line(0);
+		if (!coal)
+		{
+			max->exit = 1;
+			break;
+		}
+		if (coal[0] == '1')
+			str = ft_stringcopy(ALDERAAN);
+		else if (coal[0] == '2')
+			str = ft_stringcopy(NABOO);
+		else if (coal[0] == '3')
+			str = ft_stringcopy(TATOOINE);
+		else if (coal[0] == '4')
+			str = ft_stringcopy(MANDALORE);
+		else if (coal[0] == '5')
+		{
+			ft_printf("\nType the name of your coalition\n");
+			str = get_next_line(0);
+			if (str && ft_strchr(str, ':'))
+			{
+				ft_printf_fd(2, "Invalid name!\n");
+				free(str);
+				str = NULL;
+			}
+			if (str)
+				str[ft_strlen(str) - 1] = 0;
+			while (str && ft_strncmp(str, "exit", 5))
+			{
+				ft_printf("\nIs your coalition: %s?\nPress 'y' to continue\n", str);
+				yn = get_next_line(0);
+				if (yn && (yn[0] == 'y' || yn[0] == 'Y'))
+				{
+					free(yn);
+					break;
+				}
+				else
+				{
+					if (yn)
+						free(yn);
+					yn = NULL;
+					if (str)
+						free(str);
+					str = NULL;
+				}
+			}
+		}
+		else
+			continue;
+		
+	}
+	max->player_coalition = str;
 }
 
 int	main(int argc, char *argv[])
@@ -163,7 +227,7 @@ int	main(int argc, char *argv[])
 		ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
 		ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
 		ft_printf("%93CFinal score: %i%0C\n", max.score);
-		ft_printf_fd(fd, "%s:coalition:%i\n", max.player_name, max.score);
+		ft_printf_fd(fd, "%s:%s:%i\n", max.player_name, max.player_coalition, max.score);
 		//save score (save score function?) name coalition, score and time does not matter, order in score txt will be enough to index it
 		//enter player name and coalition (max init function?)
 		ft_max_init(&max);

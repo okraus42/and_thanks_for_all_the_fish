@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 13:54:12 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 15:55:00 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/13 16:51:54 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free(t_max *max)
 {
-	ft_free_split(max->map->m);
+	ft_free_split(&max->map->m);
 	free(max->map->c);
 	max->map->c = NULL;
 	free(max->map->cx);
@@ -35,6 +35,6 @@ void	ft_free(t_max *max)
 
 void	ft_exit(t_map *map, int n)
 {
-	ft_free_split(map->m);
+	ft_free_split(&map->m);
 	exit(n);
 }

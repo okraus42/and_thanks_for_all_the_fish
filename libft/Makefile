@@ -6,7 +6,7 @@
 #    By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 13:43:18 by okraus            #+#    #+#              #
-#    Updated: 2023/06/17 15:57:00 by okraus           ###   ########.fr        #
+#    Updated: 2023/08/17 14:59:52 by okraus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ endif
 NAME		=	libft.a
 INCS		=	libft.h
 LIBC		=	ar rcs
-CC 		=	cc
-CFLAGS		=	-Wall -Wextra -Werror
+CC 			=	cc
+CFLAGS		=	-Wall -Wextra -Werror -g
 OBJ_DIR		=	objects/
 SLEEP		=	#sleep 0.5
 
@@ -92,6 +92,7 @@ SRC_LIB		=	ft_atoi \
 
 SRC_EX		=	ft_abs \
 				ft_atoi_base \
+				ft_copy_split \
 				ft_dlstadd \
 				ft_dlstclear \
 				ft_dlstdelone \
@@ -106,7 +107,12 @@ SRC_EX		=	ft_abs \
 				ft_min \
 				ft_print_memory \
 				ft_print_memory_plus \
+				ft_put_split \
 				ft_put_strarray \
+				ft_split_add \
+				ft_split_rm \
+				ft_splitlen \
+				ft_stringcopy \
 				ft_swap \
 				ft_uabsdif \
 				ft_umax \
