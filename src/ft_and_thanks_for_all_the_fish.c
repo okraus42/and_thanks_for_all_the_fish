@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/14 10:18:52 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/14 11:52:38 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,20 +206,57 @@ void	ft_max_init(t_max *max)
 	max->player_coalition = str;
 }
 
-void	ft_print_list(t_list *lst)
+void	ft_print_score(t_list *lst)
 {
 	t_hs	*tmp;
+	int		i;
 
-	while (lst)
+	i = 1;
+	ft_printf("%68CPosition   |                Name   |           Coalition   |  Score %0C\n");
+	while (lst && i <= 25)
 	{
 		tmp = lst->content;
-		ft_printf("index: %3i   ", tmp->index);
-		ft_printf("name: %12s   ", tmp->name);
-		ft_printf("coalition: %12s   ", tmp->coalition);
-		ft_printf("score: %7i", tmp->score);
-		ft_printf("\n");
+		//if orint%C based on coalition
+		if (!ft_strncmp(tmp->coalition, NABOO, 10))
+			ft_printf("%54C");
+		else if (!ft_strncmp(tmp->coalition, ALDERAAN, 10))
+			ft_printf("%43C");
+		else if (!ft_strncmp(tmp->coalition, TATOOINE, 10))
+			ft_printf("%53C");
+		else if (!ft_strncmp(tmp->coalition, MANDALORE, 10))
+			ft_printf("%51C");
+		else
+			ft_printf("%58C");
+		ft_printf("     %3i   |", i);
+		ft_printf("%20s   |", tmp->name);
+		ft_printf("%20s   |", tmp->coalition);
+		ft_printf("%7i", tmp->score);
+		ft_printf("%0C\n");
+		lst = lst->next;
+		++i;
+	}
+}
+
+int	ft_sortscore(t_list *lst)
+{
+	t_hs	*now;
+	t_hs	*next;
+	int		r;
+
+	r = 0;
+	while (lst && lst->next)
+	{
+		now = lst->content;
+		next = lst->next->content;
+		if (now->score < next->score)
+		{
+			lst->next->content = now;
+			lst->content = next;
+			r = 1;
+		}
 		lst = lst->next;
 	}
+	return (r);
 }
 
 void	ft_highscore(int fd)
@@ -272,7 +309,9 @@ void	ft_highscore(int fd)
 		str = NULL;
 		str = get_next_line(fd);
 	}
-	ft_print_list(head);
+	while (ft_sortscore(head))
+		continue;
+	ft_print_score(head);
 }
 
 int	main(int argc, char *argv[])

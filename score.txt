@@ -17,3 +17,11 @@ okraus:coalition:53243
 adggg:coalition:10577
 okraus:ABC:53312
 ok:Mandalore:25205
+hello:Naboo:9919
+old:Alderaan:9426
+Anakin:Tatooine:10409
+okraus:Mandalore:11993
+okraus:Mandalore:26538
+Jar-Jar Binks:Naboo:25092
+R2D2:Tatooine:13294
+somethong:Alderaan:5830
