@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/13 16:49:20 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/14 09:40:24 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,14 @@ typedef struct s_map
 	int		xy;
 	int		steps;
 }	t_map;
+
+typedef struct s_highscore
+{
+	char	*name;
+	char	*coalition;
+	int		index;
+	int		score;
+}	t_hs;
 
 typedef struct s_control
 {

@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/13 17:02:10 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/14 10:18:52 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,6 +206,75 @@ void	ft_max_init(t_max *max)
 	max->player_coalition = str;
 }
 
+void	ft_print_list(t_list *lst)
+{
+	t_hs	*tmp;
+
+	while (lst)
+	{
+		tmp = lst->content;
+		ft_printf("index: %3i   ", tmp->index);
+		ft_printf("name: %12s   ", tmp->name);
+		ft_printf("coalition: %12s   ", tmp->coalition);
+		ft_printf("score: %7i", tmp->score);
+		ft_printf("\n");
+		lst = lst->next;
+	}
+}
+
+void	ft_highscore(int fd)
+{
+	//read file in list
+	//sort highscores
+	//display top 10
+	t_hs	*tmp;
+	t_list	*head;
+	t_list	*leaf;
+	char	*str;
+	int		i;
+	int		zero[3];
+
+	i = 0;
+
+	head = NULL;
+	str = get_next_line(fd);
+	while (str)
+	{
+		tmp = malloc(sizeof(t_hs));
+		if (!tmp)
+			exit(2);
+		tmp->index = i;
+		zero[0] = 0;
+		while(str && str[zero[0]] != ':')
+			zero[0]++;
+		str[zero[0]] = '\0';
+		zero[1] = zero[0] + 1;
+		while(str && str[zero[1]] != ':')
+			zero[1]++;
+		str[zero[1]] = '\0';
+		zero[2] = zero[1] + 1;
+		while(str && str[zero[2]] != '\n')
+			zero[2]++;
+		str[zero[2]] = '\0';
+		tmp->score = ft_atoi(&str[zero[1] + 1]);
+		tmp->name = ft_stringcopy(str);
+		if (!tmp->name)
+			exit(2);
+		tmp->coalition = ft_stringcopy(&str[zero[0] + 1]);
+		if (!tmp->coalition)
+			exit(2);
+		leaf = ft_lstnew(tmp);
+		if (!leaf)
+			exit(2);
+		ft_lstadd_back(&head, leaf);
+		i++;
+		free(str);
+		str = NULL;
+		str = get_next_line(fd);
+	}
+	ft_print_list(head);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_max	max;
@@ -219,6 +288,8 @@ int	main(int argc, char *argv[])
 	}
 	(void)argv;
 	fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
+	if (fd < 0)
+		return (1);
 	while (!max.exit)
 	{
 		ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
@@ -233,6 +304,11 @@ int	main(int argc, char *argv[])
 		ft_max_init(&max);
 	}
 	close(fd);
+	fd = open("score.txt", O_RDONLY);
+	if (fd < 0)
+		return (1);
+	ft_highscore(fd);
+	close (fd);
 	//also figure out how to maximise MLX window to fullscreen
 	//display highscores before exiting
 	return (0);
