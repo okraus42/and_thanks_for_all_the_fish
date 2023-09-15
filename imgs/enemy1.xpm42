@@ -1,70 +1,195 @@
 !XPM42
-60 60 8 1 c
-  #000000FF
-. #FF0000FF
-X #00FF00FF
-o #130881FF
-O #006EFFFF
-+ #FF00FFFF
-@ #009BFFFF
-# #FFFFFFFF
-O@oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@O
-O@oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@O
-@oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO
-@oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO
-oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO@
-oooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO@
-ooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO@o
-ooooooooooooooooooooooooo@OO@oooooooooooooooooooooooooo@OO@o
-oooooooooooooooooooooooo@OO@         ooooooooooooooooo@OO@oo
-oooooooooooooooooooooooo    +++++++++    ooooooooooooo@OO@oo
-oooooooooooooooooooooo  +++++++++++++++++  oooooooooo@OO@ooo
-oooooooooooooooooooo  +++++++++++++++++++++  oooooooo@OO@ooo
-oooooooooooooooooo  +++++++++++++++++++++++++  ooooo@OO@oooo
-ooooooooooooooooo +++++++++++++++++++++++++++++ oooo@OO@oooo
-oooooooooooooooo +++++++++++++++++++++++++++++++ oo@OO@ooooo
-ooooooooooooooo +++++++++++++++++++++++++++++++++ o@OO@ooooo
-oooooooooooooo +++++++++++++++++++++++++++++++++++ OO@oooooo
-ooooooooooooo +++++++++++++++++++++++++++++++++++++ O@oooooo
-oooooooooooo +++++++++++++++++++++++++++++++++++++++ ooooooo
-oooooooooooo +++++++++++++++++++++++++++++++++++++++ ooooooo
-ooooooooooo ++++++++++      ++++++++++         ++++++ oooooo
-ooooooooooo ++++++++  XX  XX  ++++++  XXXX  XXX  ++++ oooooo
-oooooooooo ++++++++ XXXX  XXXX ++++ XXXXXX  XXXXX ++++ ooooo
-oooooooooo +++++++ XXXXX  XXXXX ++ XXXXXXX  XXXXXX +++ ooooo
-ooooooooo ++++++++ XXXXX  XXXXX ++ XXXXXXX  XXXXXX ++++ oooo
-ooooooooo +++++++++ XXXX  XXXX ++++ XXXXXX  XXXXX +++++ oooo
-ooooooooo ++++++++++  XX  XX  ++++++  XXXX  XXX  ++++++ oooo
-oooooooo +++++++++++++      ++++++++++         +++++++++ ooo
-oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
-oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
-oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
-oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
-oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
-oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
-oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
-oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
-oooooooo +++++++++++++++++++++++++++++++++++++++++++++++ ooo
-ooooooooo +++++++++++++++++++++++++++++++++++++++++++++ oooo
-ooooooooo +++++++++++++++++             +++++++++++++++ oooo
-ooooooooo +++++++++++++    #.###..###.##    +++++++++++ oooo
-oooooooo@O ++++++++++  #####.###..###.##.##.  ++++++++ ooooo
-oooooooo@O +++++++++ ##...##.###..###.##.##.## +++++++ ooooo
-ooooooo@OO@ ++++++++ ####.......##.......##.## ++++++ oooooo
-ooooooo@OO@ ++++++++ ####.#.###.##.##.##...### ++++++ oooooo
-oooooo@OO@oo ++++++++  ##.#.###.##.##.##.##.  ++++++ ooooooo
-oooooo@OO@oo ++++++++++    .###.##.##.##    ++++++++ ooooooo
-ooooo@OO@oooo +++++++++++++             +++++++++++ oooooooo
-ooooo@OO@ooooo +++++++++++++++++++++++++++++++++++ ooooooooo
-oooo@OO@ooooooo +++++++++++++++++++++++++++++++++ oooooooooo
-oooo@OO@oooooooo +++++++++++++++++++++++++++++++ ooooooooooo
-ooo@OO@oooooooooo +++++++++++++++++++++++++++++ oooooooooooo
-ooo@OO@ooooooooooo  +++++++++++++++++++++++++  ooooooooooooo
-oo@OO@oooooooooooooo  +++++++++++++++++++++  ooooooooooooooo
-oo@OO@oooooooooooooooo  +++++++++++++++++  ooooooooooooooooo
-o@OO@ooooooooooooooooooo    +++++++++    ooooooooooooooooooo
-o@OO@ooooooooooooooooooooooo         ooooooooooooooooooooooo
-@OO@oooooooooooooooooooooooooo@OO@ooooooooooooooooooooooooo@
-@OO@oooooooooooooooooooooooooo@OO@ooooooooooooooooooooooooo@
-OO@oooooooooooooooooooooooooo@OO@ooooooooooooooooooooooooo@O
-OO@oooooooooooooooooooooooooo@OO@ooooooooooooooooooooooooo@O
+60 60 133 2 c
+   #0E1F26FF
+.  #131F27FF
+X  #311E2AFF
+o  #132229FF
+O  #1B252CFF
++  #2C2E34FF
+@  #3C2F36FF
+#  #39343AFF
+$  #451E2CFF
+%  #4A1E2CFF
+&  #531E2DFF
+*  #721F20FF
+=  #6F1D30FF
+-  #443A3FFF
+;  #762122FF
+:  #7A2425FF
+>  #7F2728FF
+,  #4C3D43FF
+<  #60474CFF
+1  #644A4EFF
+2  #6F4F53FF
+3  #7D5559FF
+4  #AC1C37FF
+5  #802728FF
+6  #842A2BFF
+7  #8A2D2EFF
+8  #84273AFF
+9  #8E3031FF
+0  #943334FF
+q  #983636FF
+w  #9D393AFF
+e  #B5213BFF
+r  #A43B3BFF
+t  #A93E3EFF
+y  #C61C39FF
+u  #C81C3AFF
+i  #D01B3AFF
+p  #E41B3DFF
+a  #E81B3DFF
+s  #B92740FF
+d  #B23C4EFF
+f  #9E4747FF
+g  #994C4CFF
+h  #80575AFF
+j  #84595CFF
+k  #895C5FFF
+l  #9B5453FF
+z  #A44343FF
+x  #AC4242FF
+c  #AC4A49FF
+v  #B34545FF
+b  #B34C4CFF
+n  #BB4A4AFF
+m  #AB4150FF
+M  #A45250FF
+N  #AD5B57FF
+B  #B55252FF
+V  #BB5555FF
+C  #B75C5CFF
+Z  #BD5959FF
+A  #91605FFF
+S  #AF645EFF
+D  #8C6363FF
+F  #876F6FFF
+G  #936063FF
+H  #817575FF
+J  #8B7777FF
+K  #847877FF
+L  #867B7AFF
+P  #8D7979FF
+I  #947A7AFF
+U  #9B7B7BFF
+Y  #AA6466FF
+T  #A3686BFF
+R  #B1676AFF
+E  #BF6A6BFF
+W  #A47D7DFF
+Q  #AB7D7DFF
+!  #B67173FF
+~  #BC7576FF
+^  #B77C72FF
+/  #C14E4EFF
+(  #C55252FF
+)  #CC5555FF
+_  #C25C5CFF
+`  #D25959FF
+'  #C56161FF
+]  #CA6565FF
+[  #C7636BFF
+{  #CD6A6AFF
+}  #D66262FF
+|  #D96666FF
+ . #DB6B6BFF
+.. #CE7E7FFF
+X. #D37172FF
+o. #DD7373FF
+O. #D17E7FFF
++. #DB7A7AFF
+@. #E07676FF
+#. #E27B7BFF
+$. #8A807EFF
+%. #B98177FF
+&. #BB887EFF
+*. #958682FF
+=. #958B85FF
+-. #9A918AFF
+;. #A38382FF
+:. #A28B84FF
+>. #BB8181FF
+,. #A6928CFF
+<. #A59C93FF
+1. #AEA79CFF
+2. #B2AB9EFF
+3. #B6B0A2FF
+4. #BDB7A8FF
+5. #BFBAAAFF
+6. #C28383FF
+7. #CB8585FF
+8. #D08686FF
+9. #D98484FF
+0. #DD8888FF
+q. #C19D8FFF
+w. #E58484FF
+e. #E88787FF
+r. #E68788FF
+t. #E48989FF
+y. #EA8B8BFF
+u. #C1BCACFF
+i. #CABDABFF
+p. #C6C1AFFF
+a. #C9C4B2FF
+s. #CFCBB7FF
+d. #00000000
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.x r r r r r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r x ( ( ( ( n n x r r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r t.y.#.} ` ` ` ) n x r r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r _ y.y.y.#.` ` ` ` ` ) x r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r +.y.y.y.#.` ` ` ` ` ` / r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r b y.y.y.y.| ` ` ` ` ` ` ) t r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r _ +.w.y.y.y.| ` ` ` ` ` ) x r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r r r w.y.y.} ` ` ` ` ` ` ) r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r b y.y.w.` ` ` ` ` ` ` ` ) r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r w.y.y.y.} ` ` ` ` ` ` ` ` n r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r { y.y.y.e.` ` ` ` ` ` ` ` ` t r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r x y.y.y.y.w.` ` ` ` ` ` ` ` n r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r +.y.y.y.y.#.` ` ` ` ` ` ` ) r r t d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r ' y.y.y.y.y.| ` ` ` ` ` ` ` v v v r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r b y.y.y.y.e.` ` ` ` ` ` ` ` ) ) ) ) v r r d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r v v t y.y.w.| ` ` ` ` ` ` ` ` ` ` ` ` ` ` / r r d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r / ) ) v @.| ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ( t r d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.r r d.d.d.d.d.d.d.r t ) ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ) t t d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.r r r d.d.d.d.d.d.r t ) ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ( r t d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.r _ r d.d.d.d.d.r t ) ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` n r d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.r ] / r d.d.d.d.r t ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ) ` x r d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.r r ] o.n r d.d.d.r r ) ` ` ` ` ) ` ` x n ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ) r t d.d.d.d.d.d.
+d.d.d.d.d.d.d.r x +.o.` x r d.d.d.r / ` ` ` ` ` ` ` w : / ` ` ` ) ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ) v r d.d.d.d.d.d.
+d.d.d.d.d.d.r r _  .` ) r d.d.d.r t ` ` ` ` ` ` ` n * v ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ) r d.d.d.d.d.d.
+d.d.d.d.r r _ t V } ` n r d.d.d.r ) ` ` ` ` ) n ` 6 0 ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` } v r d.d.d.d.d.
+r r r r x X.y.w.o.` ) r d.d.d.r v ` ` ` ` ) 6 9 / * n ` ` ` ` ` ` ` ` ` ` | Y O.y.y.o.` ` ` ` ` ` ` | e.y.{ r d.d.d.d.d.
+r r ' +.y.y.y.w.` ` n r d.d.d.r ) ` ` ` ` x * ( r : ` ` ` ` ` ` ` ` ` | w.y.# o h r.y.#.` ` ` ` ` ` e.y.T 3 t r d.d.d.d.
+d.r x X.y.y.x X.` ` ) r d.d.r v ` ` ` ` ` 7 0 ` 0 6 ` ` ` ` ` ` ` ` @.y.y.y.,     + R y.r.| ` ` ) @.y.O.O o V r d.d.d.d.
+d.d.t r r r r { ` ` ` t r d.r ) ` ` n 6 ` ; d ) 9 9 ` ` ` ` ` ` ` w.w.X.+.y.3     & p s X.y.#.o.#.y.y.- .   E r d.d.d.d.
+d.d.d.d.d.d.t ] ` ` ` ( r r x ` ` ` 9 9 ) * x ` 7 9 ` ` ` ` ` } t.{ r r r ] ~ o   u a a p d e.y.y.y.m %     9.r t d.d.d.
+d.d.d.d.d.d.r ] } ` ` ` n r ( ` ` ` > r ` * x ` 0 7 ` ` ` ` ` w.+.r Z ] ] r y.+   a a a a a 8 ~ y.[ p u     y.B t d.d.d.
+d.d.d.d.d.d.r _ #.` ` ` ( t ` ` ` ` 6 q ` > w ` r ; ` ` ` `  .y.' t w.w +.B y.j   u a a a a & o ! e a 4   + y.] r d.d.d.
+d.d.d.d.d.d.r b y.` ` ` n / ` ` ` ` t 5 ` q 6 ` n * ( ` ` `  .y.] x y.z ] y.y.0.O & p a a 4   + ~ @ $ .   < y.w.r d d.d.
+d.d.d.d.d.d.d.x y.` ` ` ) ` ` ` ` ` ) n ` n * ) ` : d ) ` `  .y.0.{ 0.l c t.y.y.k   X = & o 2 w.y.y.! 3 1 ..y.y.' r d.d.
+d.d.d.d.d.d.d.r y.} ` ` ` ` ` ` ` ` ` ` ` ` 6 r ` w > ` ` `  .y.y.t.%.:.r { y.y.y.1 O , G 9.y.y.y.y.y.y.y.y.y.y.r.t r d.
+d.d.d.d.d.d.d.r o. .` ` ` ` ` ` ` ` ` ` ` ` ) ) ` ) ; n ` ` #.y.y.8.H u.;.z #.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.r.x r 
+d.d.d.d.d.d.d.r _ @.` ` ` ` ) ` ` ` ` ` ` ` ) ` ` ` ) ` ` @.y.y.t.%.=.s.s.N x w.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.b r 
+d.d.d.d.d.d.d.r x #.` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` `  .y.y.y.t.=.2.s.s.i.M c w.y.y.y.y.y.y.y.t.;.3 P 0.y.y.y.y.Z r g 
+d.d.d.d.d.d.d.d.r #.` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` `  .y.y.y.y.7.3 u.s.a.,.F z x +.y.y.y.y.y.y.*.$.5.L %.y.y.r.B r l H 
+d.d.d.d.d.d.d.d.r x #.#.} ` ` ` `  .@.#.o.o. .} ` ` @.y.y.y.y.y.6.H 1.,.K J 6.Q M r Z r.y.y.y.6.H 4.s.3.H t.X.x f :.<.3 
+d.d.d.d.d.d.d.r r / `  .w.` ` @.y.y.y.y.y.y.y.y.#.w.y.y.y.y.y.y.t.J H P >.t.y.W <.>.z w Z +.t.L <.s.s.i.A z r z 1.s.-.*.
+d.d.d.d.d.d.d.r / ` ` ` @.y.e.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.t.t.y.y.y.y.U 1.s.i.^ z r r z S S c r r r g H i.a.-.3 
+d.d.d.d.d.d.r v ` ` ` ` } y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.U ,.s.s.s.-.D C B c c B c r d.d.H J u.$.H 
+d.d.d.d.d.d.t t / / / / ` y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.y.Q *.s.p.=.L 7.y.y.y.y._ r c d.d.d.H H 3 d.
+d.d.d.d.d.d.d.r r r r x r X.y.y.y.y.y.y.w.b }  .@.#.y.y.y.y.y.y.y.y.y.y.y.y.y.8.H =.K I 0.y.y.y.r.V r t d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.c r ] y.y.y.y.y.b x ` ` ` ` `  .w.y.y.y.y.y.y.y.y.y.y.y.7.Q 6.y.y.y.y.+.c w d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.b r x X.y.y.V x ) ` ` ` ` ` ` ` | w.y.y.y.y.y.y.y.y.y.y.y.y.y.y.w.Z r x d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.x r b _ r ) ` ` ` ` ` ` ` ` ` ` #.y.y.y.y.y.y.y.y.y.y.y.w.' t r r d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r n ) ` ` ` ` ` ` ` ` ` ) v X.y.y.y.y.y.y.y.y.+.V r r v n r d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r v ` ` ` ` ` ` ` ` ` ) v r B w.y.y.y.e.w.X._ t r r n ) ` ` v r d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r ) ` ` ` ` ` ` ` ) v r x ' +.+.X.' B x r r r r n ) ` ) ` ` ) t r d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r ) ` ` ` ` ` ` ( t r r r r r r r r r r r d.d.d.r r r v ) ` ` ` n r d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r v ` ` ) ` ) / v r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.t t r t v ( ) t d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r ) ` ` ) n r r t d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r r r r d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.r v / v t r r t d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.r r r r d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.
+d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.d.

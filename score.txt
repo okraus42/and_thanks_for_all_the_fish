@@ -1,27 +1,6 @@
-ehasalu:coalition:2281:time
-vhyl:coalition:2257:time
-okraus:coalition:1566:time
-vhyl:coalition:1330:time
-haha:coalition:2125
-hi:coalition:-2
-er:coalition:4117
-hermano:coalition:6686
-tester:coalition:7387
-full:coalition:4893
-fish:coalition:8038
-phe:coalition:26253
-tester:coalition:10981
-sol:coalition:7121
-sol:coalition:7071
-okraus:coalition:53243
-adggg:coalition:10577
-okraus:ABC:53312
-ok:Mandalore:25205
-hello:Naboo:9919
-old:Alderaan:9426
-Anakin:Tatooine:10409
-okraus:Mandalore:11993
-okraus:Mandalore:26538
-Jar-Jar Binks:Naboo:25092
-R2D2:Tatooine:13294
-somethong:Alderaan:5830
+tester:coalition:5000
+Darth Maul:Mandalore:25000
+Jar Jar Binks:Naboo:25000
+Organa:Alderaan:25000
+Anakin:Tatooine:25000
+Haxor:Anonymous:60000

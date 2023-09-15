@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/14 11:52:38 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/15 16:27:22 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,25 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	return (1);
 }
 
+int	ft_check_printable(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	write(1, "what\n", 5);
+	while (str[i] && str[i + 1])
+	{
+		if (!ft_isprint(str[i]))
+			return (0);
+		write(1, "pass\n", 5);
+		++i;
+	}
+	write(1, "PASS\n", 5);
+	return (1);
+}
+
 void	ft_max_init(t_max *max)
 {
 	char	*str;
@@ -117,7 +136,7 @@ void	ft_max_init(t_max *max)
 	{
 		ft_printf("Enter your intra name or type 'exit' to quit: \n");
 		str = get_next_line(0);
-		if (str && ft_strchr(str, ':'))
+		if (!ft_check_printable(str) || ft_strchr(str, ':'))
 		{
 			ft_printf_fd(2, "Invalid name!\n");
 			free(str);
@@ -171,7 +190,7 @@ void	ft_max_init(t_max *max)
 		{
 			ft_printf("\nType the name of your coalition\n");
 			str = get_next_line(0);
-			if (str && ft_strchr(str, ':'))
+			if (!ft_check_printable(str) || ft_strchr(str, ':'))
 			{
 				ft_printf_fd(2, "Invalid name!\n");
 				free(str);
