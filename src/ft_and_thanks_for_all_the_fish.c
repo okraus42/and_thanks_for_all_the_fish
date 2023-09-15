@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/15 16:27:22 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/15 16:37:28 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,15 +108,12 @@ int	ft_check_printable(char *str)
 	i = 0;
 	if (!str)
 		return (0);
-	write(1, "what\n", 5);
 	while (str[i] && str[i + 1])
 	{
 		if (!ft_isprint(str[i]))
 			return (0);
-		write(1, "pass\n", 5);
 		++i;
 	}
-	write(1, "PASS\n", 5);
 	return (1);
 }
 
@@ -136,7 +133,7 @@ void	ft_max_init(t_max *max)
 	{
 		ft_printf("Enter your intra name or type 'exit' to quit: \n");
 		str = get_next_line(0);
-		if (!ft_check_printable(str) || ft_strchr(str, ':'))
+		if (!ft_check_printable(str) || ft_strlen(str) > 15 || ft_strchr(str, ':'))
 		{
 			ft_printf_fd(2, "Invalid name!\n");
 			free(str);
@@ -190,7 +187,7 @@ void	ft_max_init(t_max *max)
 		{
 			ft_printf("\nType the name of your coalition\n");
 			str = get_next_line(0);
-			if (!ft_check_printable(str) || ft_strchr(str, ':'))
+			if (!ft_check_printable(str) || ft_strlen(str) > 15  || ft_strchr(str, ':'))
 			{
 				ft_printf_fd(2, "Invalid name!\n");
 				free(str);
