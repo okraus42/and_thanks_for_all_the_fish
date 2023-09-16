@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/12 08:47:20 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/16 16:09:29 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,22 @@ void	ft_hook(void *param)
 	max = param;
 	if (mlx_is_key_down(max->mlx, MLX_KEY_ESCAPE))
 	{
-		ft_printf("%41CYou have quit this map:/%0C\n");
+		ft_printf("%41CYou have quit the game:/%0C\n");
 		ft_printf("%55CCurrent score: %i%0C\n", max->score);
+		max->exit = 1;
+		mlx_close_window(max->mlx);
+	}
+	if (mlx_is_key_down(max->mlx, MLX_KEY_KP_SUBTRACT))
+	{
+		ft_printf("%41C%s is a cheater!!!/%0C\n", max->player_name);
+		mlx_close_window(max->mlx);
+	}
+	if (mlx_is_key_down(max->mlx, MLX_KEY_KP_MULTIPLY))
+	{
+		ft_printf("%41C%s is a cheater!!!/%0C\n", max->player_name);
+		max->time += 5000;
+		max->lives += 1;
+		max->death = 1;
 		mlx_close_window(max->mlx);
 	}
 	if (max->map->p < 0 && mlx_is_key_down(max->mlx, MLX_KEY_ENTER))

@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/16 14:15:43 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/16 15:50:43 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,9 +171,9 @@ void	ft_max_init(t_max *max)
 	{
 		ft_printf("Enter your intra name or type 'exit' to quit: \n");
 		str = ft_printmove(get_next_line(0));
-		if (!str || ft_strlen(str) > 15 || ft_strchr(str, ':'))
+		if (!str || ft_strlen(str) > 15 || ft_strlen(str) < 3 || ft_strchr(str, ':'))
 		{
-			ft_printf_fd(2, "%s: Invalid name!\n", str);
+			ft_printf_fd(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
 			free(str);
 			str = NULL;
 		}
@@ -223,14 +223,12 @@ void	ft_max_init(t_max *max)
 		{
 			ft_printf("\nType the name of your coalition\n");
 			str = ft_printmove(get_next_line(0));
-			if (!str  || ft_strlen(str) > 15  || ft_strchr(str, ':'))
+			if (!str  || ft_strlen(str) > 15 || ft_strlen(str) < 3 || ft_strchr(str, ':'))
 			{
-				ft_printf_fd(2, "%s, Invalid name!\n", str);
+				ft_printf_fd(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
 				free(str);
 				str = NULL;
 			}
-			if (str)
-				str[ft_strlen(str) - 1] = 0;
 			while (str && ft_strncmp(str, "exit", 5))
 			{
 				ft_printf("\nIs your coalition: %s?\nPress 'y' to continue\n", str);
