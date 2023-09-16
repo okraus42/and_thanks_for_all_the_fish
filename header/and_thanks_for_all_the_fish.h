@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/16 11:27:58 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/16 14:07:23 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,7 @@ typedef struct s_max
 	char		*player_name;
 	char		*player_coalition;
 	int			death;
+	int			lives;
 	int			score;
 	int			exit;
 	int			time;
@@ -146,6 +147,7 @@ typedef struct s_max
 
 //	ft_draw
 void	ft_put_background(t_max *max);
+void	ft_put_lives(t_max *max);
 //	ft_draw2
 void	ft_put_collectibles(t_max *max);
 void	ft_put_collectibles2(t_max *max);

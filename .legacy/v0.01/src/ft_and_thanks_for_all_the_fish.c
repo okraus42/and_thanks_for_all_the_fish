@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/12 08:54:05 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/16 14:06:37 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	ft_and_thanks_for_all_the_fish2(t_max *max, char *mapfile)
 void	ft_and_thanks_for_all_the_fish3(t_max *max)
 {
 	ft_put_background(max);
+	ft_put_lives(max);
 	ft_put_collectibles(max);
 	ft_put_collectibles2(max);
 	ft_put_opendoor(max);

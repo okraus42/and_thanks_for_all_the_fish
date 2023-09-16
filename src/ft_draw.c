@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:04:17 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/12 08:38:57 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/16 14:05:45 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,31 @@ void	ft_put_background(t_max *max)
 	ft_put_ground(max, grnd_img);
 	mlx_delete_xpm42(wall_xpm);
 	mlx_delete_xpm42(ground_xpm);
+}
+
+void	ft_put_lives(t_max *max)
+{
+	xpm_t		*life_xpm;
+	mlx_image_t	*life_img;
+	int	x;
+	int	y;
+
+	life_xpm = mlx_load_xpm42("./imgs/life.xpm42");
+	if (!life_xpm)
+		exit(-4);
+	life_img = mlx_texture_to_image(max->mlx, &life_xpm->texture);
+	if (!life_img)
+		exit(-8);
+
+	y = 0;
+	while (max->map->m[y + 1])
+		y++;
+	x = 0;
+	while (x < max->lives)
+	{
+		if (mlx_image_to_window(max->mlx, life_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
+			exit(-5);
+		x++;
+	}
+	mlx_delete_xpm42(life_xpm);
 }
