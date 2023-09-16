@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/14 09:40:24 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/16 11:27:58 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ typedef struct s_max
 	mlx_image_t	*tmp;
 	char		*player_name;
 	char		*player_coalition;
+	int			death;
 	int			score;
 	int			exit;
 	int			time;

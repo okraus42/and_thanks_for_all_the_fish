@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/15 16:37:28 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/16 11:54:24 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	max->map = &mapt;
 	max->key = &keyt;
 	max->img = &imgt;
+	max->death = 0;
 	max->str = NULL;
 	max->tmp = NULL;
 	ft_and_thanks_for_all_the_fish2(max, mapfile);
@@ -117,6 +118,40 @@ int	ft_check_printable(char *str)
 	return (1);
 }
 
+char	*ft_printmove(char *str)
+{
+	int		i;
+	int		l;
+	char	*print;
+
+	if (!str)
+		return (NULL);
+	i = 0;
+	l = 0;
+	while (str[i])
+	{
+		if (ft_isprint(str[i]))
+			l++;
+		i++;
+	}
+	print = ft_calloc(l + 1, sizeof(char));
+	if (!print)
+		return (NULL);
+	i = 0;
+	l = 0;
+	while (str[i])
+	{
+		if (ft_isprint(str[i]))
+		{
+			print[l] = str[i];
+			l++;
+		}
+		i++;
+	}
+	free(str);
+	return (print);
+}
+
 void	ft_max_init(t_max *max)
 {
 	char	*str;
@@ -126,21 +161,20 @@ void	ft_max_init(t_max *max)
 	max->score = 2500;
 	max->time = 2500;
 	max->exit = 0;
+	max->death = 1;
 	str = NULL;
 	yn = NULL;
 	coal = NULL;
 	while (!str)
 	{
 		ft_printf("Enter your intra name or type 'exit' to quit: \n");
-		str = get_next_line(0);
-		if (!ft_check_printable(str) || ft_strlen(str) > 15 || ft_strchr(str, ':'))
+		str = ft_printmove(get_next_line(0));
+		if (!str || ft_strlen(str) > 15 || ft_strchr(str, ':'))
 		{
-			ft_printf_fd(2, "Invalid name!\n");
+			ft_printf_fd(2, "%s: Invalid name!\n", str);
 			free(str);
 			str = NULL;
 		}
-		if (str)
-			str[ft_strlen(str) - 1] = 0;
 		while (str && ft_strncmp(str, "exit", 5))
 		{
 			ft_printf("\nIs your name: %s?\nPress 'y' to continue\n", str);
@@ -169,7 +203,7 @@ void	ft_max_init(t_max *max)
 	while (!max->exit && !str)
 	{
 		ft_printf("\nChoose your coalition: \n1 - Alderaan   2 - Naboo   3 - Tatooine   4 - Mandalore   5 - other\n");
-		coal = get_next_line(0);
+		coal = ft_printmove(get_next_line(0));
 		if (!coal)
 		{
 			max->exit = 1;
@@ -186,10 +220,10 @@ void	ft_max_init(t_max *max)
 		else if (coal[0] == '5')
 		{
 			ft_printf("\nType the name of your coalition\n");
-			str = get_next_line(0);
-			if (!ft_check_printable(str) || ft_strlen(str) > 15  || ft_strchr(str, ':'))
+			str = ft_printmove(get_next_line(0));
+			if (!str  || ft_strlen(str) > 15  || ft_strchr(str, ':'))
 			{
-				ft_printf_fd(2, "Invalid name!\n");
+				ft_printf_fd(2, "%s, Invalid name!\n", str);
 				free(str);
 				str = NULL;
 			}
@@ -347,11 +381,20 @@ int	main(int argc, char *argv[])
 		return (1);
 	while (!max.exit)
 	{
-		ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
-		ft_and_thanks_for_all_the_fish("maps/map2.ber", &max);
-		ft_and_thanks_for_all_the_fish("maps/map3.ber", &max);
-		ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
-		ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
+		while (max.death && !max.exit)
+			ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
+		max.death++;
+		while (max.death && !max.exit)
+			ft_and_thanks_for_all_the_fish("maps/map2.ber", &max);
+		max.death++;
+		while (max.death && !max.exit)
+			ft_and_thanks_for_all_the_fish("maps/map3.ber", &max);
+		max.death++;
+		while (max.death && !max.exit)
+			ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
+		max.death++;
+		while (max.death && !max.exit)
+			ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
 		ft_printf("%93CFinal score: %i%0C\n", max.score);
 		ft_printf_fd(fd, "%s:%s:%i\n", max.player_name, max.player_coalition, max.score);
 		//save score (save score function?) name coalition, score and time does not matter, order in score txt will be enough to index it
