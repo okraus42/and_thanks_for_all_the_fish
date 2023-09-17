@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/16 16:11:53 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/17 15:24:20 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,10 @@ void	ft_hook(void *param)
 	if (mlx_is_key_down(max->mlx, MLX_KEY_KP_SUBTRACT))
 	{
 		ft_printf("%41C%s is a cheater!!!/%0C\n", max->player_name);
+		free(max->player_name);
+		max->player_name = ft_strdup("cheater");
+		if (!max->player_name)
+			exit(5);
 		mlx_close_window(max->mlx);
 	}
 	if (mlx_is_key_down(max->mlx, MLX_KEY_KP_MULTIPLY))
@@ -107,6 +111,10 @@ void	ft_hook(void *param)
 		max->score += 2500;
 		max->lives += 1;
 		max->death = 1;
+		free(max->player_name);
+		max->player_name = ft_strdup("cheater");
+		if (!max->player_name)
+			exit(5);
 		mlx_close_window(max->mlx);
 	}
 	if (max->map->p < 0 && mlx_is_key_down(max->mlx, MLX_KEY_ENTER))

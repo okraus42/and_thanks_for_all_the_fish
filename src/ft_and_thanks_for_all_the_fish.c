@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/16 15:50:43 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/17 15:29:21 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -399,8 +399,12 @@ int	main(int argc, char *argv[])
 		ft_printf_fd(fd, "%s:%s:%i\n", max.player_name, max.player_coalition, max.score);
 		//save score (save score function?) name coalition, score and time does not matter, order in score txt will be enough to index it
 		//enter player name and coalition (max init function?)
+		free(max.player_name);
+		free(max.player_coalition);
 		ft_max_init(&max);
 	}
+	free(max.player_name);
+	free(max.player_coalition);
 	close(fd);
 	fd = open("score.txt", O_RDONLY);
 	if (fd < 0)
