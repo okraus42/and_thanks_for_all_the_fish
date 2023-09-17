@@ -102,6 +102,7 @@ all:			announce libmlx $(LIBFT) $(NAME)
 				@$(PRINT2)
 				@$(PRINT1)
 				@$(ECHO)
+				@cp .score.txt score.txt
 				@echo "$(GREEN)Amazing <<$(REVERSE)and_thanks_for_all_the_fish$(NRM_FORMAT)$(GREEN)>> compiled!$(NRM_FORMAT)"
 				
 
@@ -165,6 +166,7 @@ clean:
 
 fclean:			clean
 				@rm $(NAME)
+				@rm score.txt
 				@echo "$(RETURN)$(RED)Library and program deleted!$(NRM_FORMAT)"
 				@$(PRINT2)
 				@$(PRINT1)
