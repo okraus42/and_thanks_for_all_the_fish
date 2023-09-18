@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/17 15:29:21 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/18 16:10:45 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,6 +167,8 @@ void	ft_max_init(t_max *max)
 	str = NULL;
 	yn = NULL;
 	coal = NULL;
+	ft_printf("Press Enter to continue:");
+	free(get_next_line(0));
 	while (!str)
 	{
 		ft_printf("Enter your intra name or type 'exit' to quit: \n");
@@ -266,7 +268,6 @@ void	ft_print_score(t_list *lst)
 	while (lst && i <= 25)
 	{
 		tmp = lst->content;
-		//if orint%C based on coalition
 		if (!ft_strncmp(tmp->coalition, NABOO, 10))
 			ft_printf("%54C");
 		else if (!ft_strncmp(tmp->coalition, ALDERAAN, 10))
@@ -311,9 +312,6 @@ int	ft_sortscore(t_list *lst)
 
 void	ft_highscore(int fd)
 {
-	//read file in list
-	//sort highscores
-	//display top 10
 	t_hs	*tmp;
 	t_list	*head;
 	t_list	*leaf;
@@ -397,8 +395,6 @@ int	main(int argc, char *argv[])
 			ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
 		ft_printf("%93CFinal score: %i%0C\n", max.score);
 		ft_printf_fd(fd, "%s:%s:%i\n", max.player_name, max.player_coalition, max.score);
-		//save score (save score function?) name coalition, score and time does not matter, order in score txt will be enough to index it
-		//enter player name and coalition (max init function?)
 		free(max.player_name);
 		free(max.player_coalition);
 		ft_max_init(&max);
@@ -411,7 +407,5 @@ int	main(int argc, char *argv[])
 		return (1);
 	ft_highscore(fd);
 	close (fd);
-	//also figure out how to maximise MLX window to fullscreen
-	//display highscores before exiting
 	return (0);
 }

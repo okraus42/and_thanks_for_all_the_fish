@@ -48,7 +48,6 @@ void	ft_and_thanks_for_all_the_fish2(t_max *max, char *mapfile)
 void	ft_and_thanks_for_all_the_fish3(t_max *max)
 {
 	ft_put_background(max);
-	ft_put_lives(max);
 	ft_put_collectibles(max);
 	ft_put_collectibles2(max);
 	ft_put_opendoor(max);
@@ -103,49 +102,14 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 
 void	ft_max_init(t_max *max)
 {
-	char	*str;
-	char	*yn;
-
 	max->score = 2500;
 	max->time = 2500;
 	max->exit = 0;
-	str = NULL;
-	yn = NULL;
-	while (!str)
-	{
-		ft_printf("Enter your intra name or type 'exit' to quit: ");
-		str = get_next_line(0);
-		if (str && ft_strchr(str, ':'))
-		{
-			ft_printf_fd(2, "Invalid name!\n");
-			str = NULL;
-		}
-		if (str)
-			str[ft_strlen(str) - 1] = 0;
-		while (str && !yn && ft_strncmp(str, "exit", 5))
-		{
-			ft_printf("\nIs your name: %s?\nType 'y' to continue\n", str);
-			yn = get_next_line(0);
-			if (!(ft_strncmp(yn, "y", 1) && ft_strncmp(yn, "Y", 1)))
-			{
-				break;
-			}
-			else
-			{
-				yn = NULL;
-				str = NULL;
-			}
-		}
-	}
-	max->player_name = str;
-	if (!ft_strncmp(max->player_name, "exit", 5))
-		max->exit = 1;
 }
 
 int	main(int argc, char *argv[])
 {
 	t_max	max;
-	int		fd;
 
 	ft_max_init(&max);
 	if (argc != 1)
@@ -154,22 +118,11 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	(void)argv;
-	fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
-	while (!max.exit)
-	{
-		ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
-		ft_and_thanks_for_all_the_fish("maps/map2.ber", &max);
-		ft_and_thanks_for_all_the_fish("maps/map3.ber", &max);
-		ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
-		ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
-		ft_printf("%93CFinal score: %i%0C\n", max.score);
-		ft_printf_fd(fd, "%s:coalition:%i\n", max.player_name, max.score);
-		//save score (save score function?) name coalition, score and time does not matter, order in score txt will be enough to index it
-		//enter player name and coalition (max init function?)
-		ft_max_init(&max);
-	}
-	close(fd);
-	//also figure out how to maximise MLX window to fullscreen
-	//display highscores before exiting
+	ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
+	ft_and_thanks_for_all_the_fish("maps/map2.ber", &max);
+	ft_and_thanks_for_all_the_fish("maps/map3.ber", &max);
+	ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
+	ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
+	ft_printf("%93CFinal score: %i%0C\n", max.score);
 	return (0);
 }
