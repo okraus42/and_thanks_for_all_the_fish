@@ -6,7 +6,7 @@
 #    By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 15:40:17 by okraus            #+#    #+#              #
-#    Updated: 2023/06/26 16:27:45 by okraus           ###   ########.fr        #
+#    Updated: 2023/09/21 11:42:45 by okraus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,7 +102,7 @@ all:			announce libmlx $(LIBFT) $(NAME)
 				@$(PRINT2)
 				@$(PRINT1)
 				@$(ECHO)
-				@cp .score.txt score.txt
+#				@cp .score.txt score.txt
 				@echo "$(GREEN)Amazing <<$(REVERSE)and_thanks_for_all_the_fish$(NRM_FORMAT)$(GREEN)>> compiled!$(NRM_FORMAT)"
 				
 
@@ -166,7 +166,7 @@ clean:
 
 fclean:			clean
 				@rm $(NAME)
-				@rm score.txt
+#				@rm score.txt
 				@echo "$(RETURN)$(RED)Library and program deleted!$(NRM_FORMAT)"
 				@$(PRINT2)
 				@$(PRINT1)

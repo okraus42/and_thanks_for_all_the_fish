@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/18 16:10:45 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/21 11:45:25 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -397,15 +397,15 @@ int	main(int argc, char *argv[])
 		ft_printf_fd(fd, "%s:%s:%i\n", max.player_name, max.player_coalition, max.score);
 		free(max.player_name);
 		free(max.player_coalition);
+		close(fd);
+		fd = open("score.txt", O_RDONLY);
+		if (fd < 0)
+			return (1);
+		ft_highscore(fd);
+		close (fd);
 		ft_max_init(&max);
 	}
 	free(max.player_name);
 	free(max.player_coalition);
-	close(fd);
-	fd = open("score.txt", O_RDONLY);
-	if (fd < 0)
-		return (1);
-	ft_highscore(fd);
-	close (fd);
 	return (0);
 }
