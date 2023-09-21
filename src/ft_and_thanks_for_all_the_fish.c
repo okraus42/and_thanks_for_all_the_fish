@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/21 11:45:25 by okraus           ###   ########.fr       */
+/*   Updated: 2023/09/21 11:55:30 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	ft_and_thanks_for_all_the_fish2(max, mapfile);
 	mlx_set_setting(MLX_FULLSCREEN, true);
 	mlx = mlx_init(max->map->w * BLOCK_WIDTH, max->map->h * BLOCK_HEIGHT, "AND THANX FOR ALL THE FISH", true);
-	if (!max->mlx)
+	if (!mlx)
 	{
 		ft_printf_fd(2, "%s\n", mlx_strerror(mlx_errno));
 		exit(-9);
@@ -374,11 +374,11 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	(void)argv;
-	fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
-	if (fd < 0)
-		return (1);
 	while (!max.exit)
 	{
+		fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
+		if (fd < 0)
+			return (1);
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
 		max.death++;
