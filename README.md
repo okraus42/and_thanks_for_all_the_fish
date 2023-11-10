@@ -1,6 +1,11 @@
 # and_thanks_for_all_the_fish
 so long
 
+MLX42 Codam
+Textures Camilo Luis Berneri
+sounds John Cummins
+
+
 Work still very much in progress
 - no norminette
 - possible memory leaks
@@ -29,11 +34,13 @@ player has more than one life
 
 to do in v 0.3
 
-Use actual time for animation and movement (10%)
+Use actual time for animation and movement (90%)
 add a randomly generated map as one level (0%)
 add soundeffects and background music (0%)
 orientation dependent tetures (0%)
 better textures (0%)
+add new libft with updated printf (0%)
+Freeze frame and stop time and add sound for completing a level or dying (0%)
 
 to do in the future:
 
