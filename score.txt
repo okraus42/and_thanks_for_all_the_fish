@@ -24,3 +24,6 @@ yalechin:Alderaan:27286
 cheater:Mandalore:9633
 cheater:Tatooine:8705
 frushiti:Tatooine:52517
+rrrr:Tatooine:4477
+erwe:Tatooine:2531
+weetw:Naboo:12471

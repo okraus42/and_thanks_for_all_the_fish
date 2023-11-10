@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 12:47:19 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/16 14:14:15 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/10 10:31:59 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,26 @@ void	ft_check_time(t_max *max)
 	i = 0;
 	while (i < max->map->ct)
 	{
-		if (max->key->time == 2 && max->map->c[i])
+		if (!max->key->switch_collect && max->key->mtime & 0x80
+			&& max->map->c[i])
 		{
 			max->img->ci[i].x += BLOCK_WIDTH * max->map->w;
 			max->img->c2i[i].x -= BLOCK_WIDTH * max->map->w;
 		}
-		if (max->key->time == 12 && max->map->c[i])
+		if (max->key->switch_collect && !(max->key->mtime & 0x80)
+			&& max->map->c[i])
 		{
 			max->img->ci[i].x -= BLOCK_WIDTH * max->map->w;
 			max->img->c2i[i].x += BLOCK_WIDTH * max->map->w;
 		}
 		i++;
 	}
+	if (!max->key->switch_collect && max->key->mtime & 0x80
+			&& max->map->c[i])
+			max->key->switch_collect = 1;
+		if (max->key->switch_collect && !(max->key->mtime & 0x80)
+			&& max->map->c[i])
+			max->key->switch_collect = 0;
 }
 
 void	ft_open_door(t_max *max)

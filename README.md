@@ -25,10 +25,19 @@ confirm the name and coalition and let user retry
 save the name of the player in the file, save its score, save the current time.
 read the file, sort the results (score first, time second), show 10 highscores
 do not exit the game, let people try again with different name without restarting the program,
+player has more than one life
+
+to do in v 0.3
+
+Use actual time for animation and movement (10%)
+add a randomly generated map as one level (0%)
+add soundeffects and background music (0%)
+orientation dependent tetures (0%)
+better textures (0%)
 
 to do in the future:
 
-player has more than one life
+
 different enemy types
 player can fight back
 real time score

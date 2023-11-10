@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/18 15:57:23 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/10 10:20:58 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	ft_game(t_max *max)
 		max->key->time = 0;	
 	}
 	ft_putscore(max);
+	ft_update_gametime_in_ms(max);
 	ft_check_time(max);
 }
 

@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/16 14:07:23 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/10 10:28:53 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <math.h>
+# include <sys/time.h>
 # include "../.MLX42/include/MLX42/MLX42.h"
 # include "../libft/header/libft.h"
 
@@ -113,6 +114,10 @@ typedef struct s_control
 	int		space;
 	int		ctrl;
 	int		time;
+	time_t	mtimenow;
+	int		mtime;
+	int		switch_collect;
+	int		mspf;
 	int		t;
 }	t_controls;
 
@@ -193,6 +198,11 @@ void	ft_test_map(t_map *map);
 void	ft_check_map(t_map *map);
 void	ft_check_flood(t_map *map);
 void	ft_print_map(t_map *map);
+
+
+//	ft_time
+time_t	ft_get_time_in_ms(void);
+void	ft_update_gametime_in_ms(t_max *max);
 
 //	ft_free
 void	ft_free(t_max *max);

@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/21 11:55:30 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/10 10:29:28 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ void	ft_and_thanks_for_all_the_fish3(t_max *max)
 	ft_put_player(max);
 	max->map->cr = max->map->ct;
 	max->key->time = 0;
+	max->key->mtime = 0;
+	max->key->switch_collect = 0;
+	max->key->mtimenow = ft_get_time_in_ms();
 	max->map->s = ft_itoa(max->score);
 	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
 	max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);

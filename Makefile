@@ -6,7 +6,7 @@
 #    By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 15:40:17 by okraus            #+#    #+#              #
-#    Updated: 2023/09/21 11:42:45 by okraus           ###   ########.fr        #
+#    Updated: 2023/11/10 10:15:53 by okraus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRC_DIR		=	src/
 SRC_S		=	ft_and_thanks_for_all_the_fish \
 				ft_hook \
 				ft_test \
+				ft_time \
 				ft_player \
 				ft_collectible \
 				ft_enemy \
