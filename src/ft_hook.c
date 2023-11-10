@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/10 10:20:58 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/10 12:50:47 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ static void	ft_putscore(t_max *max)
 {
 	char *str;
 
-	max->time--;
+	//ft_printf("%41CMax time : %i%0C\n", max->time);
+	//ft_printf("%41Cmax->key->mspf : %i%0C\n", max->key->mspf);
+	max->time -= max->key->mspf;
 	free (max->map->s);
 	max->map->s = ft_itoa(max->time);
 	max->map->s = ft_strjoin_freeright("        Time left: ", max->map->s);
@@ -49,25 +51,26 @@ static void	ft_putscore(t_max *max)
 void	ft_game(t_max *max)
 {
 	if ((max->key->w || max->key->a || max->key->s || max->key->d)
-		&& !(max->key->t))
+		&& !(max->key->mt))
 	{
 		ft_moveplayer(max, max->key->w << 3 | max->key->s << 2
 			| max->key->a << 1 | max->key->d);
-		max->key->t++;
+		max->key->mt = max->key->mspf;
 	}
-	if (max->key->t && max->key->time)
+	if (max->key->mt)
 	{
 		ft_init_key(max->key, 0);
 	}
 	max->key->time++;
-	max->score--;
-	if (max->key->t && max->key->t < 10)
+	max->score -= max->key->mspf;
+	if (max->key->mt && max->key->mt < 256)
 	{
 		max->key->t++;
+		max->key->mt += max->key->mspf;
 	}
 	else
 	{
-		max->key->t = 0;
+		max->key->mt = 0;
 	}
 	if (max->key->time > 20)
 	{
@@ -102,8 +105,8 @@ void	ft_hook(void *param)
 	if (mlx_is_key_down(max->mlx, MLX_KEY_KP_MULTIPLY))
 	{
 		ft_printf("%41C%s is a cheater!!!/%0C\n", max->player_name);
-		max->time += 5000;
-		max->score += 2500;
+		max->time += 60000;
+		max->score += 100000;
 		max->lives += 1;
 		max->death = 1;
 		free(max->player_name);

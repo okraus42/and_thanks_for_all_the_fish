@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/10 10:29:28 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/10 13:15:05 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	ft_and_thanks_for_all_the_fish3(t_max *max)
 	max->map->cr = max->map->ct;
 	max->key->time = 0;
 	max->key->mtime = 0;
+	max->key->mspf = 0;
+	max->key->mt = 0;
 	max->key->switch_collect = 0;
 	max->key->mtimenow = ft_get_time_in_ms();
 	max->map->s = ft_itoa(max->score);
@@ -162,8 +164,8 @@ void	ft_max_init(t_max *max)
 	char	*yn;
 	char	*coal;
 
-	max->score = 2500;
-	max->time = 2500;
+	max->score = 100000;
+	max->time = 60000;
 	max->exit = 0;
 	max->death = 1;
 	max->lives = 1;
@@ -210,6 +212,8 @@ void	ft_max_init(t_max *max)
 	while (!max->exit && !str)
 	{
 		ft_printf("\nChoose your coalition: \n1 - Alderaan   2 - Naboo   3 - Tatooine   4 - Mandalore   5 - other\n");
+		if (coal)
+			free(coal);
 		coal = ft_printmove(get_next_line(0));
 		if (!coal)
 		{
@@ -258,6 +262,8 @@ void	ft_max_init(t_max *max)
 			continue;
 		
 	}
+	if (coal)
+		free(coal);
 	max->player_coalition = str;
 }
 
@@ -313,6 +319,16 @@ int	ft_sortscore(t_list *lst)
 	return (r);
 }
 
+void	ft_free_hs(void *content)
+{
+	t_hs	*tmp;
+
+	tmp = content;
+	free(tmp->name);
+	free(tmp->coalition);
+	free(tmp);
+}
+
 void	ft_highscore(int fd)
 {
 	t_hs	*tmp;
@@ -363,6 +379,7 @@ void	ft_highscore(int fd)
 	while (ft_sortscore(head))
 		continue;
 	ft_print_score(head);
+	ft_lstclear(&head, ft_free_hs);
 }
 
 int	main(int argc, char *argv[])

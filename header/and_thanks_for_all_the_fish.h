@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/10 10:28:53 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/10 12:45:19 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ typedef struct s_control
 	int		switch_collect;
 	int		mspf;
 	int		t;
+	int		mt;
 }	t_controls;
 
 typedef struct s_imgs
