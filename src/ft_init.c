@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:06:00 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 15:54:57 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 15:34:00 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	ft_init_key(t_controls *key, int a)
 	key->s = 0;
 	key->a = 0;
 	key->d = 0;
-	if (a == 1)
+	if (a == UP)
 		key->w++;
-	else if (a == 2)
+	else if (a == DOWN)
 		key->s++;
-	else if (a == 3)
+	else if (a == LEFT)
 		key->a++;
-	else if (a == 4)
+	else if (a == RIGHT)
 		key->d++;
 }
 
@@ -48,6 +48,7 @@ void	ft_init_map(t_map *map)
 	map->w = 0;
 	map->h = 0;
 	map->p = 0;
+	map->po = RIGHT;
 	map->px = 0;
 	map->py = 0;
 	map->ct = 0;
@@ -57,6 +58,7 @@ void	ft_init_map(t_map *map)
 	map->cy = NULL;
 	map->et = 0;
 	map->e = NULL;
+	map->eo = NULL;
 	map->ex = NULL;
 	map->ey = NULL;
 	map->x = 0;

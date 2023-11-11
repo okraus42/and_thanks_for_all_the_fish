@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 13:54:12 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/17 15:26:00 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 16:16:17 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_free(t_max *max)
 	{
 		free(max->map->e);
 		max->map->e = NULL;
+		free(max->map->eo);
+		max->map->eo = NULL;
 		free(max->map->ex);
 		max->map->ex = NULL;
 		free(max->map->ey);

@@ -3,7 +3,7 @@ so long
 
 MLX42 Codam
 Textures Camilo Luis Berneri
-sounds John Cummins
+Sounds John Cummins
 
 
 Work still very much in progress
@@ -25,29 +25,29 @@ How to use:
 
 to do in v 0.2:
 
-get the name of the player (and the coalition)
-confirm the name and coalition and let user retry
-save the name of the player in the file, save its score, save the current time.
-read the file, sort the results (score first, time second), show 10 highscores
-do not exit the game, let people try again with different name without restarting the program,
-player has more than one life
+- get the name of the player (and the coalition)
+- confirm the name and coalition and let user retry
+- save the name of the player in the file, save its score, save the current time.
+- read the file, sort the results (score first, time second), show 10 highscores
+- do not exit the game, let people try again with different name without restarting the program,
+- player has more than one life
 
 to do in v 0.3
 
-Use actual time for animation and movement (90%)
-add a randomly generated map as one level (0%)
-add soundeffects and background music (1%)
-orientation dependent tetures (0%)
-better textures (0%)
-add new libft with updated printf (0%)
-Freeze frame and stop time and add sound for completing a level or dying (0%)
+- Use actual time for animation and movement (90%)
+- add a randomly generated map as one level (0%)
+- add soundeffects and background music (80%)
+- orientation dependent tetures (60%)
+- better textures (0%)
+- add new libft with updated printf (0%)
+- Freeze frame and stop time and add sound for completing a level or dying (10%)
 
 to do in the future:
 
-
-different enemy types
-player can fight back
-real time score
-smoother movement
-more animations
-more maps
+- GUI instead of terminal
+- different enemy types
+- player can fight back
+- real time score
+- smoother movement
+- more animations
+- more maps

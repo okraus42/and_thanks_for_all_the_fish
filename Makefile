@@ -6,7 +6,7 @@
 #    By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 15:40:17 by okraus            #+#    #+#              #
-#    Updated: 2023/11/11 10:20:25 by okraus           ###   ########.fr        #
+#    Updated: 2023/11/11 14:50:02 by okraus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -156,7 +156,7 @@ $(LIBFT):
 
 clean:
 				@rm -rf $(OBJ_DIR)
-				@rm $(LIBFT)
+				@rm -f $(LIBFT)
 				@make fclean -s -C $(LIBFT_F)
 				@rm -rf $(LIBMLX)/build
 				@echo "$(RED)Objects removed!$(NRM_FORMAT)"
@@ -167,7 +167,7 @@ clean:
 # Remove the program after running clean
 
 fclean:			clean
-				@rm $(NAME)
+				@rm -f $(NAME)
 #				@rm score.txt
 				@echo "$(RETURN)$(RED)Library and program deleted!$(NRM_FORMAT)"
 				@$(PRINT2)

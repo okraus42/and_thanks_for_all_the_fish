@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 11:16:50 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 15:23:59 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,14 @@
 //	int		steps;		// number of steps player did
 // } map_t;
 
+typedef enum e_orientation
+{
+	LEFT = 2,
+	RIGHT = 1,
+	UP = 8,
+	DOWN = 4
+}	t_orientation;
+
 typedef struct s_map
 {
 	char	**m;
@@ -91,6 +99,7 @@ typedef struct s_map
 	int		w;
 	int		h;
 	int		p;
+	int		po;
 	int		px;
 	int		py;
 	int		ct;
@@ -100,6 +109,7 @@ typedef struct s_map
 	int		*cy;
 	int		et;
 	int		*e;
+	int		*eo;
 	int		*ex;
 	int		*ey;
 	int		x;
@@ -136,7 +146,15 @@ typedef struct s_control
 typedef struct s_imgs
 {
 	mlx_instance_t	*pi;
+	mlx_instance_t	*pli;
+	mlx_instance_t	*pri;
+	mlx_instance_t	*pdi;
+	mlx_instance_t	*pui;
 	mlx_instance_t	*ei;
+	mlx_instance_t	*eli;
+	mlx_instance_t	*eri;
+	mlx_instance_t	*edi;
+	mlx_instance_t	*eui;
 	mlx_instance_t	*ci;
 	mlx_instance_t	*c2i;
 	mlx_instance_t	*dci;

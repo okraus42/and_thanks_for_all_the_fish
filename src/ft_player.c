@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:05:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 10:46:58 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 15:45:23 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,127 @@ static void	ft_putscore(t_max *max)
 	ft_soundeffect(max->ev, MOVE);
 }
 
+static void	ft_domovepup(t_max *max)
+{
+	max->img->pi[0].y -= BLOCK_HEIGHT;
+	max->img->pli[0].y -= BLOCK_HEIGHT;
+	max->img->pri[0].y -= BLOCK_HEIGHT;
+	max->img->pui[0].y -= BLOCK_HEIGHT;
+	max->img->pdi[0].y -= BLOCK_HEIGHT;
+	max->map->py--;
+	if (max->map->po & DOWN)
+	{
+		max->img->pdi[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pui[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	else if (max->map->po & LEFT)
+	{
+		max->img->pli[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pui[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	else if (max->map->po & RIGHT)
+	{
+		max->img->pri[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pui[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	max->map->po = UP;
+}
+
+static void	ft_domovepdown(t_max *max)
+{
+	max->img->pi[0].y += BLOCK_HEIGHT;
+	max->img->pli[0].y += BLOCK_HEIGHT;
+	max->img->pri[0].y += BLOCK_HEIGHT;
+	max->img->pui[0].y += BLOCK_HEIGHT;
+	max->img->pdi[0].y += BLOCK_HEIGHT;
+	max->map->py++;
+	if (max->map->po & UP)
+	{
+		max->img->pui[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pdi[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	else if (max->map->po & LEFT)
+	{
+		max->img->pli[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pdi[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	else if (max->map->po & RIGHT)
+	{
+		max->img->pri[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pdi[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	max->map->po = DOWN;
+}
+
+static void	ft_domovepright(t_max *max)
+{
+	max->img->pi[0].x += BLOCK_HEIGHT;
+	max->img->pli[0].x += BLOCK_HEIGHT;
+	max->img->pri[0].x += BLOCK_HEIGHT;
+	max->img->pui[0].x += BLOCK_HEIGHT;
+	max->img->pdi[0].x += BLOCK_HEIGHT;
+	max->map->px++;
+	if (max->map->po & DOWN)
+	{
+		max->img->pdi[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pri[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	else if (max->map->po & LEFT)
+	{
+		max->img->pli[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pri[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	else if (max->map->po & UP)
+	{
+		max->img->pui[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pri[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	max->map->po = RIGHT;
+}
+
+static void	ft_domovepleft(t_max *max)
+{
+	max->img->pi[0].x -= BLOCK_HEIGHT;
+	max->img->pli[0].x -= BLOCK_HEIGHT;
+	max->img->pri[0].x -= BLOCK_HEIGHT;
+	max->img->pui[0].x -= BLOCK_HEIGHT;
+	max->img->pdi[0].x -= BLOCK_HEIGHT;
+	max->map->px--;
+	if (max->map->po & DOWN)
+	{
+		max->img->pdi[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pli[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	else if (max->map->po & UP)
+	{
+		max->img->pui[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pli[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	else if (max->map->po & RIGHT)
+	{
+		max->img->pri[0].x += BLOCK_HEIGHT * max->map->w;
+		max->img->pli[0].x -= BLOCK_HEIGHT * max->map->w;
+	}
+	max->map->po = LEFT;
+}
+
 static void	ft_domovep(t_max *max, int d)
 {
-	if (d == 8 && max->map->p > 0)
+	if (d == UP && max->map->p > 0)
 	{
-		max->img->pi[0].y -= BLOCK_HEIGHT;
-		max->map->py--;
+		ft_domovepup(max);
 	}
-	if (d == 4 && max->map->p > 0)
+	if (d == DOWN && max->map->p > 0)
 	{
-		max->img->pi[0].y += BLOCK_HEIGHT;
-		max->map->py++;
+		ft_domovepdown(max);
 	}
-	if (d == 2 && max->map->p > 0)
+	if (d == LEFT && max->map->p > 0)
 	{
-		max->img->pi[0].x -= BLOCK_WIDTH;
-		max->map->px--;
+		ft_domovepleft(max);
 	}
-	if (d == 1 && max->map->p > 0)
+	if (d == RIGHT && max->map->p > 0)
 	{
-		max->img->pi[0].x += BLOCK_WIDTH;
-		max->map->px++;
+		ft_domovepright(max);
 	}
 	ft_putscore(max);
 }
@@ -86,13 +186,13 @@ void	ft_moveplayer(t_max *max, int d)
 
 	x = max->map->px;
 	y = max->map->py;
-	if (d == 1)
+	if (d == RIGHT)
 		x++;
-	if (d == 2)
+	if (d == LEFT)
 		x--;
-	if (d == 4)
+	if (d == DOWN)
 		y++;
-	if (d == 8)
+	if (d == UP)
 		y--;
 	ft_moveplayer2(max, x, y, d);
 }

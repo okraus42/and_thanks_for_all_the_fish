@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 13:28:54 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 15:19:22 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,19 +127,19 @@ void	ft_hook(void *param)
 	}
 	if (max->map->p > 0 && mlx_is_key_down(max->mlx, MLX_KEY_UP))
 	{
-		ft_init_key(max->key, 1);
+		ft_init_key(max->key, UP);
 	}
 	if (max->map->p > 0 && mlx_is_key_down(max->mlx, MLX_KEY_DOWN))
 	{
-		ft_init_key(max->key, 2);
+		ft_init_key(max->key, DOWN);
 	}
 	if (max->map->p > 0 && mlx_is_key_down(max->mlx, MLX_KEY_LEFT))
 	{
-		ft_init_key(max->key, 3);
+		ft_init_key(max->key, LEFT);
 	}
 	if (max->map->p > 0 && mlx_is_key_down(max->mlx, MLX_KEY_RIGHT))
 	{
-		ft_init_key(max->key, 4);
+		ft_init_key(max->key, RIGHT);
 	}
 	ft_game(max);
 }
