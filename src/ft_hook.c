@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/10 12:50:47 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 13:28:54 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@ static void	ft_putscore(t_max *max)
 	//ft_printf("%41Cmax->key->mspf : %i%0C\n", max->key->mspf);
 	max->time -= max->key->mspf;
 	free (max->map->s);
-	max->map->s = ft_itoa(max->time);
+	if (!max->key->mspf)
+		max->key->mspf = 1000;
+	max->map->s = ft_itoa(1000 / max->key->mspf);
+	max->map->s = ft_strjoin_freeright("        FPS: ", max->map->s);
+	str = ft_itoa(max->time / 1000);
+	max->map->s = ft_strjoin_freeright(str, max->map->s);
+	free(str);
 	max->map->s = ft_strjoin_freeright("        Time left: ", max->map->s);
 	str = ft_itoa(max->score);
 	max->map->s = ft_strjoin_freeright(str, max->map->s);

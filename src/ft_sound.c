@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 11:30:13 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 13:19:56 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 int	ft_soundeffect(char **ev, char *track)
 {
 	pid_t	pid;
-	char	*av[4];
+	char	*av[9];
 
 	pid = fork();
-	av[0] = "/usr/bin/mpg123";
-	av[1] = "-q";
-	av[2] = track;
-	av[3] = NULL;
+	av[0] = "/usr/bin/ffplay";
+	av[1] = "-v";
+	av[2] = "-0";
+	av[3] = "-nodisp";
+	av[4] = "-autoexit";
+	av[5] = "-loop";
+	av[6] = "1";
+	av[7] = track;
+	av[8] = NULL;
 	if (pid == 0)
 	{
 		execve(av[0], av, ev);
@@ -33,15 +38,18 @@ int	ft_soundeffect(char **ev, char *track)
 int	ft_soundmusic(char **ev, char *track)
 {
 	pid_t	pid;
-	char	*av[6];
+	char	*av[9];
 
 	pid = fork();
-	av[0] = "/usr/bin/mpg123";
-	av[1] = "-q";
-	av[2] = "--loop";
-	av[3] = "-1";
-	av[4] = track;
-	av[5] = NULL;
+	av[0] = "/usr/bin/ffplay";
+	av[1] = "-v";
+	av[2] = "-0";
+	av[3] = "-nodisp";
+	av[4] = "-autoexit";
+	av[5] = "-loop";
+	av[6] = "0";
+	av[7] = track;
+	av[8] = NULL;
 	if (pid == 0)
 	{
 		execve(av[0], av, ev);

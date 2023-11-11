@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 11:49:30 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 13:34:03 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	max->death = 0;
 	max->str = NULL;
 	max->tmp = NULL;
-	max->pid = ft_soundmusic(max->ev, CHIPTUNE1);
 	ft_and_thanks_for_all_the_fish2(max, mapfile);
 	mlx_set_setting(MLX_FULLSCREEN, true);
 	mlx = mlx_init(max->map->w * BLOCK_WIDTH, max->map->h * BLOCK_HEIGHT, "AND THANX FOR ALL THE FISH", true);
@@ -98,7 +97,6 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	ft_and_thanks_for_all_the_fish3(max);
 	mlx_loop_hook(mlx, ft_hook, max);
 	mlx_loop(mlx);
-	kill(max->pid, SIGKILL);
 	if (mapt.p == -1)
 	{
 		ft_free(max);
@@ -400,6 +398,7 @@ int	main(int argc, char *argv[], char *env[])
 	max.ac = argc;
 	max.av = argv;
 	max.ev = env;
+	max.pid = ft_soundmusic(max.ev, CHIPTUNE1);
 	while (!max.exit)
 	{
 		fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
@@ -431,6 +430,7 @@ int	main(int argc, char *argv[], char *env[])
 		close (fd);
 		ft_max_init(&max);
 	}
+	kill(max.pid, SIGKILL);
 	free(max.player_name);
 	free(max.player_coalition);
 	return (0);
