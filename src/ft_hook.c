@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 15:19:22 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 17:30:50 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ static void	ft_putscore(t_max *max)
 	{
 		ft_printf("%41CYou have run out of time :/%0C\n");
 		ft_printf("%55CCurrent score: %i%0C\n", max->score);
-		mlx_close_window(max->mlx);
+		max->map->p = 0; 
+		max->lives = 0;
+		//mlx_close_window(max->mlx);
 	}
 }
 
@@ -87,6 +89,19 @@ void	ft_game(t_max *max)
 	ft_check_time(max);
 }
 
+void	ft_pause(t_max *max)
+{
+	static int time = 0;
+
+	if (time < 1000)
+		time += max->key->mspf;
+	else
+	{
+		time = 0;
+		mlx_close_window(max->mlx);
+	}
+}
+
 void	ft_hook(void *param)
 {
 	t_max	*max;
@@ -121,10 +136,10 @@ void	ft_hook(void *param)
 			exit(5);
 		mlx_close_window(max->mlx);
 	}
-	if (max->map->p < 0 && mlx_is_key_down(max->mlx, MLX_KEY_ENTER))
-	{
-		mlx_close_window(max->mlx);
-	}
+	// if (max->map->p < 0 && mlx_is_key_down(max->mlx, MLX_KEY_ENTER))
+	// {
+	// 	mlx_close_window(max->mlx);
+	// }
 	if (max->map->p > 0 && mlx_is_key_down(max->mlx, MLX_KEY_UP))
 	{
 		ft_init_key(max->key, UP);
@@ -141,5 +156,8 @@ void	ft_hook(void *param)
 	{
 		ft_init_key(max->key, RIGHT);
 	}
-	ft_game(max);
+	if (max->map->p > 0)
+		ft_game(max);
+	else
+		ft_pause(max);
 }

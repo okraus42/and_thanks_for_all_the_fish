@@ -40,7 +40,7 @@ to do in v 0.3
 - orientation dependent tetures (60%)
 - better textures (0%)
 - add new libft with updated printf (0%)
-- Freeze frame and stop time and add sound for completing a level or dying (10%)
+- Freeze frame and stop time and add sound for completing a level or dying (80%)
 
 to do in the future:
 

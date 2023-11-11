@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 12:47:19 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 10:51:52 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 17:04:09 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,6 @@ void	ft_check_door(t_max *max)
 		ft_soundeffect(max->ev, LEVELWIN);
 		ft_printf("%22CYou win!%0C\n");
 		ft_printf("%52CCurrent score: %i%0C\n", max->score);
-		mlx_close_window(max->mlx);
+		//mlx_close_window(max->mlx);
 	}
 }
