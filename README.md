@@ -36,7 +36,7 @@ to do in v 0.3
 
 Use actual time for animation and movement (90%)
 add a randomly generated map as one level (0%)
-add soundeffects and background music (0%)
+add soundeffects and background music (1%)
 orientation dependent tetures (0%)
 better textures (0%)
 add new libft with updated printf (0%)

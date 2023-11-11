@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/10 12:45:19 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 11:16:50 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include <stdio.h>
+# include <signal.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
@@ -43,6 +43,17 @@
 #define TATOOINE "Tatooine"
 #define NABOO "Naboo"
 #define ALDERAAN "Alderaan"
+
+//	SOUND FILES
+#define MOVE "sounds/move2.mp3"
+#define COLLECT "sounds/collect1.mp3"
+#define DEATH1 "sounds/death1.mp3"
+#define DEATH2 "sounds/death2.mp3"
+#define LEVELWIN "sounds/levelwin.mp3"
+#define GAMEWIN "sounds/gamewin.mp3"	//unused
+#define EXITUNLOCK "sounds/exitunlock.mp3"
+#define GAMEOVER "sounds/gameover.mp3"
+#define CHIPTUNE1 "sounds/chiptune.mp3"	//unused
 
 // STRUCTURES
 // AND_THANKS_FOR_ALL_THE_FISH structures
@@ -147,6 +158,10 @@ typedef struct s_max
 	int			score;
 	int			exit;
 	int			time;
+	int			pid;
+	int			ac;
+	char		**av;
+	char		**ev;
 }	t_max;
 
 // PROTOTYPES
@@ -193,6 +208,10 @@ void	ft_init_keys(t_controls *key);
 
 //	ft_update
 void	ft_update_map(t_map *map);
+
+//	ft_sound
+int		ft_soundeffect(char **ev, char *track);
+int		ft_soundmusic(char **ev, char *track);
 
 //	ft_test
 void	ft_test_map(t_map *map);

@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/10 13:15:05 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/11 11:45:43 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	max->death = 0;
 	max->str = NULL;
 	max->tmp = NULL;
+	max->pid = ft_soundmusic(max->ev, CHIPTUNE1);
 	ft_and_thanks_for_all_the_fish2(max, mapfile);
 	mlx_set_setting(MLX_FULLSCREEN, true);
 	mlx = mlx_init(max->map->w * BLOCK_WIDTH, max->map->h * BLOCK_HEIGHT, "AND THANX FOR ALL THE FISH", true);
@@ -97,6 +98,7 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	ft_and_thanks_for_all_the_fish3(max);
 	mlx_loop_hook(mlx, ft_hook, max);
 	mlx_loop(mlx);
+	kill(max->pid, SIGKILL);
 	if (mapt.p == -1)
 	{
 		ft_free(max);
@@ -172,8 +174,10 @@ void	ft_max_init(t_max *max)
 	str = NULL;
 	yn = NULL;
 	coal = NULL;
+	//clearerr(stdin);
 	ft_printf("Press Enter to continue:");
 	free(get_next_line(0));
+	//clearerr(stdin);
 	while (!str)
 	{
 		ft_printf("Enter your intra name or type 'exit' to quit: \n");
@@ -273,7 +277,7 @@ void	ft_print_score(t_list *lst)
 	int		i;
 
 	i = 1;
-	ft_printf("%68CPosition   |                Name   |           Coalition   |  Score %0C\n");
+	ft_printf("%68CPosition   |                Name   |           Coalition   |      Score  %0C\n");
 	while (lst && i <= 25)
 	{
 		tmp = lst->content;
@@ -290,7 +294,7 @@ void	ft_print_score(t_list *lst)
 		ft_printf("     %3i   |", i);
 		ft_printf("%20s   |", tmp->name);
 		ft_printf("%20s   |", tmp->coalition);
-		ft_printf("%7i", tmp->score);
+		ft_printf("%10i   ", tmp->score);
 		ft_printf("%0C\n");
 		lst = lst->next;
 		++i;
@@ -382,7 +386,7 @@ void	ft_highscore(int fd)
 	ft_lstclear(&head, ft_free_hs);
 }
 
-int	main(int argc, char *argv[])
+int	main(int argc, char *argv[], char *env[])
 {
 	t_max	max;
 	int		fd;
@@ -393,7 +397,9 @@ int	main(int argc, char *argv[])
 		ft_printf_fd(2, "%9CError%0C\n");
 		return (1);
 	}
-	(void)argv;
+	max.ac = argc;
+	max.av = argv;
+	max.ev = env;
 	while (!max.exit)
 	{
 		fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
