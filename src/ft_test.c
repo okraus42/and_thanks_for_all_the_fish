@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:09:29 by okraus            #+#    #+#             */
-/*   Updated: 2023/06/27 15:54:51 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 11:05:21 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_check_flood(t_map *map)
 		{
 			if (map->m[y][x] == 'E' || map->m[y][x] == 'C')
 			{
-				ft_printf_fd(2, "No valid path\n");
+				ft_dprintf(2, "No valid path\n");
 				ft_exit(map, 6);
 			}
 			if (map->m[y][x] == 'c')
@@ -76,7 +76,7 @@ void	ft_inner_check(t_map *map, int x, int y, int z)
 	{
 		if (map->m[y][x] != '1')
 		{
-			ft_printf_fd(2, "Missing wall x=%i,y=%i\n", x, y);
+			ft_dprintf(2, "Missing wall x=%i,y=%i\n", x, y);
 			ft_exit(map, 3);
 		}
 	}
@@ -94,7 +94,7 @@ void	ft_inner_check(t_map *map, int x, int y, int z)
 		map->ct++;
 	else if (map->m[y][x] != '1' && map->m[y][x] != '0')
 	{
-		ft_printf_fd(2, "Invalid or duplicated char\n");
+		ft_dprintf(2, "Invalid or duplicated char\n");
 		ft_exit(map, 4);
 	}
 }
@@ -117,7 +117,7 @@ void	ft_check_map(t_map *map)
 		}
 		if (x < 3 || x != map->w)
 		{
-			ft_printf_fd(2, "Wrong width\n");
+			ft_dprintf(2, "Wrong width\n");
 			ft_exit(map, 2);
 		}
 		y++;

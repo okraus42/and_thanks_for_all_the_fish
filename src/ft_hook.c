@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 17:30:50 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 11:24:39 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ static void	ft_putscore(t_max *max)
 {
 	char *str;
 
-	//ft_printf("%41CMax time : %i%0C\n", max->time);
-	//ft_printf("%41Cmax->key->mspf : %i%0C\n", max->key->mspf);
 	max->time -= max->key->mspf;
 	free (max->map->s);
 	if (!max->key->mspf)
@@ -36,8 +34,8 @@ static void	ft_putscore(t_max *max)
 	max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);
 	if (max->time <= 0)
 	{
-		ft_printf("%41CYou have run out of time :/%0C\n");
-		ft_printf("%55CCurrent score: %i%0C\n", max->score);
+		ft_printf("%14.*^*CYou have run out of time :/%C\n", 0xFFFFFF, 0x880000);
+		ft_printf("%25.*^*CCurrent score: %i%C\n", 0xFFFFFF, 0x888800, max->score);
 		max->map->p = 0; 
 		max->lives = 0;
 		//mlx_close_window(max->mlx);
@@ -109,14 +107,14 @@ void	ft_hook(void *param)
 	max = param;
 	if (mlx_is_key_down(max->mlx, MLX_KEY_ESCAPE))
 	{
-		ft_printf("%41CYou have quit the game:/%0C\n");
-		ft_printf("%55CCurrent score: %i%0C\n", max->score);
+		ft_printf("%14.*^*CYou have quit the game:/%0C\n", 0xFFFFFF, 0x880000);
+		ft_printf("%25.*^*CCurrent score: %i%C\n", 0xFFFFFF, 0x888800, max->score);
 		max->exit = 1;
 		mlx_close_window(max->mlx);
 	}
 	if (mlx_is_key_down(max->mlx, MLX_KEY_KP_SUBTRACT))
 	{
-		ft_printf("%41C%s is a cheater!!!/%0C\n", max->player_name);
+		ft_printf("%25.*^*C%s is a cheater!!!/%0C\n", 0xFFFFFF, 0x880088, max->player_name);
 		free(max->player_name);
 		max->player_name = ft_strdup("cheater");
 		if (!max->player_name)
@@ -125,7 +123,7 @@ void	ft_hook(void *param)
 	}
 	if (mlx_is_key_down(max->mlx, MLX_KEY_KP_MULTIPLY))
 	{
-		ft_printf("%41C%s is a cheater!!!/%0C\n", max->player_name);
+		ft_printf("%25.*^*C%s is a cheater!!!/%0C\n", 0xFFFFFF, 0x880088, max->player_name);
 		max->time += 60000;
 		max->score += 100000;
 		max->lives += 1;

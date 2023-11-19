@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_vprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 14:59:58 by okraus            #+#    #+#             */
-/*   Updated: 2023/10/15 13:38:18 by okraus           ###   ########.fr       */
+/*   Created: 2023/10/15 11:34:36 by okraus            #+#    #+#             */
+/*   Updated: 2023/10/15 13:37:31 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libft.h"
 
-int	ft_printf(const char *s, ...)
+int	ft_vprintf(const char *s, va_list arg)
 {
 	int		value;
 	char	*str;
 	int		len;
-	va_list	arg;
 
 	len = 0;
-	va_start(arg, s);
 	str = ft_get_print_string(arg, s, &len);
-	va_end(arg);
 	if (str)
 	{
 		value = write(1, str, len);
@@ -33,19 +30,16 @@ int	ft_printf(const char *s, ...)
 	return (value);
 }
 
-// int	ft_fprintf(FILE *restrict stream, const char *s, ...);
+// int	ft_fprintf(FILE *restrict stream, const char *s, va_list arg);
 
-int	ft_dprintf(int fd, const char *s, ...)
+int	ft_vdprintf(int fd, const char *s, va_list arg)
 {
 	int		value;
 	char	*str;
 	int		len;
-	va_list	arg;
 
 	len = 0;
-	va_start(arg, s);
 	str = ft_get_print_string(arg, s, &len);
-	va_end(arg);
 	if (str)
 	{
 		value = write(fd, str, len);
@@ -56,17 +50,14 @@ int	ft_dprintf(int fd, const char *s, ...)
 	return (value);
 }
 
-int	ft_sprintf(char *str, const char *s, ...)
+int	ft_vsprintf(char *str, const char *s, va_list arg)
 {
 	int		value;
 	char	*temp;
 	int		len;
-	va_list	arg;
 
 	len = 0;
-	va_start(arg, s);
 	temp = ft_get_print_string(arg, s, &len);
-	va_end(arg);
 	if (temp)
 	{
 		value = ft_snpf_strncpy(str, temp, len, len);
@@ -77,17 +68,14 @@ int	ft_sprintf(char *str, const char *s, ...)
 	return (value);
 }
 
-int	ft_snprintf(char *str, size_t size, const char *s, ...)
+int	ft_vsnprintf(char *str, size_t size, const char *s, va_list arg)
 {
 	int		value;
 	char	*temp;
 	int		len;
-	va_list	arg;
 
 	len = 0;
-	va_start(arg, s);
 	temp = ft_get_print_string(arg, s, &len);
-	va_end(arg);
 	if (temp)
 	{
 		value = ft_snpf_strncpy(str, temp, size, len);

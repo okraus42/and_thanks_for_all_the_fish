@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:21:31 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 17:02:09 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 11:20:29 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,8 +198,8 @@ void	ft_check_enemy(t_max *max)
 				ft_soundeffect(max->ev, DEATH1);
 			else
 				ft_soundeffect(max->ev, GAMEOVER);
-			ft_printf("%21CYou stepped on enemy and died:(%0C\n");
-			ft_printf("%55CCurrent score: %i%0C\n", max->score);
+			ft_printf("%14.*^*CYou stepped on enemy and died:(%C\n", 0xFFFFFF, 0x880000);
+			ft_printf("%25.*^*CCurrent score: %i%C\n", 0xFFFFFF, 0x888800, max->score);
 			//mlx_close_window(max->mlx);
 		}
 		i++;

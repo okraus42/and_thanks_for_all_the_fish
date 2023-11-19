@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 13:34:03 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 11:29:02 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	mlx = mlx_init(max->map->w * BLOCK_WIDTH, max->map->h * BLOCK_HEIGHT, "AND THANX FOR ALL THE FISH", true);
 	if (!mlx)
 	{
-		ft_printf_fd(2, "%s\n", mlx_strerror(mlx_errno));
+		ft_dprintf(2, "%s\n", mlx_strerror(mlx_errno));
 		exit(-9);
 	}
 	max->mlx = mlx;
@@ -182,7 +182,7 @@ void	ft_max_init(t_max *max)
 		str = ft_printmove(get_next_line(0));
 		if (!str || ft_strlen(str) > 15 || ft_strlen(str) < 3 || ft_strchr(str, ':'))
 		{
-			ft_printf_fd(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
+			ft_dprintf(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
 			free(str);
 			str = NULL;
 		}
@@ -236,7 +236,7 @@ void	ft_max_init(t_max *max)
 			str = ft_printmove(get_next_line(0));
 			if (!str  || ft_strlen(str) > 15 || ft_strlen(str) < 3 || ft_strchr(str, ':'))
 			{
-				ft_printf_fd(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
+				ft_dprintf(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
 				free(str);
 				str = NULL;
 			}
@@ -275,25 +275,25 @@ void	ft_print_score(t_list *lst)
 	int		i;
 
 	i = 1;
-	ft_printf("%68CPosition   |                Name   |           Coalition   |      Score  %0C\n");
+	ft_printf("%1.*^*CPosition   |                Name   |           Coalition   |      Score  %C\n", 0xFFFFFF, 0x000000);
 	while (lst && i <= 25)
 	{
 		tmp = lst->content;
 		if (!ft_strncmp(tmp->coalition, NABOO, 10))
-			ft_printf("%54C");
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x678DA4);
 		else if (!ft_strncmp(tmp->coalition, ALDERAAN, 10))
-			ft_printf("%43C");
+			ft_printf("%1.*^*C", 0xFFFFFF, 0xAD8F65);
 		else if (!ft_strncmp(tmp->coalition, TATOOINE, 10))
-			ft_printf("%53C");
+			ft_printf("%1.*^*C", 0xFFFFFF, 0xE08F4C);
 		else if (!ft_strncmp(tmp->coalition, MANDALORE, 10))
-			ft_printf("%51C");
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x9C0505);
 		else
-			ft_printf("%58C");
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x008822);
 		ft_printf("     %3i   |", i);
 		ft_printf("%20s   |", tmp->name);
 		ft_printf("%20s   |", tmp->coalition);
 		ft_printf("%10i   ", tmp->score);
-		ft_printf("%0C\n");
+		ft_printf("%C\n");
 		lst = lst->next;
 		++i;
 	}
@@ -392,7 +392,7 @@ int	main(int argc, char *argv[], char *env[])
 	ft_max_init(&max);
 	if (argc != 1)
 	{
-		ft_printf_fd(2, "%9CError%0C\n");
+		ft_dprintf(2, "%25.*^*CError%C\n", 0xFFFFFF, 0xFF0000);
 		return (1);
 	}
 	max.ac = argc;
@@ -418,8 +418,8 @@ int	main(int argc, char *argv[], char *env[])
 		max.death++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
-		ft_printf("%93CFinal score: %i%0C\n", max.score);
-		ft_printf_fd(fd, "%s:%s:%i\n", max.player_name, max.player_coalition, max.score);
+		ft_printf("%1.*^*CFinal score: %i%C\n\n\n", 0xFFFFFF, 0x000088, max.score);
+		ft_dprintf(fd, "%s:%s:%i\n", max.player_name, max.player_coalition, max.score);
 		free(max.player_name);
 		free(max.player_coalition);
 		close(fd);

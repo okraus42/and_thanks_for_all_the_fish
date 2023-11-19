@@ -1,0 +1,9 @@
+cheater:Naboo:893427
+test:Tatooine:98729
+naboo:Naboo:98605
+mandalore:Mandalore:98825
+tatooine:Tatooine:98994
+alderaan:Alderaan:98551
+other:other coalition:98923
+cheater:cheat:360721
+winner:Mandalore:3062101
