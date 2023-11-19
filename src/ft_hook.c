@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 11:24:39 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 13:43:04 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	ft_pause(t_max *max)
 {
 	static int time = 0;
 
-	if (time < 1000)
+	if (time < 3000)
 		time += max->key->mspf;
 	else
 	{

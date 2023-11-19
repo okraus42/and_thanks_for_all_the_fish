@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 15:23:59 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 13:30:43 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,12 +145,12 @@ typedef struct s_control
 
 typedef struct s_imgs
 {
-	mlx_instance_t	*pi;
+	//mlx_instance_t	*pi;
 	mlx_instance_t	*pli;
 	mlx_instance_t	*pri;
 	mlx_instance_t	*pdi;
 	mlx_instance_t	*pui;
-	mlx_instance_t	*ei;
+	//mlx_instance_t	*ei;
 	mlx_instance_t	*eli;
 	mlx_instance_t	*eri;
 	mlx_instance_t	*edi;

@@ -35,12 +35,12 @@ to do in v 0.2:
 to do in v 0.3
 
 - Use actual time for animation and movement (90%)
-- add a randomly generated map as one level (0%)
+- add a randomly generated map as one level (20%)
 - add soundeffects and background music (80%)
-- orientation dependent tetures (60%)
+- orientation dependent tetures (80%)
 - better textures (0%)
 - add new libft with updated printf (100%)
-- Freeze frame and stop time and add sound for completing a level or dying (80%)
+- Freeze frame and stop time and add sound for completing a level or dying (100%)
 
 to do in the future:
 

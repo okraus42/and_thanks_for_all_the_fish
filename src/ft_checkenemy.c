@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:21:31 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 11:20:29 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 13:32:27 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_domoveeup(t_max *max, int i)
 {
-	max->img->ei[i].y -= BLOCK_HEIGHT;
+	//max->img->ei[i].y -= BLOCK_HEIGHT;
 	max->img->eli[i].y -= BLOCK_HEIGHT;
 	max->img->eri[i].y -= BLOCK_HEIGHT;
 	max->img->eui[i].y -= BLOCK_HEIGHT;
@@ -40,7 +40,7 @@ static void	ft_domoveeup(t_max *max, int i)
 
 static void	ft_domoveedown(t_max *max, int i)
 {
-	max->img->ei[i].y += BLOCK_HEIGHT;
+	//max->img->ei[i].y += BLOCK_HEIGHT;
 	max->img->eli[i].y += BLOCK_HEIGHT;
 	max->img->eri[i].y += BLOCK_HEIGHT;
 	max->img->eui[i].y += BLOCK_HEIGHT;
@@ -66,7 +66,7 @@ static void	ft_domoveedown(t_max *max, int i)
 
 static void	ft_domoveeright(t_max *max, int i)
 {
-	max->img->ei[i].x += BLOCK_HEIGHT;
+	//max->img->ei[i].x += BLOCK_HEIGHT;
 	max->img->eli[i].x += BLOCK_HEIGHT;
 	max->img->eri[i].x += BLOCK_HEIGHT;
 	max->img->eui[i].x += BLOCK_HEIGHT;
@@ -92,7 +92,7 @@ static void	ft_domoveeright(t_max *max, int i)
 
 static void	ft_domoveeleft(t_max *max, int i)
 {
-	max->img->ei[i].x -= BLOCK_HEIGHT;
+	//max->img->ei[i].x -= BLOCK_HEIGHT;
 	max->img->eli[i].x -= BLOCK_HEIGHT;
 	max->img->eri[i].x -= BLOCK_HEIGHT;
 	max->img->eui[i].x -= BLOCK_HEIGHT;

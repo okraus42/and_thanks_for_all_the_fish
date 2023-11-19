@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:05:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 15:45:23 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 13:31:59 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_putscore(t_max *max)
 
 static void	ft_domovepup(t_max *max)
 {
-	max->img->pi[0].y -= BLOCK_HEIGHT;
+	//max->img->pi[0].y -= BLOCK_HEIGHT;
 	max->img->pli[0].y -= BLOCK_HEIGHT;
 	max->img->pri[0].y -= BLOCK_HEIGHT;
 	max->img->pui[0].y -= BLOCK_HEIGHT;
@@ -47,7 +47,7 @@ static void	ft_domovepup(t_max *max)
 
 static void	ft_domovepdown(t_max *max)
 {
-	max->img->pi[0].y += BLOCK_HEIGHT;
+	//max->img->pi[0].y += BLOCK_HEIGHT;
 	max->img->pli[0].y += BLOCK_HEIGHT;
 	max->img->pri[0].y += BLOCK_HEIGHT;
 	max->img->pui[0].y += BLOCK_HEIGHT;
@@ -73,7 +73,7 @@ static void	ft_domovepdown(t_max *max)
 
 static void	ft_domovepright(t_max *max)
 {
-	max->img->pi[0].x += BLOCK_HEIGHT;
+	//max->img->pi[0].x += BLOCK_HEIGHT;
 	max->img->pli[0].x += BLOCK_HEIGHT;
 	max->img->pri[0].x += BLOCK_HEIGHT;
 	max->img->pui[0].x += BLOCK_HEIGHT;
@@ -99,7 +99,7 @@ static void	ft_domovepright(t_max *max)
 
 static void	ft_domovepleft(t_max *max)
 {
-	max->img->pi[0].x -= BLOCK_HEIGHT;
+	//max->img->pi[0].x -= BLOCK_HEIGHT;
 	max->img->pli[0].x -= BLOCK_HEIGHT;
 	max->img->pri[0].x -= BLOCK_HEIGHT;
 	max->img->pui[0].x -= BLOCK_HEIGHT;

@@ -7,3 +7,6 @@ alderaan:Alderaan:98551
 other:other coalition:98923
 cheater:cheat:360721
 winner:Mandalore:3062101
+Dolph:Alderaan:2897804
+test:Mandalore:393392
+alien:Xenomorph:529805

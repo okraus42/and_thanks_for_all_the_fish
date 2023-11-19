@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 13:19:56 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 13:39:55 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_soundeffect(char **ev, char *track)
 {
 	pid_t	pid;
 	char	*av[9];
+	int		fd;
 
 	pid = fork();
 	av[0] = "/usr/bin/ffplay";
@@ -29,8 +30,12 @@ int	ft_soundeffect(char **ev, char *track)
 	av[8] = NULL;
 	if (pid == 0)
 	{
+		fd = open("/dev/null", O_WRONLY);
+		dup2(fd, 1);
+		dup2(fd, 2);
+		close(fd);
 		execve(av[0], av, ev);
-		exit(0);
+		exit(9);
 	}
 	return (pid);
 }
@@ -39,6 +44,8 @@ int	ft_soundmusic(char **ev, char *track)
 {
 	pid_t	pid;
 	char	*av[9];
+	int		fd;
+
 
 	pid = fork();
 	av[0] = "/usr/bin/ffplay";
@@ -52,8 +59,12 @@ int	ft_soundmusic(char **ev, char *track)
 	av[8] = NULL;
 	if (pid == 0)
 	{
+		fd = open("/dev/null", O_WRONLY);
+		dup2(fd, 1);
+		dup2(fd, 2);
+		close(fd);
 		execve(av[0], av, ev);
-		exit(0);
+		exit(9);
 	}
 	return (pid);
 }
