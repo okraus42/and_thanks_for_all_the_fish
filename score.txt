@@ -10,3 +10,9 @@ winner:Mandalore:3062101
 Dolph:Alderaan:2897804
 test:Mandalore:393392
 alien:Xenomorph:529805
+afs:Naboo:97422
+cheater:Tatooine:292918
+cheater:Mandalore:811384
+cheater:Naboo:146964
+cheater:Naboo:688370
+cheater:QWERT:11399927

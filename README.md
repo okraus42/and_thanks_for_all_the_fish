@@ -35,7 +35,7 @@ to do in v 0.2:
 to do in v 0.3
 
 - Use actual time for animation and movement (90%)
-- add a randomly generated map as one level (20%)
+- add a randomly generated map as one level (95%)
 - add soundeffects and background music (80%)
 - orientation dependent tetures (80%)
 - better textures (0%)

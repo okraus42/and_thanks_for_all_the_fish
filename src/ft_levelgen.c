@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 13:32:35 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 15:38:15 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 17:04:42 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -527,15 +527,15 @@ static void	map_refill5(t_level *m)
 static void	maze_mod4(t_level *m)
 {
 	map_refill4(m);
-	map_print("refill4", m);
+	//map_print("refill4", m);
 	if (!(!m->ends || (!m->e && !m->l && !m->x && !m->t)))
 	{
 		m->d = m->ends << 8;
 		map_calculate4(m);
 	}
-	map_print("calculate4", m);
+	//map_print("calculate4", m);
 	map_loops4(m);
-	map_print("loops4", m);
+	//map_print("loops4", m);
 	map_refill5(m);
 }
 
@@ -803,7 +803,7 @@ static void	flooding_loop(t_level *m)
 
 static void	connect_rooms6(t_level *m)
 {
-	map_print("connecting rooms 6", m);
+	//map_print("connecting rooms 6", m);
 	m->i = 0;
 	m->d = -1;
 	while (m->i < m->s)
@@ -815,27 +815,27 @@ static void	connect_rooms6(t_level *m)
 		}
 		++m->i;
 	}
-	map_print("flooding 1", m);
+	//map_print("flooding 1", m);
 	start_flooding6(m);
-	map_print("started flooding", m);
+	//map_print("started flooding", m);
 	while (flood_check(m))
 	{
 		flooding_loop(m);
 	}
-	map_print("kept flooding222", m);
+	//map_print("kept flooding222", m);
 }
 
 static void	add_rooms6(t_level *m)
 {
-	map_print("add rooms", m);
+	//map_print("add rooms", m);
 	add_rooms_nooverlap6(m);
-	map_print("added nonoverlapping rooms", m);
+	//map_print("added nonoverlapping rooms", m);
 	add_rooms_overlap6(m);
-	map_print("added overlapping rooms", m);
+	//map_print("added overlapping rooms", m);
 	add_room_walls6(m);
-	map_print("added walls around rooms", m);
+	//map_print("added walls around rooms", m);
 	connect_rooms6(m);
-	map_print("connected rooms", m);
+	//map_print("connected rooms", m);
 }
 
 static void	floodfill_room(t_level *m, int i)
@@ -916,9 +916,9 @@ static void	refill_corridors3(t_level *m)
 static void	map_refill999(t_level *m)
 {
 	refill_corridors1(m);
-	map_print("refilled map 1", m);
+	//map_print("refilled map 1", m);
 	refill_corridors2(m);
-	map_print("refilled map 2", m);
+	//map_print("refilled map 2", m);
 	m->i = 0;
 	while (m->i < m->s)
 	{
@@ -926,7 +926,7 @@ static void	map_refill999(t_level *m)
 			floodfill_room(m, m->i);
 		++(m->i);
 	}
-	map_print("refilled map 3", m);
+	//map_print("refilled map 3", m);
 	refill_corridors3(m);
 }
 
@@ -1100,10 +1100,10 @@ static void	trim_deadends(t_level *m)
 {
 	map_refill999(m);
 	map_refill5(m);
-	map_print("refilled map", m);
+	//map_print("refilled map", m);
 	list_deadends(m);
 	process_deadends(m);
-	map_print("trimmed ends", m);
+	//map_print("trimmed ends", m);
 }
 
 static void	map_refill42(t_level *m)
@@ -1244,14 +1244,14 @@ static void	level_fill3(t_level *m)
 	}
 }
 
-static void	level_fill2(t_level *m)
+static void	level_fillenemy(t_level *m, int variant)
 {
 	int	x;
 	int	y;
 	int	e;
 
 	e = 0;
-	while (e < 2)
+	while (e < variant)
 	{
 		y = 0;
 		while (y < 18)
@@ -1259,7 +1259,7 @@ static void	level_fill2(t_level *m)
 			x = 0;
 			while (x < 32)
 			{
-				if (m->level[y][x] == '0' && x + y > 10 && e < 2)
+				if (m->level[y][x] == '0' && x + y > 10 && e < variant)
 				{
 					if (rand() % 64 == 1)
 					{
@@ -1316,7 +1316,58 @@ static void	level_print(t_level *m)
 	}
 }
 
-int	main(int ac, char *av[])
+static void	level_copy(t_map *map, t_level *m)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < 18)
+	{
+		x = 0;
+		while (x < 32)
+		{
+			map->m[y][x] = m->level[y][x];
+			++x;
+		}
+		++y;
+	}
+}
+
+void	ft_random_map(t_map *map, int variant)
+{
+	t_level	m;
+	int	i;
+
+	i = 0;
+	map->m = ft_calloc(sizeof(char *), 19);
+	while (i < 18)
+	{
+		map->m[i] = ft_calloc(sizeof(char), 33);
+		++i;
+	}
+		
+	map_init1(&m);
+	map_prefill2(&m);
+	//map_print("prefilled map", &m);
+	maze_gen2(&m);
+	maze_mod4(&m);
+	//map_print("indexed map", &m);
+	add_rooms6(&m);
+	//map_print("added and opened rooms", &m);
+	trim_deadends(&m);
+	//map_print("???trimmed deadeneds???", &m);
+	map_refill42(&m);
+	//map_print("FINAL MAP", &m);
+	level_fill(&m);
+	level_fill1(&m);
+	level_fillenemy(&m, variant);
+	level_fill3(&m);
+	level_copy(map, &m);
+	//level_print(&m);
+}
+
+int	not_main(int ac, char *av[])
 {
 	t_level	m;
 
@@ -1324,19 +1375,19 @@ int	main(int ac, char *av[])
 	{
 		map_init1(&m);
 		map_prefill2(&m);
-		map_print("prefilled map", &m);
+		//map_print("prefilled map", &m);
 		maze_gen2(&m);
 		maze_mod4(&m);
-		map_print("indexed map", &m);
+		//map_print("indexed map", &m);
 		add_rooms6(&m);
-		map_print("added and opened rooms", &m);
+		//map_print("added and opened rooms", &m);
 		trim_deadends(&m);
-		map_print("???trimmed deadeneds???", &m);
+		//map_print("???trimmed deadeneds???", &m);
 		map_refill42(&m);
-		map_print("FINAL MAP", &m);
+		//map_print("FINAL MAP", &m);
 		level_fill(&m);
 		level_fill1(&m);
-		level_fill2(&m);
+		level_fillenemy(&m, 2);
 		level_fill3(&m);
 		level_print(&m);
 		return (0);
@@ -1350,14 +1401,14 @@ int	main(int ac, char *av[])
 		|| m.cw < 0 || m.dr < 0)
 		return (4);
 	map_prefill2(&m);
-	map_print("prefilled map", &m);
+	//map_print("prefilled map", &m);
 	maze_gen2(&m);
 	maze_mod4(&m);
-	map_print("indexed map", &m);
+	//map_print("indexed map", &m);
 	add_rooms6(&m);
-	map_print("added and opened rooms", &m);
+	//map_print("added and opened rooms", &m);
 	trim_deadends(&m);
-	map_print("???trimmed deadeneds???", &m);
+	//map_print("???trimmed deadeneds???", &m);
 	map_refill42(&m);
 	map_print("FINAL MAP", &m);
 	return (0);

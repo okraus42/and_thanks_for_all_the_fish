@@ -6,7 +6,7 @@
 #    By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 15:40:17 by okraus            #+#    #+#              #
-#    Updated: 2023/11/11 14:50:02 by okraus           ###   ########.fr        #
+#    Updated: 2023/11/19 16:46:09 by okraus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRC_S		=	ft_and_thanks_for_all_the_fish \
 				ft_time \
 				ft_sound \
 				ft_player \
+				ft_levelgen \
 				ft_collectible \
 				ft_enemy \
 				ft_checkenemy \

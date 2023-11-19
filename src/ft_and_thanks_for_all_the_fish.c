@@ -6,42 +6,52 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 11:29:02 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 17:03:37 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/and_thanks_for_all_the_fish.h"
 
-void	ft_fill_map(t_map *map, char *mapfile)
+void	ft_fill_map(t_map *map, char *mapfile, int level)
 {
 	int		fd;
 	char	*gamemap;
 	char	*line;
 
-	fd = open(mapfile, O_RDONLY);
-	if (fd < 0)
-		exit(-1);
-	line = get_next_line(fd);
-	gamemap = ft_strdup("");
-	map->w = ft_strlen(line) - 1;
-	while (line)
+	if (!mapfile)
 	{
-		gamemap = ft_strjoin_freeleft(gamemap, line);
-		free(line);
-		line = get_next_line(fd);
-		map->h++;
+		map->w = 32;
+		map->h = 18;
+		ft_random_map(map, level);
+		ft_test_map(map);
 	}
-	free(line);
-	map->m = ft_split(gamemap, '\n');
-	free(gamemap);
-	ft_test_map(map);
+	else
+	{
+		fd = open(mapfile, O_RDONLY);
+		if (fd < 0)
+			exit(-1);
+		line = get_next_line(fd);
+		gamemap = ft_strdup("");
+		map->w = ft_strlen(line) - 1;
+		while (line)
+		{
+			gamemap = ft_strjoin_freeleft(gamemap, line);
+			free(line);
+			line = get_next_line(fd);
+			map->h++;
+		}
+		free(line);
+		map->m = ft_split(gamemap, '\n');
+		free(gamemap);
+		ft_test_map(map);
+	}
 }
 
 void	ft_and_thanks_for_all_the_fish2(t_max *max, char *mapfile)
 {
 	ft_init_map(max->map);
 	ft_init_keys(max->key);
-	ft_fill_map(max->map, mapfile);
+	ft_fill_map(max->map, mapfile, max->level);
 	ft_update_map(max->map);
 }
 
@@ -404,20 +414,64 @@ int	main(int argc, char *argv[], char *env[])
 		fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
 		if (fd < 0)
 			return (1);
+		max.level = 0;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
 		max.death++;
-			while (max.death && max.lives && !max.exit)
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map2.ber", &max);
 		max.death++;
 		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map3.ber", &max);
+		max.death++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
 		max.death++;
 		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
 		ft_printf("%1.*^*CFinal score: %i%C\n\n\n", 0xFFFFFF, 0x000088, max.score);
 		ft_dprintf(fd, "%s:%s:%i\n", max.player_name, max.player_coalition, max.score);
 		free(max.player_name);

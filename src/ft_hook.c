@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 13:43:04 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 17:07:36 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_game(t_max *max)
 	}
 	max->key->time++;
 	max->score -= max->key->mspf;
-	if (max->key->mt && max->key->mt < 256)
+	if (max->key->mt && max->key->mt < 128)
 	{
 		max->key->t++;
 		max->key->mt += max->key->mspf;

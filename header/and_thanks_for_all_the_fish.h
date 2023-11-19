@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 13:30:43 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/19 16:58:14 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,6 +172,7 @@ typedef struct s_max
 	char		*player_name;
 	char		*player_coalition;
 	int			death;
+	int			level;
 	int			lives;
 	int			score;
 	int			exit;
@@ -237,6 +238,8 @@ void	ft_check_map(t_map *map);
 void	ft_check_flood(t_map *map);
 void	ft_print_map(t_map *map);
 
+//	ft_levelgen.c
+void	ft_random_map(t_map *map, int variant);
 
 //	ft_time
 time_t	ft_get_time_in_ms(void);
