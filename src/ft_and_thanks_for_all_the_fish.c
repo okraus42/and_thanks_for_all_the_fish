@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 17:03:37 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/20 17:01:49 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -415,10 +415,6 @@ int	main(int argc, char *argv[], char *env[])
 		if (fd < 0)
 			return (1);
 		max.level = 0;
-		while (max.death && max.lives && !max.exit)
-			ft_and_thanks_for_all_the_fish(NULL, &max);
-		max.death++;
-		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
 		max.death++;

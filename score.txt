@@ -20,3 +20,5 @@ tester:Naboo:100420221
 valgrind:VALGRIND:2085667
 aqgrh:Alderaan:95702
 test:Tatooine:99188
+test:Mandalore:2135887
+test:Mandalore:35788400
