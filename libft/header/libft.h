@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:43:29 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/18 16:43:37 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/20 16:11:49 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@
 # define BASE_HEX	"0123456789ABCDEF"
 
 //	MACROS - forbidden?
+
+typedef long long	t_fix64;
 
 //# define ABS(Value) (Value < 0 ? -Value : Value)
 
@@ -539,6 +541,7 @@ char			*ft_fixtoa(long long n, unsigned int fixbits);
 char			*ft_fixstr(long long n, int declen, char *whole, char *decimal);
 int				ft_process_prcfix(t_pf_info *data);
 int				ft_fix_prec(t_pf_info *data);
+t_fix64			ft_ftofix(double f, unsigned int bits);
 
 // void			ft_putstuff(va_list arg, const char *s, int *q, t_output *t);
 // void			ft_writestuff(int fd, const char *s, int *q);

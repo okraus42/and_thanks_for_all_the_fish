@@ -16,3 +16,7 @@ cheater:Mandalore:811384
 cheater:Naboo:146964
 cheater:Naboo:688370
 cheater:QWERT:11399927
+tester:Naboo:100420221
+valgrind:VALGRIND:2085667
+aqgrh:Alderaan:95702
+test:Tatooine:99188

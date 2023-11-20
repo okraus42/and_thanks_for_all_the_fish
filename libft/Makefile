@@ -6,7 +6,7 @@
 #    By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 13:43:18 by okraus            #+#    #+#              #
-#    Updated: 2023/11/18 16:42:10 by okraus           ###   ########.fr        #
+#    Updated: 2023/11/20 16:01:15 by okraus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,6 +132,7 @@ SRC_PF		= 	ft_printf.c \
 				ft_fixprec.c \
 				ft_fixtoa.c \
 				ft_fixtoa2.c \
+				ft_ftofix.c \
 				ft_init0.c \
 				ft_init1.c \
 				ft_init2.c \

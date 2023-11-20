@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:40:45 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/18 16:43:20 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/20 16:00:13 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*ft_fixtoa(long long n, unsigned int fixbits)
 	int					declen;
 
 	if (!fixbits || fixbits > 16)
-		fixbits = 8;
+		fixbits = 16;
 	declen = ft_get_declen(fixbits);
 	if (declen < 0)
 		return (NULL);
