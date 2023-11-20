@@ -22,3 +22,9 @@ aqgrh:Alderaan:95702
 test:Tatooine:99188
 test:Mandalore:2135887
 test:Mandalore:35788400
+hello:Alderaan:4034898
+one:Tatooine:1711498
+cheater:Alderaan:879375
+veronika:Alderaan:761157
+veronika:Alderaan:850966
+ondra:Mandalore:17807174

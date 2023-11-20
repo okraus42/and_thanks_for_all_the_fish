@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/20 17:01:49 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/20 18:43:59 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,7 +175,7 @@ void	ft_max_init(t_max *max)
 	char	*coal;
 
 	max->score = 100000;
-	max->time = 60000;
+	max->time = 30000;
 	max->exit = 0;
 	max->death = 1;
 	max->lives = 1;
@@ -418,6 +418,7 @@ int	main(int argc, char *argv[], char *env[])
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map1.ber", &max);
 		max.death++;
+		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
@@ -425,6 +426,7 @@ int	main(int argc, char *argv[], char *env[])
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map2.ber", &max);
 		max.death++;
+		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
@@ -432,15 +434,31 @@ int	main(int argc, char *argv[], char *env[])
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map3.ber", &max);
 		max.death++;
+		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
 		max.death++;
+		max.level++;
+		max.level++;
+		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
+		max.level++;
+		max.level++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		max.level++;
 		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
@@ -448,21 +466,31 @@ int	main(int argc, char *argv[], char *env[])
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
 		max.level++;
-		while (max.death && max.lives && !max.exit)
-			ft_and_thanks_for_all_the_fish(NULL, &max);
-		max.death++;
+		max.level++;
 		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
 		max.level++;
-		while (max.death && max.lives && !max.exit)
-			ft_and_thanks_for_all_the_fish(NULL, &max);
-		max.death++;
+		max.level++;
 		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
+		max.level++;
+		max.level++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		max.level++;
+		max.level++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
+		max.level++;
+		max.level++;
 		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
