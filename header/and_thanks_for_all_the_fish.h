@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/22 19:18:58 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/22 19:20:15 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@
 #define NABOO "Naboo"
 #define ALDERAAN "Alderaan"
 
-//	SOUND FILES
+//	SOUND FILES (John)
+
 #define MOVE "sounds/move2.mp3"
 #define COLLECT "sounds/collect1.mp3"
 #define DEATH1 "sounds/death1.mp3"
@@ -54,6 +55,8 @@
 #define EXITUNLOCK "sounds/exitunlock.mp3"
 #define GAMEOVER "sounds/gameover.mp3"
 #define CHIPTUNE1 "sounds/chiptune.wav"
+
+//	IMAGE FILES (Camilo)
 
 // STRUCTURES
 // AND_THANKS_FOR_ALL_THE_FISH structures
