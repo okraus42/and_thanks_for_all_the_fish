@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 13:39:55 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/22 19:51:16 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_soundeffect(char **ev, char *track)
 int	ft_soundmusic(char **ev, char *track)
 {
 	pid_t	pid;
-	char	*av[9];
+	char	*av[11];
 	int		fd;
 
 
@@ -56,7 +56,9 @@ int	ft_soundmusic(char **ev, char *track)
 	av[5] = "-loop";
 	av[6] = "0";
 	av[7] = track;
-	av[8] = NULL;
+	av[8] = "-af";
+	av[9] = "volume=0.3";
+	av[10] = NULL;
 	if (pid == 0)
 	{
 		fd = open("/dev/null", O_WRONLY);

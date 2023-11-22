@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/22 19:20:15 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/22 19:43:35 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@
 
 //	SOUND FILES (John)
 
-#define MOVE "sounds/move2.mp3"
-#define COLLECT "sounds/collect1.mp3"
-#define DEATH1 "sounds/death1.mp3"
-#define DEATH2 "sounds/death2.mp3"
+#define MOVE "sounds/move2.wav"
+#define COLLECT "sounds/collect1.wav"
+#define DEATH1 "sounds/death1.wav"
+#define DEATH2 "sounds/death2.wav"
 #define LEVELWIN "sounds/levelwin.mp3"
 #define GAMEWIN "sounds/gamewin.mp3"	//unused
-#define EXITUNLOCK "sounds/exitunlock.mp3"
-#define GAMEOVER "sounds/gameover.mp3"
+#define EXITUNLOCK "sounds/exitunlock.wav"
+#define GAMEOVER "sounds/gameover.wav"
 #define CHIPTUNE1 "sounds/chiptune.wav"
 
 //	IMAGE FILES (Camilo)
