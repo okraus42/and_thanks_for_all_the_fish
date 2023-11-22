@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 16:58:14 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/22 19:18:58 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@
 #define GAMEWIN "sounds/gamewin.mp3"	//unused
 #define EXITUNLOCK "sounds/exitunlock.mp3"
 #define GAMEOVER "sounds/gameover.mp3"
-#define CHIPTUNE1 "sounds/chiptune.mp3"	//unused
+#define CHIPTUNE1 "sounds/chiptune.wav"
 
 // STRUCTURES
 // AND_THANKS_FOR_ALL_THE_FISH structures

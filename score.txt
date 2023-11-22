@@ -28,3 +28,6 @@ cheater:Alderaan:879375
 veronika:Alderaan:761157
 veronika:Alderaan:850966
 ondra:Mandalore:17807174
+agdsg:Tatooine:10565067
+fadf:Naboo:83207
+arggg:Tatooine:478124
