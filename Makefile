@@ -6,7 +6,7 @@
 #    By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 15:40:17 by okraus            #+#    #+#              #
-#    Updated: 2023/11/19 16:46:09 by okraus           ###   ########.fr        #
+#    Updated: 2023/11/23 09:37:02 by okraus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ endif
 NAME		=	and_thanks_for_all_the_fish
 LIBFT_F		=	libft/
 LIBFT		=	libft.a
+HEADER		=	header/and_thanks_for_all_the_fish.h
 LIBMLX		=	./.MLX42
 LIBS		=	$(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 LHEADERS	=	-I ./include -I $(LIBMLX)/include
@@ -100,7 +101,7 @@ OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_S)))
 
 # RULES
 
-all:			announce libmlx $(LIBFT) $(NAME)
+all:			announce libmlx $(LIBFT) $(NAME) $(HEADER)
 				@echo "$(RETURN)$(RETURN)$(GREEN)AND THANKS FOR ALL THE FISH compiled! $(NRM_FORMAT)"
 				@$(PRINT2)
 				@$(PRINT1)
@@ -127,7 +128,7 @@ libmlx:
 
 # COMPILATION
 
-$(OBJ_DIR)%.o:	$(SRC_DIR)%.c
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.c $(HEADER)
 				@mkdir -p $(OBJ_DIR)
 				@$(SLEEP)
 				@echo "$(RETURN)$(RETURN)$(YELLOW)Compiling AND THANKS FOR ALL THE FISH: $< $(NRM_FORMAT)"

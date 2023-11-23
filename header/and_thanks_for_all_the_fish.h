@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/22 19:43:35 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/23 09:36:03 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
 #define COLLECT "sounds/collect1.wav"
 #define DEATH1 "sounds/death1.wav"
 #define DEATH2 "sounds/death2.wav"
-#define LEVELWIN "sounds/levelwin.mp3"
+#define LEVELWIN "sounds/exitunlock.wav" //levelwin.mp3
 #define GAMEWIN "sounds/gamewin.mp3"	//unused
 #define EXITUNLOCK "sounds/exitunlock.wav"
 #define GAMEOVER "sounds/gameover.wav"

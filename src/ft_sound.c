@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/22 19:51:16 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/23 09:25:42 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_soundmusic(char **ev, char *track)
 	av[6] = "0";
 	av[7] = track;
 	av[8] = "-af";
-	av[9] = "volume=0.3";
+	av[9] = "volume=0.5";
 	av[10] = NULL;
 	if (pid == 0)
 	{
