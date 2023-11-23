@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/23 09:36:03 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/23 10:00:00 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,8 +232,8 @@ void	ft_init_keys(t_controls *key);
 void	ft_update_map(t_map *map);
 
 //	ft_sound
-int		ft_soundeffect(char **ev, char *track);
-int		ft_soundmusic(char **ev, char *track);
+int		ft_soundeffect(char **ev, char *track, int vol);
+int		ft_soundmusic(char **ev, char *track, int vol);
 
 //	ft_test
 void	ft_test_map(t_map *map);

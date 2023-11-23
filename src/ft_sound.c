@@ -6,18 +6,21 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/23 09:25:42 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/23 10:05:16 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/and_thanks_for_all_the_fish.h"
 
-int	ft_soundeffect(char **ev, char *track)
+int	ft_soundeffect(char **ev, char *track, int vol)
 {
 	pid_t	pid;
-	char	*av[9];
+	char	*av[11];
 	int		fd;
+	char	volume[50];
 
+	ft_snprintf(volume, 40, "volume=%.2^8P", vol);
+	//ft_printf("%s %s\n", track, volume); 
 	pid = fork();
 	av[0] = "/usr/bin/ffplay";
 	av[1] = "-v";
@@ -28,6 +31,9 @@ int	ft_soundeffect(char **ev, char *track)
 	av[6] = "1";
 	av[7] = track;
 	av[8] = NULL;
+	av[8] = "-af";
+	av[9] = volume;
+	av[10] = NULL;
 	if (pid == 0)
 	{
 		fd = open("/dev/null", O_WRONLY);
@@ -40,13 +46,15 @@ int	ft_soundeffect(char **ev, char *track)
 	return (pid);
 }
 	
-int	ft_soundmusic(char **ev, char *track)
+int	ft_soundmusic(char **ev, char *track, int vol)
 {
 	pid_t	pid;
 	char	*av[11];
 	int		fd;
+	char	volume[50];
 
-
+	ft_snprintf(volume, 40, "volume=%.2^8P", vol);
+	//ft_printf("%s %s\n", track, volume); 
 	pid = fork();
 	av[0] = "/usr/bin/ffplay";
 	av[1] = "-v";
@@ -57,7 +65,7 @@ int	ft_soundmusic(char **ev, char *track)
 	av[6] = "0";
 	av[7] = track;
 	av[8] = "-af";
-	av[9] = "volume=0.5";
+	av[9] = volume;
 	av[10] = NULL;
 	if (pid == 0)
 	{

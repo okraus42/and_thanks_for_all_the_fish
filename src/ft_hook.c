@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/23 09:29:25 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/23 10:02:32 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	ft_putscore(t_max *max)
 	max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);
 	if (max->time <= 0)
 	{
-		ft_soundeffect(max->ev, GAMEOVER);
+		ft_soundeffect(max->ev, GAMEOVER, 256);
 		ft_printf("%14.*^*CYou have run out of time :/%C\n", 0xFFFFFF, 0x880000);
 		ft_printf("%25.*^*CCurrent score: %i%C\n", 0xFFFFFF, 0x888800, max->score);
 		max->map->p = 0; 
@@ -108,7 +108,7 @@ void	ft_hook(void *param)
 	max = param;
 	if (mlx_is_key_down(max->mlx, MLX_KEY_ESCAPE))
 	{
-		ft_soundeffect(max->ev, GAMEOVER);
+		ft_soundeffect(max->ev, GAMEOVER, 256);
 		ft_printf("%14.*^*CYou have quit the game:/%0C\n", 0xFFFFFF, 0x880000);
 		ft_printf("%25.*^*CCurrent score: %i%C\n", 0xFFFFFF, 0x888800, max->score);
 		max->exit = 1;

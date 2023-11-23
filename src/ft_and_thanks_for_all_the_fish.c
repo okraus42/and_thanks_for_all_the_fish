@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/20 18:43:59 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/23 09:59:41 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -408,7 +408,7 @@ int	main(int argc, char *argv[], char *env[])
 	max.ac = argc;
 	max.av = argv;
 	max.ev = env;
-	max.pid = ft_soundmusic(max.ev, CHIPTUNE1);
+	max.pid = ft_soundmusic(max.ev, CHIPTUNE1, 128);
 	while (!max.exit)
 	{
 		fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);

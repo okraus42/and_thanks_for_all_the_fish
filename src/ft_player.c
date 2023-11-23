@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:05:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 13:31:59 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/23 10:02:27 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_putscore(t_max *max)
 {
 	max->map->steps++;
 	max->score += 500;
-	ft_soundeffect(max->ev, MOVE);
+	ft_soundeffect(max->ev, MOVE, 128);
 }
 
 static void	ft_domovepup(t_max *max)

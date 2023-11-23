@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 12:47:19 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 11:25:40 by okraus           ###   ########.fr       */
+/*   Updated: 2023/11/23 10:02:24 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_check_player(t_max *max, int i)
 		max->lives--;
 		max->score -= 25000;
 		if (max->lives)
-			ft_soundeffect(max->ev, DEATH2);
+			ft_soundeffect(max->ev, DEATH2, 256);
 		else
-			ft_soundeffect(max->ev, GAMEOVER);
+			ft_soundeffect(max->ev, GAMEOVER, 256);
 		ft_printf("%14.*^*CEnemy got you and you are now dead:(%C\n", 0xFFFFFF, 0x880000);
 		ft_printf("%25.*^*CCurrent score: %i%C\n", 0xFFFFFF, 0x888800, max->score);
 		//mlx_close_window(max->mlx);

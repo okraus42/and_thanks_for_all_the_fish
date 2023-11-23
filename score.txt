@@ -48,3 +48,6 @@ testttt:Tatooine:737537
 agd:Naboo:90994
 fdbhdhf:Mandalore:419456
 agd:Tatooine:387332
+gada:Tatooine:3781538
+gsh:Tatooine:98510
+shf:Mandalore:3812162
