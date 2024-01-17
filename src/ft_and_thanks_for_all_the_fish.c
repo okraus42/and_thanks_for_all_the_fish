@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/23 09:59:41 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/17 17:54:12 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,13 @@ void	ft_and_thanks_for_all_the_fish3(t_max *max)
 	max->key->mt = 0;
 	max->key->switch_collect = 0;
 	max->key->mtimenow = ft_get_time_in_ms();
-	max->map->s = ft_itoa(max->score);
-	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
-	max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);
-	free(max->map->s);
-	max->map->s = ft_itoa(max->time);
-	max->map->s = ft_strjoin_freeright("Time left: ", max->map->s);
+	// max->map->s = ft_itoa(max->score);
+	// max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
+	// max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);
+	// free(max->map->s);
+	// max->map->s = ft_itoa(max->time);
+	// max->map->s = ft_strjoin_freeright("Time left: ", max->map->s);
+	max->map->s[0] = 0;
 	max->tmp = mlx_put_string(max->mlx, max->map->s, 250, 5);
 	mlx_delete_image(max->mlx, max->tmp);
 }
@@ -219,64 +220,66 @@ void	ft_max_init(t_max *max)
 	max->player_name = str;
 	if (!ft_strncmp(max->player_name, "exit", 5))
 		max->exit = 1;
-	str = NULL;
-	yn = NULL;
-	while (!max->exit && !str)
-	{
-		ft_printf("\nChoose your coalition: \n1 - Alderaan   2 - Naboo   3 - Tatooine   4 - Mandalore   5 - other\n");
-		if (coal)
-			free(coal);
-		coal = ft_printmove(get_next_line(0));
-		if (!coal)
-		{
-			max->exit = 1;
-			break;
-		}
-		if (coal[0] == '1')
-			str = ft_stringcopy(ALDERAAN);
-		else if (coal[0] == '2')
-			str = ft_stringcopy(NABOO);
-		else if (coal[0] == '3')
-			str = ft_stringcopy(TATOOINE);
-		else if (coal[0] == '4')
-			str = ft_stringcopy(MANDALORE);
-		else if (coal[0] == '5')
-		{
-			ft_printf("\nType the name of your coalition\n");
-			str = ft_printmove(get_next_line(0));
-			if (!str  || ft_strlen(str) > 15 || ft_strlen(str) < 3 || ft_strchr(str, ':'))
-			{
-				ft_dprintf(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
-				free(str);
-				str = NULL;
-			}
-			while (str && ft_strncmp(str, "exit", 5))
-			{
-				ft_printf("\nIs your coalition: %s?\nPress 'y' to continue\n", str);
-				yn = get_next_line(0);
-				if (yn && (yn[0] == 'y' || yn[0] == 'Y'))
-				{
-					free(yn);
-					break;
-				}
-				else
-				{
-					if (yn)
-						free(yn);
-					yn = NULL;
-					if (str)
-						free(str);
-					str = NULL;
-				}
-			}
-		}
-		else
-			continue;
+	(void)coal;
+	// str = NULL;
+	// yn = NULL;
+	// while (!max->exit && !str)
+	// {
+	// 	ft_printf("\nChoose your coalition: \n1 - Alderaan   2 - Naboo   3 - Tatooine   4 - Mandalore   5 - other\n");
+	// 	if (coal)
+	// 		free(coal);
+	// 	coal = ft_printmove(get_next_line(0));
+	// 	if (!coal)
+	// 	{
+	// 		max->exit = 1;
+	// 		break;
+	// 	}
+	// 	if (coal[0] == '1')
+	// 		str = ft_stringcopy(ALDERAAN);
+	// 	else if (coal[0] == '2')
+	// 		str = ft_stringcopy(NABOO);
+	// 	else if (coal[0] == '3')
+	// 		str = ft_stringcopy(TATOOINE);
+	// 	else if (coal[0] == '4')
+	// 		str = ft_stringcopy(MANDALORE);
+	// 	else if (coal[0] == '5')
+	// 	{
+	// 		ft_printf("\nType the name of your coalition\n");
+	// 		str = ft_printmove(get_next_line(0));
+	// 		if (!str  || ft_strlen(str) > 15 || ft_strlen(str) < 3 || ft_strchr(str, ':'))
+	// 		{
+	// 			ft_dprintf(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
+	// 			free(str);
+	// 			str = NULL;
+	// 		}
+	// 		while (str && ft_strncmp(str, "exit", 5))
+	// 		{
+	// 			ft_printf("\nIs your coalition: %s?\nPress 'y' to continue\n", str);
+	// 			yn = get_next_line(0);
+	// 			if (yn && (yn[0] == 'y' || yn[0] == 'Y'))
+	// 			{
+	// 				free(yn);
+	// 				break;
+	// 			}
+	// 			else
+	// 			{
+	// 				if (yn)
+	// 					free(yn);
+	// 				yn = NULL;
+	// 				if (str)
+	// 					free(str);
+	// 				str = NULL;
+	// 			}
+	// 		}
+	// 	}
+	// 	else
+	// 		continue;
 		
-	}
-	if (coal)
-		free(coal);
-	max->player_coalition = str;
+	// }
+	// if (coal)
+	// 	free(coal);
+	// max->player_coalition = str;
+	max->player_coalition = ft_strdup("");
 }
 
 void	ft_print_score(t_list *lst)
@@ -285,18 +288,28 @@ void	ft_print_score(t_list *lst)
 	int		i;
 
 	i = 1;
-	ft_printf("%1.*^*CPosition   |                Name   |           Coalition   |      Score  %C\n", 0xFFFFFF, 0x000000);
+	ft_printf("%1.*^*CPosition   |                Name   |           .........   |      Score  %C\n", 0xFFFFFF, 0x000000);
 	while (lst && i <= 25)
 	{
 		tmp = lst->content;
-		if (!ft_strncmp(tmp->coalition, NABOO, 10))
-			ft_printf("%1.*^*C", 0xFFFFFF, 0x678DA4);
-		else if (!ft_strncmp(tmp->coalition, ALDERAAN, 10))
-			ft_printf("%1.*^*C", 0xFFFFFF, 0xAD8F65);
-		else if (!ft_strncmp(tmp->coalition, TATOOINE, 10))
-			ft_printf("%1.*^*C", 0xFFFFFF, 0xE08F4C);
-		else if (!ft_strncmp(tmp->coalition, MANDALORE, 10))
-			ft_printf("%1.*^*C", 0xFFFFFF, 0x9C0505);
+		// if (!ft_strncmp(tmp->coalition, NABOO, 10))
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x678DA4);
+		// else if (!ft_strncmp(tmp->coalition, ALDERAAN, 10))
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0xAD8F65);
+		// else if (!ft_strncmp(tmp->coalition, TATOOINE, 10))
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0xE08F4C);
+		// else if (!ft_strncmp(tmp->coalition, MANDALORE, 10))
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x9C0505);
+		// else
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x008822);
+		if (!(i % 4))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x008080);
+		else if (!(i % 4 - 1))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x191970);
+		else if (!(i % 4 - 2))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x2E8B57);
+		else if (!(i % 4 - 3))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0X4B0082);
 		else
 			ft_printf("%1.*^*C", 0xFFFFFF, 0x008822);
 		ft_printf("     %3i   |", i);
@@ -408,7 +421,7 @@ int	main(int argc, char *argv[], char *env[])
 	max.ac = argc;
 	max.av = argv;
 	max.ev = env;
-	max.pid = ft_soundmusic(max.ev, CHIPTUNE1, 128);
+	max.pid = ft_soundmusic(max.ev, CHIPTUNE1, 64);
 	while (!max.exit)
 	{
 		fd = open("score.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);

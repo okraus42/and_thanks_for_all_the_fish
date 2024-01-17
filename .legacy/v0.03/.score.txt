@@ -1,0 +1,6 @@
+tester:coalition:5000
+Darth Maul:Mandalore:30000
+Jar Jar Binks:Naboo:10000
+Princess Leia Organa:Alderaan:20000
+Anakin Skywalker:Tatooine:40000
+Haxor:Anonymous:60000

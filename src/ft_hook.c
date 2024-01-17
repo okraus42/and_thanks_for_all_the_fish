@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/23 10:02:32 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/17 17:29:03 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 
 static void	ft_putscore(t_max *max)
 {
-	char *str;
+	//char *str;
 
 	max->time -= max->key->mspf;
-	free (max->map->s);
+	//free (max->map->s);
 	if (!max->key->mspf)
 		max->key->mspf = 1000;
-	max->map->s = ft_itoa(1000 / max->key->mspf);
-	max->map->s = ft_strjoin_freeright("        FPS: ", max->map->s);
-	str = ft_itoa(max->time / 1000);
-	max->map->s = ft_strjoin_freeright(str, max->map->s);
-	free(str);
-	max->map->s = ft_strjoin_freeright("        Time left: ", max->map->s);
-	str = ft_itoa(max->score);
-	max->map->s = ft_strjoin_freeright(str, max->map->s);
-	free(str);
-	max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
+	// max->map->s = ft_itoa(1000 / max->key->mspf);
+	// max->map->s = ft_strjoin_freeright("        FPS: ", max->map->s);
+	// str = ft_itoa(max->time / 1000);
+	// max->map->s = ft_strjoin_freeright(str, max->map->s);
+	// free(str);
+	// max->map->s = ft_strjoin_freeright("        Time left: ", max->map->s);
+	// str = ft_itoa(max->score);
+	// max->map->s = ft_strjoin_freeright(str, max->map->s);
+	// free(str);
+	// max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
+	ft_snprintf(max->map->s, 255, "Score: %-10i Time left: %-4i FPS: %3i Player: %-20s Level: %2i",
+		max->score, max->time / 1000, 1000 / max->key->mspf, max->player_name, max->level);
 	mlx_delete_image(max->mlx, max->str);
 	max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);
 	if (max->time <= 0)

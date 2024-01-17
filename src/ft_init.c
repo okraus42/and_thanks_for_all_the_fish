@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:06:00 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 15:34:00 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/17 10:41:15 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_init_key(t_controls *key, int a)
 void	ft_init_map(t_map *map)
 {
 	map->m = NULL;
-	map->s = NULL;
+	//map->s = NULL;
 	map->w = 0;
 	map->h = 0;
 	map->p = 0;

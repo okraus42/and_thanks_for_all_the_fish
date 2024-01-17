@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/23 15:50:14 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/17 10:35:39 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ typedef enum e_orientation
 typedef struct s_map
 {
 	char	**m;
-	char	*s;
+	char	s[256];
 	int		w;
 	int		h;
 	int		p;

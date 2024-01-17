@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:43:29 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/20 16:11:49 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/17 17:50:33 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,20 @@
 # include <stdint.h>
 # include <stdarg.h>
 # include <limits.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <sys/time.h>
 
 // DEFINITIONS
+
+//	Useful Macros
+# define ABS(a) (((a) > 0) * (a) - ((a) < 0) * (a))
+# define PN(a) (((a) > 0) - ((a) < 0))
+# define MAX(a, b) (((a) > (b)) * (a) + ((a) <= (b)) * (b))
+# define MIN(a, b) (((a) < (b)) * (a) + ((a) >= (b)) * (b))
+// # define PERCENTIL(a, b, c, d) (MIN(a, b) + (MAX(a, b) - MIN(a, b)) * (c) / (d))
+# define PERCENTIL(a, b, c, d) ((a) + ((b) - (a)) * (c) / (d))
+
 // GET_NEXT_LINE definitions
 
 # ifndef BUFFER_SIZE
@@ -278,7 +290,6 @@ typedef union u_value
 	char				*s;
 	void				*p;
 }	t_value;
-
 // STRUCTURES
 // LIBFT structure
 
@@ -324,6 +335,7 @@ typedef struct s_output
 	char	type;
 	int		base;
 }			t_output;
+
 
 // EXTRA structure
 
@@ -402,11 +414,24 @@ t_dlist			*ft_dlstnew(void *content);
 // string stuff
 char			*ft_stringcopy(char const *str);
 
+// time
+time_t			ft_get_time_in_ms(void);
+
 // evil malloc & calloc
 void			*ft_evil_malloc(size_t size);
 void			*ft_evil_malloc_plus(size_t size, size_t padding);
 void			*ft_evil_calloc(size_t nmemb, size_t size);
 void			*ft_evil_calloc_plus(size_t nmemb, size_t size, size_t padding);
+
+//ctype
+int				ft_isblank(int c);
+int				ft_iscntrl(int c);
+int				ft_isgraph(int c);
+int				ft_islower(int c);
+int				ft_ispunct(int c);
+int				ft_isspace(int c);
+int				ft_isupper(int c);
+int				ft_isxdigit(int c);
 
 // math stuff
 int				ft_abs(int n);
@@ -435,6 +460,9 @@ int				ft_splitlen(char **split);
 void			*ft_print_memory(void *addr, int fd, unsigned int size);
 void			*ft_print_memory_plus(void *addr, int fd, unsigned int size);
 
+// reading file
+char			**ft_readfile(char *path, int size);
+
 // printing array of strings
 void			ft_put_strarray(char **arr);
 
@@ -447,6 +475,8 @@ char			*get_next_line(int fd);
 int				ft_find_char(char *s, char c);
 int				ft_strlen_gnl(char *s);
 char			*ft_strjoin_gnl(char *s1, char *s2);
+
+// FT_PRINTF prototypes
 
 // FT_PRINTF prototypes
 

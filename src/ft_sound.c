@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:57 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/23 10:05:16 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/17 17:53:18 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_soundeffect(char **ev, char *track, int vol)
 	char	volume[50];
 
 	ft_snprintf(volume, 40, "volume=%.2^8P", vol);
-	//ft_printf("%s %s\n", track, volume); 
+	//ft_printf("TRACK VOLUME %s %s %i\n", track, volume, vol); 
 	pid = fork();
 	av[0] = "/usr/bin/ffplay";
 	av[1] = "-v";
@@ -30,10 +30,10 @@ int	ft_soundeffect(char **ev, char *track, int vol)
 	av[5] = "-loop";
 	av[6] = "1";
 	av[7] = track;
-	av[8] = NULL;
 	av[8] = "-af";
 	av[9] = volume;
 	av[10] = NULL;
+	//ft_put_split(av);
 	if (pid == 0)
 	{
 		fd = open("/dev/null", O_WRONLY);

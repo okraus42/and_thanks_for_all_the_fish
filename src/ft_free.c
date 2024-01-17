@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 13:54:12 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/11 16:16:17 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/17 10:41:36 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_free(t_max *max)
 		free(max->map->ey);
 		max->map->ey = NULL;
 	}
-	free(max->map->s);
+	//free(max->map->s);
 }
 
 void	ft_exit(t_map *map, int n)
