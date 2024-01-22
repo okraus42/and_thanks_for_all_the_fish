@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2024/01/17 10:35:39 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/22 13:13:51 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,7 @@ typedef struct s_highscore
 	char	*coalition;
 	int		index;
 	int		score;
+	int		level;
 }	t_hs;
 
 typedef struct s_control
@@ -176,6 +177,7 @@ typedef struct s_max
 	char		*player_coalition;
 	int			death;
 	int			level;
+	int			flevel;
 	int			lives;
 	int			score;
 	int			exit;

@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2024/01/22 12:25:50 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/22 13:26:20 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ static void	ft_putscore(t_max *max)
 	// max->map->s = ft_strjoin_freeright(str, max->map->s);
 	// free(str);
 	// max->map->s = ft_strjoin_freeright("Score: ", max->map->s);
-	ft_snprintf(max->map->s, 255, "Score: %-10i Time left: %-4i FPS: %3i Player: %-20s Level: %2i",
-		max->score, max->time / 1000, 1000 / max->key->mspf, max->player_name, max->level);
+	ft_snprintf(max->map->s, 255, "Level: %2i Score: %8i Time left: %3i  FPS: %3i Player: %-20s",
+		max->level, max->score, max->time / 1000, 1000 / max->key->mspf, max->player_name);
 	mlx_delete_image(max->mlx, max->str);
 	max->str = mlx_put_string(max->mlx, max->map->s, 10, 5);
 	if (max->time <= 0)
@@ -108,6 +108,7 @@ void	ft_hook(void *param)
 	t_max	*max;
 
 	max = param;
+	max->flevel = max->level;
 	if (mlx_is_key_down(max->mlx, MLX_KEY_ESCAPE))
 	{
 		ft_soundeffect(max->ev, GAMEOVER, 256);

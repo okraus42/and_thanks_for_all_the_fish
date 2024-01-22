@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2024/01/17 17:54:12 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/22 13:18:15 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -288,7 +288,7 @@ void	ft_print_score(t_list *lst)
 	int		i;
 
 	i = 1;
-	ft_printf("%1.*^*CPosition   |                Name   |           .........   |      Score  %C\n", 0xFFFFFF, 0x000000);
+	ft_printf("%1.*^*CPosition   |                Name   |           .........   |      Score  |  Level %C\n", 0xFFFFFF, 0x000000);
 	while (lst && i <= 25)
 	{
 		tmp = lst->content;
@@ -315,7 +315,8 @@ void	ft_print_score(t_list *lst)
 		ft_printf("     %3i   |", i);
 		ft_printf("%20s   |", tmp->name);
 		ft_printf("%20s   |", tmp->coalition);
-		ft_printf("%10i   ", tmp->score);
+		ft_printf(" %10i  |", tmp->score);
+		ft_printf("  %5i ", tmp->level);
 		ft_printf("%C\n");
 		lst = lst->next;
 		++i;
@@ -361,7 +362,7 @@ void	ft_highscore(int fd)
 	t_list	*leaf;
 	char	*str;
 	int		i;
-	int		zero[3];
+	int		zero[4];
 
 	i = 0;
 
@@ -382,9 +383,14 @@ void	ft_highscore(int fd)
 			zero[1]++;
 		str[zero[1]] = '\0';
 		zero[2] = zero[1] + 1;
-		while(str && str[zero[2]] != '\n')
+		while(str && str[zero[2]] != ':')
 			zero[2]++;
 		str[zero[2]] = '\0';
+		zero[3] = zero[2] + 1;
+		while(str && str[zero[3]] != '\n')
+			zero[3]++;
+		str[zero[3]] = '\0';
+		tmp->level = ft_atoi(&str[zero[2] + 1]);
 		tmp->score = ft_atoi(&str[zero[1] + 1]);
 		tmp->name = ft_stringcopy(str);
 		if (!tmp->name)
@@ -510,7 +516,7 @@ int	main(int argc, char *argv[], char *env[])
 		max.death++;
 		max.level++;
 		ft_printf("%1.*^*CFinal score: %i%C\n\n\n", 0xFFFFFF, 0x000088, max.score);
-		ft_dprintf(fd, "%s:%s:%i\n", max.player_name, max.player_coalition, max.score);
+		ft_dprintf(fd, "%s:%s:%i:%i\n", max.player_name, max.player_coalition, max.score, max.flevel);
 		free(max.player_name);
 		free(max.player_coalition);
 		close(fd);
