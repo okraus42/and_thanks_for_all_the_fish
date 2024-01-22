@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 13:32:35 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 17:04:42 by okraus           ###   ########.fr       */
+/*   Updated: 2024/01/22 12:37:37 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,8 +220,8 @@ static void	map_prefill2(t_level *m)
 	m->i = 0;
 	while (m->i < m->s)
 	{
-		if ((m->i < m->w * 2) || (m->i > (m->w * (m->h - 2)))
-			|| (m->i % m->w) < 2 || (m->i % m->w) > (m->w - 3))
+		if ((m->i < m->w * 4) || (m->i > (m->w * (m->h - 4)))
+			|| (m->i % m->w) < 4 || (m->i % m->w) > (m->w - 5))
 			m->map[m->i] = EDGE;
 		else if ((m->i / m->w) & 1 && !(m->i & 1))
 			m->map[m->i] = FLOOD_A;
@@ -1221,7 +1221,7 @@ static void	level_fill3(t_level *m)
 	int	c;
 
 	c = 0;
-	while (c < 50)
+	while (c < 16)
 	{
 		y = 0;
 		while (y < 18)
@@ -1231,7 +1231,7 @@ static void	level_fill3(t_level *m)
 			{
 				if (m->level[y][x] == '0')
 				{
-					if (rand() % 16 == 1 && x + y > 10 && c < 50)
+					if (rand() % 32 == 1 && x + y > 12 && c < 50)
 					{
 						m->level[y][x] = 'C';
 						++c;
@@ -1259,7 +1259,7 @@ static void	level_fillenemy(t_level *m, int variant)
 			x = 0;
 			while (x < 32)
 			{
-				if (m->level[y][x] == '0' && x + y > 10 && e < variant)
+				if (m->level[y][x] == '0' && x + y > 16 && e < variant)
 				{
 					if (rand() % 64 == 1)
 					{
