@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2024/01/22 13:18:15 by okraus           ###   ########.fr       */
+/*   Updated: 2024/02/29 10:01:05 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ int	ft_and_thanks_for_all_the_fish(char *mapfile, t_max *max)
 	ft_and_thanks_for_all_the_fish2(max, mapfile);
 	mlx_set_setting(MLX_FULLSCREEN, true);
 	mlx = mlx_init(max->map->w * BLOCK_WIDTH, max->map->h * BLOCK_HEIGHT, "AND THANX FOR ALL THE FISH", true);
+	//mlx = mlx_init(1920, 1080, "AND THANX FOR ALL THE FISH", true);
 	if (!mlx)
 	{
 		ft_dprintf(2, "%s\n", mlx_strerror(mlx_errno));
@@ -175,8 +176,8 @@ void	ft_max_init(t_max *max)
 	char	*yn;
 	char	*coal;
 
-	max->score = 100000;
-	max->time = 30000;
+	max->score = 1000000;
+	max->time = 50000;
 	max->exit = 0;
 	max->death = 1;
 	max->lives = 1;
