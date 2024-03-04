@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2024/02/29 10:01:05 by okraus           ###   ########.fr       */
+/*   Updated: 2024/03/04 14:03:03 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,65 +222,65 @@ void	ft_max_init(t_max *max)
 	if (!ft_strncmp(max->player_name, "exit", 5))
 		max->exit = 1;
 	(void)coal;
-	// str = NULL;
-	// yn = NULL;
-	// while (!max->exit && !str)
-	// {
-	// 	ft_printf("\nChoose your coalition: \n1 - Alderaan   2 - Naboo   3 - Tatooine   4 - Mandalore   5 - other\n");
-	// 	if (coal)
-	// 		free(coal);
-	// 	coal = ft_printmove(get_next_line(0));
-	// 	if (!coal)
-	// 	{
-	// 		max->exit = 1;
-	// 		break;
-	// 	}
-	// 	if (coal[0] == '1')
-	// 		str = ft_stringcopy(ALDERAAN);
-	// 	else if (coal[0] == '2')
-	// 		str = ft_stringcopy(NABOO);
-	// 	else if (coal[0] == '3')
-	// 		str = ft_stringcopy(TATOOINE);
-	// 	else if (coal[0] == '4')
-	// 		str = ft_stringcopy(MANDALORE);
-	// 	else if (coal[0] == '5')
-	// 	{
-	// 		ft_printf("\nType the name of your coalition\n");
-	// 		str = ft_printmove(get_next_line(0));
-	// 		if (!str  || ft_strlen(str) > 15 || ft_strlen(str) < 3 || ft_strchr(str, ':'))
-	// 		{
-	// 			ft_dprintf(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
-	// 			free(str);
-	// 			str = NULL;
-	// 		}
-	// 		while (str && ft_strncmp(str, "exit", 5))
-	// 		{
-	// 			ft_printf("\nIs your coalition: %s?\nPress 'y' to continue\n", str);
-	// 			yn = get_next_line(0);
-	// 			if (yn && (yn[0] == 'y' || yn[0] == 'Y'))
-	// 			{
-	// 				free(yn);
-	// 				break;
-	// 			}
-	// 			else
-	// 			{
-	// 				if (yn)
-	// 					free(yn);
-	// 				yn = NULL;
-	// 				if (str)
-	// 					free(str);
-	// 				str = NULL;
-	// 			}
-	// 		}
-	// 	}
-	// 	else
-	// 		continue;
+	str = NULL;
+	yn = NULL;
+	while (!max->exit && !str)
+	{
+		ft_printf("\nChoose your coalition: \n1 - Alderaan   2 - Naboo   3 - Tatooine   4 - Mandalore   5 - other\n");
+		if (coal)
+			free(coal);
+		coal = ft_printmove(get_next_line(0));
+		if (!coal)
+		{
+			max->exit = 1;
+			break;
+		}
+		if (coal[0] == '1')
+			str = ft_stringcopy(ALDERAAN);
+		else if (coal[0] == '2')
+			str = ft_stringcopy(NABOO);
+		else if (coal[0] == '3')
+			str = ft_stringcopy(TATOOINE);
+		else if (coal[0] == '4')
+			str = ft_stringcopy(MANDALORE);
+		else if (coal[0] == '5')
+		{
+			ft_printf("\nType the name of your coalition\n");
+			str = ft_printmove(get_next_line(0));
+			if (!str  || ft_strlen(str) > 15 || ft_strlen(str) < 3 || ft_strchr(str, ':'))
+			{
+				ft_dprintf(2, "%s: Invalid name! \nUse between 3-15 characters and avoid ':'\n", str);
+				free(str);
+				str = NULL;
+			}
+			while (str && ft_strncmp(str, "exit", 5))
+			{
+				ft_printf("\nIs your coalition: %s?\nPress 'y' to continue\n", str);
+				yn = get_next_line(0);
+				if (yn && (yn[0] == 'y' || yn[0] == 'Y'))
+				{
+					free(yn);
+					break;
+				}
+				else
+				{
+					if (yn)
+						free(yn);
+					yn = NULL;
+					if (str)
+						free(str);
+					str = NULL;
+				}
+			}
+		}
+		else
+			continue;
 		
-	// }
-	// if (coal)
-	// 	free(coal);
-	// max->player_coalition = str;
-	max->player_coalition = ft_strdup("");
+	}
+	if (coal)
+		free(coal);
+	max->player_coalition = str;
+	//max->player_coalition = ft_strdup("");
 }
 
 void	ft_print_score(t_list *lst)
@@ -289,30 +289,30 @@ void	ft_print_score(t_list *lst)
 	int		i;
 
 	i = 1;
-	ft_printf("%1.*^*CPosition   |                Name   |           .........   |      Score  |  Level %C\n", 0xFFFFFF, 0x000000);
+	ft_printf("%1.*^*CPosition   |                Name   |           Coalition   |      Score  |  Level %C\n", 0xFFFFFF, 0x000000);
 	while (lst && i <= 25)
 	{
 		tmp = lst->content;
-		// if (!ft_strncmp(tmp->coalition, NABOO, 10))
-		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x678DA4);
-		// else if (!ft_strncmp(tmp->coalition, ALDERAAN, 10))
-		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0xAD8F65);
-		// else if (!ft_strncmp(tmp->coalition, TATOOINE, 10))
-		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0xE08F4C);
-		// else if (!ft_strncmp(tmp->coalition, MANDALORE, 10))
-		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x9C0505);
-		// else
-		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x008822);
-		if (!(i % 4))
-			ft_printf("%1.*^*C", 0xFFFFFF, 0x008080);
-		else if (!(i % 4 - 1))
-			ft_printf("%1.*^*C", 0xFFFFFF, 0x191970);
-		else if (!(i % 4 - 2))
-			ft_printf("%1.*^*C", 0xFFFFFF, 0x2E8B57);
-		else if (!(i % 4 - 3))
-			ft_printf("%1.*^*C", 0xFFFFFF, 0X4B0082);
+		if (!ft_strncmp(tmp->coalition, NABOO, 10))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x678DA4);
+		else if (!ft_strncmp(tmp->coalition, ALDERAAN, 10))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0xAD8F65);
+		else if (!ft_strncmp(tmp->coalition, TATOOINE, 10))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0xE08F4C);
+		else if (!ft_strncmp(tmp->coalition, MANDALORE, 10))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x9C0505);
 		else
 			ft_printf("%1.*^*C", 0xFFFFFF, 0x008822);
+		// if (!(i % 4))
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x008080);
+		// else if (!(i % 4 - 1))
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x191970);
+		// else if (!(i % 4 - 2))
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x2E8B57);
+		// else if (!(i % 4 - 3))
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0X4B0082);
+		// else
+		// 	ft_printf("%1.*^*C", 0xFFFFFF, 0x008822);
 		ft_printf("     %3i   |", i);
 		ft_printf("%20s   |", tmp->name);
 		ft_printf("%20s   |", tmp->coalition);

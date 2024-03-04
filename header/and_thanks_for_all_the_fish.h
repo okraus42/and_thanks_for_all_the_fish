@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2024/01/22 13:13:51 by okraus           ###   ########.fr       */
+/*   Updated: 2024/03/04 15:34:27 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,14 @@ typedef struct s_highscore
 	int		level;
 }	t_hs;
 
+typedef struct s_players
+{
+	char	name[120][20];
+	char	coalition[120][20];
+	int		round[20];
+	int		players;
+}	t_players;
+
 typedef struct s_control
 {
 	int		w;
@@ -171,6 +179,7 @@ typedef struct s_max
 	t_map		*map;
 	t_controls	*key;
 	t_imgs		*img;
+	t_players	players;
 	mlx_image_t	*str;
 	mlx_image_t	*tmp;
 	char		*player_name;
