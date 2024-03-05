@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:04:17 by okraus            #+#    #+#             */
-/*   Updated: 2023/09/16 14:05:45 by okraus           ###   ########.fr       */
+/*   Updated: 2024/03/05 13:37:09 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void	ft_put_lives(t_max *max)
 	{
 		if (mlx_image_to_window(max->mlx, life_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 			exit(-5);
+		max->img->li = life_img->instances;
 		x++;
 	}
 	mlx_delete_xpm42(life_xpm);

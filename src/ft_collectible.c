@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 12:47:19 by okraus            #+#    #+#             */
-/*   Updated: 2024/01/25 15:15:51 by okraus           ###   ########.fr       */
+/*   Updated: 2024/03/05 13:32:23 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_check_door(t_max *max)
 	{
 		max->map->p = -1;
 		max->score *= 2;
-		max->time += 45000;
+		max->time += 60000;
 		max->lives += 1;
 		ft_soundeffect(max->ev, LEVELWIN, 256);
 		ft_printf("%14.*^*CYou win the level!%0C\n", 0xFFFFFF, 0x008888);

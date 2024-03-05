@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:26:04 by okraus            #+#    #+#             */
-/*   Updated: 2024/01/25 09:02:28 by okraus           ###   ########.fr       */
+/*   Updated: 2024/03/05 13:40:17 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,42 @@ void	ft_game(t_max *max)
 	ft_check_time(max);
 }
 
+void	ft_reset_map(t_max *max)
+{
+	int	e;
+
+	e = 0;
+	while (e < max->map->et)
+	{
+		max->img->eli[e].x = max->map->esx[e] * BLOCK_WIDTH;
+		max->img->eri[e].x = (max->map->w + max->map->esx[e]) * BLOCK_WIDTH;
+		max->img->eui[e].x = (max->map->w + max->map->esx[e]) * BLOCK_WIDTH;
+		max->img->edi[e].x = (max->map->w + max->map->esx[e]) * BLOCK_WIDTH;
+		max->img->eli[e].y = max->map->esy[e] * BLOCK_WIDTH;
+		max->img->eri[e].y = (max->map->esy[e]) * BLOCK_WIDTH;
+		max->img->eui[e].y = (max->map->esy[e]) * BLOCK_WIDTH;
+		max->img->edi[e].y = (max->map->esy[e]) * BLOCK_WIDTH;
+		max->map->eo[e] = LEFT;
+		max->map->ex[e] = max->map->esx[e];
+		max->map->ey[e] = max->map->esy[e];
+		++e;
+	}
+	max->img->pli[0].x = (max->map->w + max->map->psx) * BLOCK_WIDTH;
+	max->img->pri[0].x = max->map->psx * BLOCK_WIDTH;
+	max->img->pui[0].x = (max->map->w + max->map->psx) * BLOCK_WIDTH;
+	max->img->pdi[0].x = (max->map->w + max->map->psx) * BLOCK_WIDTH;
+	max->img->pli[0].y = (max->map->psy) * BLOCK_WIDTH;
+	max->img->pri[0].y = max->map->psy * BLOCK_WIDTH;
+	max->img->pui[0].y = (max->map->psy) * BLOCK_WIDTH;
+	max->img->pdi[0].y = (max->map->psy) * BLOCK_WIDTH;
+	max->map->px = max->map->psx;
+	max->map->py = max->map->psy;
+	max->map->po = RIGHT;
+	max->img->li[max->lives].x += max->map->w * BLOCK_WIDTH;
+	max->death = 0;
+	max->map->p = 1;
+}
+
 void	ft_pause(t_max *max)
 {
 	static int time = 0;
@@ -99,7 +135,10 @@ void	ft_pause(t_max *max)
 	else
 	{
 		time = 0;
-		mlx_close_window(max->mlx);
+		if (max->lives && max->death)
+			ft_reset_map(max);
+		else
+			mlx_close_window(max->mlx);
 	}
 }
 

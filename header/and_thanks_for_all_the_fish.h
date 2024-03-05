@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2024/03/04 15:34:27 by okraus           ###   ########.fr       */
+/*   Updated: 2024/03/05 13:35:48 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,8 @@ typedef struct s_map
 	int		po;
 	int		px;
 	int		py;
+	int		psx;
+	int		psy;
 	int		ct;
 	int		cr;
 	int		*c;
@@ -115,6 +117,8 @@ typedef struct s_map
 	int		*eo;
 	int		*ex;
 	int		*ey;
+	int		*esx;
+	int		*esy;
 	int		x;
 	int		xx;
 	int		xy;
@@ -171,6 +175,7 @@ typedef struct s_imgs
 	mlx_instance_t	*c2i;
 	mlx_instance_t	*dci;
 	mlx_instance_t	*doi;
+	mlx_instance_t	*li;
 }	t_imgs;
 
 typedef struct s_max

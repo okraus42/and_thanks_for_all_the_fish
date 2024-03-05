@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:06:00 by okraus            #+#    #+#             */
-/*   Updated: 2024/01/17 10:41:15 by okraus           ###   ########.fr       */
+/*   Updated: 2024/03/05 12:58:14 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ void	ft_init_map(t_map *map)
 	map->eo = NULL;
 	map->ex = NULL;
 	map->ey = NULL;
+	map->esx = NULL;
+	map->esy = NULL;
 	map->x = 0;
 	map->xx = 0;
 	map->xy = 0;

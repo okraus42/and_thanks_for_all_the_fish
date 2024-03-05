@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2024/03/04 14:03:03 by okraus           ###   ########.fr       */
+/*   Updated: 2024/03/05 13:30:44 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,7 @@ void	ft_max_init(t_max *max)
 	char	*coal;
 
 	max->score = 1000000;
-	max->time = 50000;
+	max->time = 45000;
 	max->exit = 0;
 	max->death = 1;
 	max->lives = 1;

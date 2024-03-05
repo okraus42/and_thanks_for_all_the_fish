@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:17:59 by okraus            #+#    #+#             */
-/*   Updated: 2023/11/19 13:32:00 by okraus           ###   ########.fr       */
+/*   Updated: 2024/03/05 12:58:38 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -277,7 +277,9 @@ void	ft_put_player_right2(t_max *max, mlx_image_t *play_img)
 				if (mlx_image_to_window(max->mlx, play_img, x * BLOCK_WIDTH, y * BLOCK_HEIGHT) < 0)
 					exit(-5);
 				max->img->pri = play_img->instances;
+				max->map->psx = x;
 				max->map->px = x;
+				max->map->psy = y;
 				max->map->py = y;
 			}
 			x++;
