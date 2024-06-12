@@ -1,0 +1,3 @@
+/home/net/42/Piscine/and_thanks_for_all_the_fish/.MLX42/build/CMakeFiles/mlx42.dir
+/home/net/42/Piscine/and_thanks_for_all_the_fish/.MLX42/build/CMakeFiles/edit_cache.dir
+/home/net/42/Piscine/and_thanks_for_all_the_fish/.MLX42/build/CMakeFiles/rebuild_cache.dir
