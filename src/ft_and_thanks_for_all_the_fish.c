@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2024/03/05 13:30:44 by okraus           ###   ########.fr       */
+/*   Updated: 2025/04/16 16:17:52 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -458,27 +458,22 @@ int	main(int argc, char *argv[], char *env[])
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
-		while (max.death && max.lives && !max.exit)
-			ft_and_thanks_for_all_the_fish(NULL, &max);
-		max.death++;
 		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map4.ber", &max);
 		max.death++;
 		max.level++;
-		max.level++;
+		while (max.death && max.lives && !max.exit)
+				ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
 		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
 		max.level++;
-		max.level++;
-		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
-		max.level++;
-		max.level++;
 		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish("maps/map5.ber", &max);
@@ -486,31 +481,21 @@ int	main(int argc, char *argv[], char *env[])
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
 		max.level++;
-		max.level++;
+		while (max.death && max.lives && !max.exit)
+			ft_and_thanks_for_all_the_fish(NULL, &max);
+		max.death++;
 		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
 		max.level++;
-		max.level++;
-		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
 		max.level++;
-		max.level++;
-		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);
 		max.death++;
-		max.level++;
-		max.level++;
-		max.level++;
-		while (max.death && max.lives && !max.exit)
-			ft_and_thanks_for_all_the_fish(NULL, &max);
-		max.death++;
-		max.level++;
-		max.level++;
 		max.level++;
 		while (max.death && max.lives && !max.exit)
 			ft_and_thanks_for_all_the_fish(NULL, &max);

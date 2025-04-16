@@ -1,0 +1,37 @@
+Enter your intra name or type 'exit' to quit: 
+lhusarov
+
+Is your name: lhusarov?
+Press 'y' to continue
+y
+
+Choose your coalition: 
+1 - Alderaan   2 - Naboo   3 - Tatooine   4 - Mandalore   5 - other
+3
+You win the level!
+Current score: 2267738
+Enemy got you and you are now dead:(
+Current score: 2385356
+You win the level!
+Current score: 4942214
+Enemy got you and you are now dead:(
+Current score: 5040419
+You win the level!
+Current score: 10199200
+You win the level!
+Current score: 20729364
+You win the level!
+Current score: 41999242
+Enemy got you and you are now dead:(
+Current score: 42027651
+Enemy got you and you are now dead:(
+Current score: 42023135
+Enemy got you and you are now dead:(
+Current score: 41998135
+Enemy got you and you are now dead:(
+Current score: 42062373
+Enemy got you and you are now dead:(
+Current score: 42037373
+Enemy got you and you are now dead:(
+Current score: 42009582
+

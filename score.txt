@@ -1,1 +1,16 @@
-test:Testers:10289481:3
+okraus:Mandalore:9796756:3
+phofer:Naboo:83670602:6
+eweldon:Alderaan:10339555:3
+dkolarov:Naboo:20661356:4
+bkelav:Alderaan:85844015:6
+vgotzlov:Naboo:10124309:3
+bsalatov:Alderaan:41521035:5
+psimcak:Tatooine:10137000:3
+mhagara:Naboo:84167740:6
+gvasylie:Alderaan:84794548:6
+Penny:Tatooine:10116860:3
+eweldon:Alderaan:10430992:3
+vgotzlov:Naboo:20714617:4
+eweldon:Alderaan:86089700:6
+psimcak:Tatooine:41924283:5
+vsanin:Tatooine:10119668:3
