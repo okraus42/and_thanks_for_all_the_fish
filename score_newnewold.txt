@@ -14,3 +14,4 @@ vgotzlov:Naboo:20714617:4
 eweldon:Alderaan:86089700:6
 psimcak:Tatooine:41924283:5
 vsanin:Tatooine:10119668:3
+observer:observer:998687:0
