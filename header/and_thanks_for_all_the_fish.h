@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:43:08 by okraus            #+#    #+#             */
-/*   Updated: 2024/04/17 15:28:53 by okraus           ###   ########.fr       */
+/*   Updated: 2026/05/11 16:34:33 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@
 #define TATOOINE "Tatooine"
 #define NABOO "Naboo"
 #define ALDERAAN "Alderaan"
+#define AURORA "Aurora"
+#define ECLIPSE "Eclipse"
+#define SUPERNOVA "Supernova"
+#define SHARKS "Sharks"
+#define DOLPHINS "Dolphins"
 
 //	SOUND FILES (John)
 

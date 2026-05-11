@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 15:35:23 by okraus            #+#    #+#             */
-/*   Updated: 2025/04/16 16:17:52 by okraus           ###   ########.fr       */
+/*   Updated: 2026/05/11 16:46:46 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,7 +226,7 @@ void	ft_max_init(t_max *max)
 	yn = NULL;
 	while (!max->exit && !str)
 	{
-		ft_printf("\nChoose your coalition: \n1 - Alderaan   2 - Naboo   3 - Tatooine   4 - Mandalore   5 - other\n");
+		ft_printf("\nChoose your coalition: \n1 - Dolphins  2 - Sharks  3 - Aurora  4 - Eclipse  5 - Supernova  6 - other\n");
 		if (coal)
 			free(coal);
 		coal = ft_printmove(get_next_line(0));
@@ -236,14 +236,16 @@ void	ft_max_init(t_max *max)
 			break;
 		}
 		if (coal[0] == '1')
-			str = ft_stringcopy(ALDERAAN);
+			str = ft_stringcopy(DOLPHINS);
 		else if (coal[0] == '2')
-			str = ft_stringcopy(NABOO);
+			str = ft_stringcopy(SHARKS);
 		else if (coal[0] == '3')
-			str = ft_stringcopy(TATOOINE);
+			str = ft_stringcopy(AURORA);
 		else if (coal[0] == '4')
-			str = ft_stringcopy(MANDALORE);
+			str = ft_stringcopy(ECLIPSE);
 		else if (coal[0] == '5')
+			str = ft_stringcopy(SUPERNOVA);
+		else if (coal[0] == '6')
 		{
 			ft_printf("\nType the name of your coalition\n");
 			str = ft_printmove(get_next_line(0));
@@ -301,6 +303,16 @@ void	ft_print_score(t_list *lst)
 			ft_printf("%1.*^*C", 0xFFFFFF, 0xE08F4C);
 		else if (!ft_strncmp(tmp->coalition, MANDALORE, 10))
 			ft_printf("%1.*^*C", 0xFFFFFF, 0x9C0505);
+		else if (!ft_strncmp(tmp->coalition, AURORA, 10))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0xA9900FF);
+		else if (!ft_strncmp(tmp->coalition, ECLIPSE, 10))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x2EA932);
+		else if (!ft_strncmp(tmp->coalition, SUPERNOVA, 10))
+			ft_printf("%1.*^*C", 0xFFFFFF, 0x7F0609);
+		else if (!ft_strncmp(tmp->coalition, DOLPHINS, 10))
+			ft_printf("%1.*^*C", 0x000000, 0xBBDDF3);
+		else if (!ft_strncmp(tmp->coalition, SHARKS, 10))
+			ft_printf("%1.*^*C", 0x000000, 0xFFAAAA);
 		else
 			ft_printf("%1.*^*C", 0xFFFFFF, 0x008822);
 		// if (!(i % 4))
